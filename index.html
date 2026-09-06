@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA LUXURY TRAVEL - 五大洲頂級奢華旅遊與會員中心</title>
+    <!-- Google Fonts 與 FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet真實地圖 CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        :root {
+            --primary-gold: #d4af37;
+            --dark-bg: #111111;
+            --card-bg: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-gray: #aaaaaa;
+            --accent-transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* 導覽列 */
+        header {
+            background-color: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: var(--accent-transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-nav-outline {
+            background: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 6px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--accent-transition);
+        }
+
+        .btn-nav-outline:hover {
+            background-color: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        .wishlist-nav-btn {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 6px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            transition: var(--accent-transition);
+        }
+
+        .wishlist-nav-btn:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        /* 主視覺 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/900?luxury') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* 🌍 5 大洲選擇按鈕列 */
+        .continent-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .continent-btn {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-light);
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--accent-transition);
+        }
+
+        .continent-btn:hover, .continent-btn.active {
+            background-color: var(--primary-gold);
+            color: var(--dark-bg);
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* 行程卡片網格 */
+        .tours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .luxury-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--accent-transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--accent-transition);
+        }
+
+        .luxury-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        /* 愛心收藏按鈕 */
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--accent-transition);
+            z-index: 10;
+        }
+
+        .wishlist-btn:hover {
+            transform: scale(1.1);
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .wishlist-btn.active {
+            color: #e74c3c;
+            border-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .card-body p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 12px;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+
+        .btn-reserve {
+            background-color: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--accent-transition);
+            font-size: 0.8rem;
+        }
+
+        .btn-reserve:hover {
+            background-color: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        /* 🗺️ 真實地圖區塊 */
+        .map-section {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .map-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        #realMap {
+            height: 450px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .map-info-panel h3 {
+            color: var(--primary-gold);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .map-info-panel p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .btn-map-explore {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--accent-transition);
+        }
+
+        .btn-map-explore:hover {
+            opacity: 0.9;
+        }
+
+        /* 📅 詳細行程檢視區 */
+        .itinerary-section {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .itinerary-timeline {
+            margin-top: 25px;
+            border-left: 2px solid var(--primary-gold);
+            padding-left: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* 規定與風險告知 */
+        .rules-risk-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .info-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .info-box h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .info-box li::before {
+            content: "▪";
+            color: var(--primary-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* 購票表單區 */
+        .booking-section {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-gold);
+            font-weight: 500;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group select:focus, .form-group input:focus {
+            border-color: var(--primary-gold);
+            outline: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .btn-submit-vip {
+            background: linear-gradient(135deg, #d4af37, #aa8c2c);
+            color: var(--dark-bg);
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: var(--accent-transition);
+        }
+
+        .btn-submit-vip:hover {
+            opacity: 0.95;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Modal 與 Toast */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--primary-gold);
+            padding: 40px;
+            border-radius: 12px;
+            width: 480px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--text-gray);
+            cursor: pointer;
+            transition: var(--accent-transition);
+        }
+
+        .close-btn:hover {
+            color: var(--primary-gold);
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .auth-switch a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* 會員中心儀表板樣式 */
+        .dashboard-section {
+            margin-bottom: 20px;
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+
+        .dashboard-section h4 {
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .order-item, .wishlist-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            padding: 6px 0;
+            border-bottom: 1px dashed #333;
+        }
+
+        .order-item:last-child, .wishlist-item:last-child {
+            border-bottom: none;
+        }
+
+        #toastBox {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: #222;
+            border-left: 4px solid var(--primary-gold);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+            animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+            max-width: 350px;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            padding: 30px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 900px) {
+            .rules-risk-section, .map-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toastBox"></div>
+
+    <!-- 導覽列 -->
+    <header>
+        <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})"><i class="fa-solid fa-crown"></i> AURA LUXURY</div>
+        <nav>
+            <a href="#tours">五大洲行程</a>
+            <a href="#mapSection">全球真實地圖</a>
+            <button class="wishlist-nav-btn" onclick="openWishlistModal()">
+                <i class="fa-solid fa-heart"></i> 收藏夾 (<span id="wishlistCount">0</span>)
+            </button>
+            <div class="nav-buttons" id="authNavContainer">
+                <button class="btn-nav-outline" onclick="openAuthModal('login')">登入</button>
+                <button class="btn-nav-outline" style="background:var(--primary-gold); color:var(--dark-bg);" onclick="openAuthModal('register')">註冊</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主視覺 -->
+    <section class="hero">
+        <h1>重新定義 <span>頂級奢華之旅</span></h1>
+        <p>請先選擇您心儀的大洲，探索各洲專屬的 7 大頂級私密秘境與私人專機體驗。</p>
+    </section>
+
+    <div class="container">
+        
+        <!-- 🌍 5大洲篩選按鈕列 -->
+        <div class="section-title">
+            <h2>探索 5 大洲頂級奢華航點</h2>
+            <p>點擊下方大洲按鈕，即可切換檢視該洲專屬的 7 大頂級旅遊行程</p>
+        </div>
+
+        <div class="continent-bar">
+            <button class="continent-btn active" onclick="filterContinent('asia')">亞洲 (Asia)</button>
+            <button class="continent-btn" onclick="filterContinent('europe')">歐洲 (Europe)</button>
+            <button class="continent-btn" onclick="filterContinent('oceania')">大洋洲與極地 (Oceania & Poles)</button>
+            <button class="continent-btn" onclick="filterContinent('americas')">美洲 (Americas)</button>
+            <button class="continent-btn" onclick="filterContinent('africa_me')">非洲與中東 (Africa & ME)</button>
+        </div>
+
+        <!-- 該大洲的 7 個旅遊行程網格 -->
+        <div class="tours-grid" id="toursGridContainer">
+            <!-- 動態載入 -->
+        </div>
+
+        <!-- 📅 詳細行程檢視區 -->
+        <div class="itinerary-section" id="itinerarySection">
+            <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                <h2 id="itineraryMainTitle">精選行程每日細節</h2>
+                <p>點擊地圖標記或行程卡片的「預訂行程」，即可深入了解每日尊榮行程安排</p>
+            </div>
+            <div class="itinerary-timeline" id="timelineContainer">
+                <!-- 動態載入時間軸 -->
+            </div>
+        </div>
+
+        <!-- 🗺️ 真實地圖區塊 -->
+        <div class="map-section" id="mapSection">
+            <div class="section-title" style="text-align: left; margin-bottom: 25px;">
+                <h2>全球真實導覽地圖</h2>
+                <p>點擊地圖上的各個導覽標記，即可檢視該航點的尊榮禮遇與每日行程</p>
+            </div>
+            
+            <div class="map-layout">
+                <div id="realMap"></div>
+                <div class="map-info-panel" id="mapInfoPanel">
+                    <h3 id="mapTitle">日本東京 · 頂級米其林與私密會所</h3>
+                    <p id="mapDesc">專屬安排東京隱密料亭包場，由三代職人為您親自主理，搭配頂級私人座車市區接送。</p>
+                    <button class="btn-map-explore" onclick="selectTourFromMap()">以此航點進行預訂</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 規定與風險告知 -->
+        <div class="rules-risk-section" id="rulesSection">
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-exclamation"></i> 貴賓預訂與取消規定</h3>
+                <ul>
+                    <li><strong>訂金支付：</strong> 預訂頂級私人行程需於確認後 48 小時內支付 50% 訂金，方完成保留程序。</li>
+                    <li><strong>取消與退款：</strong> 於出發前 30 天以上取消者，退還全額訂金；30 天以內取消將扣除已發生之私人包機與酒店訂金。</li>
+                    <li><strong>名額轉讓：</strong> 由於本行程包含高度客製化與實名制私人專機/門票，貴賓若需變更旅客姓名，須於出發前 14 個工作天提出申請。</li>
+                    <li><strong>身份核實：</strong> 為維護全體貴賓隱私與安全，所有同行旅客均須於報到時出示有效護照正本。</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fa-solid fa-shield-halved"></i> 風險告知與免責聲明</h3>
+                <ul>
+                    <li><strong>不可抗力因素：</strong> 若遇極端天候（如極光區暴風雪、海島水上飛機停飛等），管家團隊將即時調整行程，相關安全變更費用將由保險或專案應變基金覆蓋。</li>
+                    <li><strong>健康狀況申明：</strong> 參與高海拔、極地或深海潛水行程之貴賓，請務必自主確認身體健康狀況，隱瞞病史導致之意外本公司恕難負責。</li>
+                    <li><strong>私人保險建議：</strong> 建議每位貴賓出發前自行投保高額海外醫療及突發事故保險，以保障極限或深度旅遊權益。</li>
+                    <li><strong>財物安全：</strong> 私人行館與專屬專機上均設有頂級保險箱，貴賓隨身之貴重物品請自行妥善保管。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 購票表單區 -->
+        <div class="booking-section" id="booking">
+            <div class="section-title" style="text-align: left; margin-bottom: 25px;">
+                <h2>私人管家預約與購票系統</h2>
+                <p>請填寫您的尊榮需求，我們將指派專屬私人管家與您聯繫</p>
+            </div>
+
+            <form onsubmit="handleBooking(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tourSelect">指定奢華行程：</label>
+                        <select id="tourSelect" required>
+                            <option value="">-- 請選擇您的尊榮行程 --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticketQuantity">貴賓人數 (位)：</label>
+                        <input type="number" id="ticketQuantity" min="1" max="10" value="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="buyerName">貴賓姓名 / 稱謂：</label>
+                        <input type="text" id="buyerName" placeholder="例如：張董 / Ms. Victoria" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="buyerPhone">專屬聯絡電話：</label>
+                        <input type="tel" id="buyerPhone" placeholder="請輸入手機號碼" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="specialRequest">特別管家服務備註（如包機需求、飲食禁忌）：</label>
+                        <input type="text" id="specialRequest" placeholder="請告知您的額外尊榮客製需求...">
+                    </div>
+                    <div class="form-group full-width">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms" style="display:inline; color:var(--text-gray); margin-bottom:0; font-weight:normal;">我已詳細閱讀並同意上述「貴賓預訂與取消規定」及「風險告知與免責聲明」</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit-vip">確認送出尊榮預約單</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- 會員登入 / 註冊彈跳視窗 (Modal) -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAuthModal()">&times;</span>
+            <div style="text-align: center; margin-bottom: 25px;">
+                <i class="fa-solid fa-crown" style="font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 10px;"></i>
+                <h2 id="modalTitle" style="font-family: 'Playfair Display', serif; color: var(--primary-gold);">VIP 會員登入</h2>
+                <p id="modalSub" style="color: var(--text-gray); font-size: 0.85rem;">尊享全球黑卡禮遇與私密航點權限</p>
+            </div>
+            
+            <form id="loginFormElement" onsubmit="handleLoginSubmit(event)">
+                <div class="form-group">
+                    <label>電子郵件：</label>
+                    <input type="email" id="loginEmail" placeholder="vip@aura-luxury.com" required>
+                </div>
+                <div class="form-group">
+                    <label>密碼：</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit-vip" style="margin-top: 10px;">安全登入</button>
+                <div class="auth-switch">
+                    還沒有黑卡帳戶？ <a onclick="switchAuthMode('register')">立即註冊</a>
+                </div>
+            </form>
+
+            <form id="registerFormElement" style="display: none;" onsubmit="handleRegisterSubmit(event)">
+                <div class="form-group">
+                    <label>貴賓姓名：</label>
+                    <input type="text" id="regName" placeholder="請輸入真實姓名" required>
+                </div>
+                <div class="form-group">
+                    <label>電子郵件：</label>
+                    <input type="email" id="regEmail" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>設定安全密碼：</label>
+                    <input type="password" id="regPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit-vip" style="margin-top: 10px;">完成註冊</button>
+                <div class="auth-switch">
+                    已經擁有帳戶？ <a onclick="switchAuthMode('login')">立即登入</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 會員中心儀表板 Modal -->
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDashboardModal()">&times;</span>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <i class="fa-solid fa-id-card-clip" style="font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 5px;"></i>
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-gold);">VIP 會員中心</h2>
+                <p id="dashboardUserEmail" style="color: var(--text-gray); font-size: 0.9rem;"></p>
+            </div>
+
+            <!-- 專屬黑卡優惠 -->
+            <div class="dashboard-section">
+                <h4><i class="fa-solid fa-ticket"></i> 我的專屬黑卡優惠碼</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span style="color:var(--primary-gold); font-weight:bold; font-size:1.1rem; letter-spacing:1px;">AURA-VIP-888</span>
+                    <span style="font-size:0.85rem; color:var(--text-gray);">全站預訂享 95 折尊榮禮遇</span>
+                </div>
+            </div>
+
+            <!-- 專屬私人管家 -->
+            <div class="dashboard-section">
+                <h4><i class="fa-solid fa-user-tie"></i> 我的專屬私人管家</h4>
+                <p style="font-size:0.9rem; margin-top:5px;">管家姓名：<strong>Victoria 總管家</strong></p>
+                <p style="font-size:0.9rem; color:var(--text-gray);">直撥專線：+886 2 8788-9999 #88</p>
+                <p style="font-size:0.9rem; color:var(--text-gray);">專屬信箱：victoria.vip@aura-luxury.com</p>
+            </div>
+
+            <!-- 歷史預約訂單 -->
+            <div class="dashboard-section">
+                <h4><i class="fa-solid fa-suitcase-rolling"></i> 我的預約訂單狀態</h4>
+                <div id="dashboardOrdersList" style="margin-top:8px;">
+                    <p style="font-size:0.85rem; color:var(--text-gray);">目前尚無預約紀錄。</p>
+                </div>
+            </div>
+
+            <button class="btn-submit-vip" style="background:#444; color:#fff; margin-top:10px;" onclick="handleLogout()">登出帳戶</button>
+        </div>
+    </div>
+
+    <!-- 收藏夾 Modal -->
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeWishlistModal()">&times;</span>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <i class="fa-solid fa-heart" style="font-size: 2.5rem; color: #e74c3c; margin-bottom: 5px;"></i>
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-gold);">我的收藏清單</h2>
+                <p style="color: var(--text-gray); font-size: 0.85rem;">您已收藏的頂級私密航點</p>
+            </div>
+            <div id="wishlistModalList" style="margin-top:15px; display:flex; flex-direction:column; gap:10px;">
+                <!-- 動態載入收藏清單 -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AURA LUXURY TRAVEL INC. All Rights Reserved. | 頂級私人旅遊管家服務</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // 5 大洲完整資料庫 (35個行程)
+        const continentTours = {
+            asia: [
+                { id: "tokyo", name: "日本東京尊榮私人會所 5 日", price: "NT$ 215,000 起", badge: "東京極上會所", lat: 35.6762, lng: 139.6503, img: "https://picsum.photos/400/250?tokyo=1", desc: "專屬安排東京隱密料亭包場，三代職人親自主理。", itinerary: ["Day 1：專機抵達 · 東京私人會所入住", "Day 2：文化私旅 · 三代職人工藝體驗", "Day 3：隱密料亭包場 · 旬味晚宴", "Day 4：私人直升機鳥瞰富士山與箱根溫泉", "Day 5：專屬貴賓室通關與賦歸"] },
+                { id: "kyoto", name: "日本京都百年町家私密茶道 5 日", price: "NT$ 198,000 起", badge: "京都町家私旅", lat: 35.0116, lng: 135.7681, img: "https://picsum.photos/400/250?kyoto=2", desc: "百年町家古宅，表千家茶道宗師親授與嵐山夜間漫遊。", itinerary: ["Day 1：抵達京都百年古宅", "Day 2：茶道宗師私密茶道", "Day 3：嵐山竹林夜間VIP封園漫遊", "Day 4：私房京料理懷石晚宴", "Day 5：賦歸"] },
+                { id: "bali", name: "印尼峇里島烏布隱世行館 6 日", price: "NT$ 220,000 起", badge: "烏布叢林隱居", lat: -8.5069, lng: 115.2625, img: "https://picsum.photos/400/250?bali=3", desc: "阿勇河谷頂級Villa，私人瑜伽大師指導與傳統淨化儀式。", itinerary: ["Day 1-2：抵達峇里島叢林Villa", "Day 3-4：皇家淨化儀式與私人瑜伽", "Day 5：藝術村參訪與私廚料理", "Day 6：賦歸"] },
+                { id: "thailand", name: "泰國清邁金三角四季帳篷 5 日", price: "NT$ 265,000 起", badge: "金三角奢華行館", lat: 20.3533, lng: 100.0814, img: "https://picsum.photos/400/250?thailand=4", desc: "湄公河畔頂級四季帳篷行館，大象保育營私人接觸。", itinerary: ["Day 1-2：清邁金三角四季帳篷", "Day 3-4：大象保育與湄公河夕陽晚宴", "Day 5：叢林泰式SPA與賦歸"] },
+                { id: "maldives", name: "馬爾地夫白馬莊園水上行館 7 日", price: "NT$ 365,000 起", badge: "島嶼私人包島", lat: 3.2028, lng: 73.2207, img: "https://picsum.photos/400/250?maldives=5", desc: "無邊際私人海景泳池，水上飛機俯瞰印度洋絕景。", itinerary: ["Day 1-2：水上飛機登島入住行館", "Day 3-4：私人無人島潛水與燭光晚宴", "Day 5-6：水療SPA與落日巡航", "Day 7：賦歸"] },
+                { id: "dubai", name: "杜拜皇家直升機與沙漠行館 5 日", price: "NT$ 295,000 起", badge: "沙漠七星酒店", lat: 25.2048, lng: 55.2708, img: "https://picsum.photos/400/250?dubai=6", desc: "搭乘私人直升機鳥瞰棕櫚島，入住七星級帆船飯店。", itinerary: ["Day 1-2：帆船飯店與直升機鳥瞰棕櫚島", "Day 3-4：沙漠保護區私人帳篷星空晚宴", "Day 5：購物與賦歸"] },
+                { id: "singapore", name: "新加坡濱海灣金沙總統級奢華 5 日", price: "NT$ 245,000 起", badge: "濱海灣總統套房", lat: 1.2834, lng: 103.8607, img: "https://picsum.photos/400/250?sg=7", desc: "入住金沙頂級總統套房，米其林主廚包場與私人遊艇夜遊。", itinerary: ["Day 1-2：總統套房入住與無邊際泳池VIP", "Day 3-4：新加坡海峽私人遊艇派對與米其林晚宴", "Day 5：賦歸"] }
+            ],
+            europe: [
+                { id: "paris", name: "法國巴黎凡爾賽宮私密漫遊 8 日", price: "NT$ 420,000 起", badge: "羅浮宮星空晚宴", lat: 48.8566, lng: 2.3522, img: "https://picsum.photos/400/250?paris=1", desc: "閉館後專屬私人導覽羅浮宮，入住皇宮級五星酒店。", itinerary: ["Day 1-2：入住皇宮酒店，塞納河私人遊艇晚餐", "Day 3-4：閉館後私人導覽羅浮宮與凡爾賽宮", "Day 5-8：訂製服鑑賞與專機賦歸"] },
+                { id: "swiss", name: "瑞士冰河列車私房雪景 6 日", price: "NT$ 310,000 起", badge: "阿爾卑斯奢華", lat: 46.0207, lng: 7.7491, img: "https://picsum.photos/400/250?swiss=2", desc: "包下黃金景觀列車頭等包廂，策馬特峰頂奢華木屋。", itinerary: ["Day 1-2：蘇黎世抵達至策馬特雪景木屋", "Day 3-4：冰河列車頭等包廂與阿爾卑斯雪景", "Day 5-6：直升機觀景與溫泉度假"] },
+                { id: "iceland", name: "冰島藍湖奢華極光 6 日", price: "NT$ 288,000 起", badge: "極光私人別墅", lat: 64.1466, lng: -21.9426, img: "https://picsum.photos/400/250?iceland=3", desc: "私人極光玻璃穹頂別墅，專屬直升機冰川導覽。", itinerary: ["Day 1-2：極光玻璃穹頂別墅入住", "Day 3-4：直升機冰川探險與藍湖溫泉VIP包場", "Day 5-6：極光攝影與私廚晚宴"] },
+                { id: "italy", name: "義大利托斯卡尼莊園品酒 7 日", price: "NT$ 340,000 起", badge: "托斯卡尼莊園", lat: 43.7696, lng: 11.2558, img: "https://picsum.photos/400/250?italy=4", desc: "文藝復興古堡莊園，私人直升機直達頂級酒莊。", itinerary: ["Day 1-2：佛羅倫斯古堡莊園入住", "Day 3-4：直升機直達酒莊品嚐珍藏紅酒", "Day 5-7：米其林料理課程與賦歸"] },
+                { id: "greece", name: "希臘聖托里尼懸崖別墅 7 日", price: "NT$ 325,000 起", badge: "愛琴海日落", lat: 36.3932, lng: 25.4615, img: "https://picsum.photos/400/250?greece=5", desc: "伊亞懸崖私人無邊際泳池別墅，私人遊艇日落巡航。", itinerary: ["Day 1-2：聖托里尼懸崖泳池別墅", "Day 3-4：私人遊艇愛琴海日落巡航", "Day 5-7：頂級Spa放鬆與懸崖晚宴"] },
+                { id: "monaco", name: "摩納哥蒙地卡羅豪華遊艇與F1 6 日", price: "NT$ 480,000 起", badge: "地中海遊艇會", lat: 43.7384, lng: 7.4246, img: "https://picsum.photos/400/250?monaco=6", desc: "地中海海景套房，超級遊艇出海與F1賽道跑車體驗。", itinerary: ["Day 1-2：蒙地卡羅五星酒店", "Day 3-4：超級遊艇地中海巡航", "Day 5-6：法拉利超跑F1賽道駕駛與賦歸"] },
+                { id: "spain", name: "西班牙巴塞隆納米其林美食 7 日", price: "NT$ 315,000 起", badge: "西班牙米其林", lat: 40.4168, lng: -3.7038, img: "https://picsum.photos/400/250?spain=7", desc: "高第建築私人閉館導覽與米其林三星名廚晚宴。", itinerary: ["Day 1-3：馬德里皇宮私人導覽與Tapas巡禮", "Day 4-6：巴塞隆納聖家堂VIP導覽", "Day 7：賦歸"] }
+            ],
+            oceania: [
+                { id: "newzealand", name: "紐西蘭皇后鎮南島冰川與峽灣 7 日", price: "NT$ 375,000 起", badge: "南島極境峽灣", lat: -45.0312, lng: 168.6626, img: "https://picsum.photos/400/250?nz=1", desc: "私人直升機降落米爾福德峽灣，湖畔私密奢華莊園。", itinerary: ["Day 1-2：皇后鎮湖畔奢華莊園", "Day 3-4：直升機米爾福德峽灣與冰川降落", "Day 5-7：私人酒莊品酒與高空跳傘"] },
+                { id: "fiji", name: "斐濟私人奢華島嶼度假村 7 日", price: "NT$ 345,000 起", badge: "南太平洋天堂", lat: -17.7134, lng: 178.0650, img: "https://picsum.photos/400/250?fiji=2", desc: "南太平洋私人島嶼全包式奢華度假，水上別墅。", itinerary: ["Day 1-2：私人島嶼水上別墅入住", "Day 3-4：珊瑚礁深海潛水與私人海灘野餐", "Day 5-7：玻里尼西亞傳統Spa與賦歸"] },
+                { id: "sydney", name: "澳洲雪梨歌劇院與大堡礁私人專機 7 日", price: "NT$ 390,000 起", badge: "大堡礁私人專機", lat: -33.8688, lng: 151.2093, img: "https://picsum.photos/400/250?sydney=3", desc: "雪梨歌劇院VIP包廂與私人專機直飛大堡礁心形礁。", itinerary: ["Day 1-2：雪梨港灣頂級酒店與歌劇院VIP", "Day 3-5：私人專機飛往大堡礁心形礁直升機導覽", "Day 6-7：海鮮盛宴與賦歸"] },
+                { id: "antarctica", name: "南極奢華破冰船極地 10 日", price: "NT$ 680,000 起", badge: "南極冰原探險", lat: -69.2284, lng: -77.5583, img: "https://picsum.photos/400/250?antarctica=4", desc: "六星級極地破冰船，直升機登陸南極大陸觀賞企鵝。", itinerary: ["Day 1-3：烏斯懷亞登船", "Day 4-7：德雷克海峽航行與直升機登陸", "Day 8-10：企鵝生態近距離與返程"] },
+                { id: "tahiti", name: "法屬玻里尼西亞大溪地波 Bora Bora 7 日", price: "NT$ 440,000 起", badge: "大溪地水上屋", lat: -16.5004, lng: -151.7415, img: "https://picsum.photos/400/250?tahiti=5", desc: "Bora Bora頂級水上奢華VILLA，與鯊魚魔鬼魚共泳。", itinerary: ["Day 1-2：大溪地過渡至Bora Bora水上屋", "Day 3-4：私人潟湖與鯊魚魔鬼魚生態共泳", "Day 5-7：落日夕陽巡航與私人海灘晚餐"] },
+                { id: "melbourne", name: "澳洲墨爾本亞拉河谷酒莊與大洋路 6 日", price: "NT$ 260,000 起", badge: "亞拉河谷品酒", lat: -37.8136, lng: 144.9631, img: "https://picsum.photos/400/250?melbourne=6", desc: "直升機鳥瞰十二門徒岩，亞拉河谷頂級酒莊私廚。", itinerary: ["Day 1-2：墨爾本頂級酒店入住", "Day 3-4：直升機鳥瞰大洋路十二門徒岩", "Day 5-6：亞拉河谷酒莊品酒與賦歸"] },
+                { id: "tasmania", name: "澳洲塔斯馬尼亞荒野極境隱居 6 日", price: "NT$ 290,000 起", badge: "塔斯馬尼亞荒野", lat: -42.8821, lng: 147.3272, img: "https://picsum.photos/400/250?tasmania=7", desc: "隱匿於世界遺產荒野中的頂級美學行館，生蠔晚宴。", itinerary: ["Day 1-2：塔斯馬尼亞荒野隱居行館", "Day 3-4：生蠔農場私人專屬品嚐與健行", "Day 5-6：極光與星空觀賞及賦歸"] }
+            ],
+            americas: [
+                { id: "canada", name: "加拿大洛磯山脈落基堡與極光 7 日", price: "NT$ 355,000 起", badge: "洛磯山脈冰原", lat: 51.1784, lng: -115.5708, img: "https://picsum.photos/400/250?canada=1", desc: "班夫國家公園百年城堡，直升機探索冰原與露易絲湖。", itinerary: ["Day 1-2：班夫百年城堡酒店入住", "Day 3-4：直升機冰原降落與露易絲湖健行", "Day 5-7：暗夜星空極光與賦歸"] },
+                { id: "peru", name: "祕魯庫斯科與馬丘比丘奢華列車 8 日", price: "NT$ 410,000 起", badge: "印加帝國秘境", lat: -13.1631, lng: -72.5450, img: "https://picsum.photos/400/250?peru=2", desc: "貝魯蒙德豪華景觀列車前往馬丘比丘，古蹟酒店。", itinerary: ["Day 1-2：庫斯科古蹟酒店適應高原", "Day 3-4：奢華景觀列車前往馬丘比丘私人導覽", "Day 5-8：印加神聖谷地文化與Spa"] },
+                { id: "hawaii", name: "夏威夷茂宜島私人海灘度假 6 日", price: "NT$ 275,000 起", badge: "夏威夷私密海灘", lat: 20.7984, lng: -156.3319, img: "https://picsum.photos/400/250?hawaii=3", desc: "茂宜島濱海度假村私人VILLA，直升機鳥瞰火山。", itinerary: ["Day 1-2：茂宜島濱海豪華別墅", "Day 3-4：直升機鳥瞰火山國家公園與浮潛", "Day 5-6：雙體船夕陽巡航與Luau盛宴"] },
+                { id: "newyork", name: "美國紐約曼哈頓頂級百老匯與米其林 6 日", price: "NT$ 320,000 起", badge: "曼哈頓總統套房", lat: 40.7128, lng: -74.0060, img: "https://picsum.photos/400/250?ny=4", desc: "中央公園旁總統套房，百老匯VIP包廂與私人直升機。", itinerary: ["Day 1-2：曼哈頓五星總統套房入住", "Day 3-4：百老匯VIP包廂與後台專屬探訪", "Day 5-6：米其林三星主廚晚宴與賦歸"] },
+                { id: "patagonia", name: "阿根廷巴塔哥尼亞冰川與奢華山莊 7 日", price: "NT$ 395,000 起", badge: "巴塔哥尼亞冰川", lat: -50.3379, lng: -72.2647, img: "https://picsum.photos/400/250?patagonia=5", desc: "莫雷諾冰川私人冰川健行，荒野頂級環保奢華山莊。", itinerary: ["Day 1-2：巴塔哥尼亞奢華山莊入住", "Day 3-4：莫雷諾冰川私人冰川健行與品酒", "Day 5-7：安地斯山脈健行與賦歸"] },
+                { id: "rio", name: "巴西里約熱內盧嘉年華與海灘VILLA 6 日", price: "NT$ 310,000 起", badge: "里約私人海灘", lat: -22.9068, lng: -43.1729, img: "https://picsum.photos/400/250?rio=6", desc: "科帕卡巴納海灘頂級VILLA，直升機鳥瞰基督像。", itinerary: ["Day 1-2：里約海灘豪華別墅入住", "Day 3-4：直升機鳥瞰科爾科瓦多山基督像", "Day 5-6：森巴文化私人派對與賦歸"] },
+                { id: "alaska", name: "美國阿拉斯加極光私人木屋與釣魚 7 日", price: "NT$ 330,000 起", badge: "阿拉斯加極光", lat: 64.2008, lng: -149.4937, img: "https://picsum.photos/400/250?alaska=7", desc: "費爾班克斯極光私人木屋，直升機冰川釣魚體驗。", itinerary: ["Day 1-2：費爾班克斯極光私人木屋", "Day 3-4：直升機冰川垂釣與狗拉雪橇", "Day 5-7：極光觀賞與賦歸"] }
+            ],
+            africa_me: [
+                { id: "safari", name: "坦尚尼亞塞倫蓋蒂頂級帳篷行館 7 日", price: "NT$ 450,000 起", badge: "非洲野生動物", lat: -2.3333, lng: 34.8333, img: "https://picsum.photos/400/250?safari=1", desc: "熱氣球俯瞰動物大遷徙，奢華移動式帳篷行館。", itinerary: ["Day 1-2：專機直飛塞倫蓋蒂帳篷行館", "Day 3-4：清晨熱氣球Safari與草原野餐", "Day 5-7：非洲五霸追蹤與星空營火晚宴"] },
+                { id: "egypt", name: "埃及尼羅河頂級骨董郵輪與金字塔 7 日", price: "NT$ 285,000 起", badge: "尼羅河古文明", lat: 26.8206, lng: 30.8025, img: "https://picsum.photos/400/250?egypt=2", desc: "吉薩金字塔閉館私人導覽，尼羅河六星級古董郵輪。", itinerary: ["Day 1-2：開羅金字塔私人閉館導覽", "Day 3-5：登上尼羅河頂級郵輪探索帝王谷", "Day 6-7：路克索神廟與賦歸"] },
+                { id: "capetown", name: "南非開普敦好望角與葡萄酒莊 7 日", price: "NT$ 295,000 起", badge: "開普敦好望角", lat: -33.9249, lng: 18.4241, img: "https://picsum.photos/400/250?capetown=3", desc: "桌山直升機鳥瞰，斯坦陵布什頂級酒莊私人品酒。", itinerary: ["Day 1-2：開普敦海岸頂級度假村", "Day 3-4：桌山直升機與好望角私人巡禮", "Day 5-7：斯坦陵布什酒莊品酒與賦歸"] },
+                { id: "morocco", name: "摩洛哥馬拉喀什皇宮與撒哈拉奢華帳篷 7 日", price: "NT$ 310,000 起", badge: "撒哈拉奢華露營", lat: 31.6295, lng: -7.9811, img: "https://picsum.photos/400/250?morocco=4", desc: "馬拉喀什百年皇宮酒店，撒哈拉沙漠星空奢華帳篷。", itinerary: ["Day 1-2：馬拉喀什皇宮酒店入住", "Day 3-4：阿特拉斯山脈與撒哈拉沙漠奢華帳篷", "Day 5-7：柏柏爾文化體驗與賦歸"] },
+                { id: "seychelles", name: "塞席爾群島弗雷格私人島嶼度假 7 日", price: "NT$ 490,000 起", badge: "印度洋私密島", lat: -4.6796, lng: 55.4920, img: "https://picsum.photos/400/250?seychelles=5", desc: "印度洋最頂級私人島嶼，巨龜生態與海灘別墅。", itinerary: ["Day 1-2：私人專機登陸塞席爾弗雷格島", "Day 3-4：百年巨龜生態導覽與私人海灘", "Day 5-7：深海垂釣與落日晚宴"] },
+                { id: "jordan", name: "約旦佩特拉古城與瓦地倫沙漠行館 6 日", price: "NT$ 275,000 起", badge: "佩特拉玫瑰之城", lat: 30.5852, lng: 36.2384, img: "https://picsum.photos/400/250?jordan=6", desc: "佩特拉古城夜晚燭光VIP，瓦地倫沙漠火星帳篷。", itinerary: ["Day 1-2：安曼頂級酒店與佩特拉古城", "Day 3-4：瓦地倫沙漠火星穹頂帳篷與吉普車探險", "Day 5-6：死海漂浮療程與賦歸"] },
+                { id: "rwanda", name: "盧安達火山國家公園山地金絲猴與猩猩探險 6 日", price: "NT$ 420,000 起", badge: "非洲山地猩猩", lat: -1.9403, lng: 29.8739, img: "https://picsum.photos/400/250?rwanda=7", desc: "火山國家公園頂級叢林行館，稀有山地金絲猴追蹤。", itinerary: ["Day 1-2：吉加利頂級叢林行館入住", "Day 3-4：專屬嚮導帶領追蹤山地金絲猴與猩猩", "Day 5-6：當地社區文化交流與賦歸"] }
+            ]
+        };
+
+        let currentContinent = 'asia';
+        let currentActiveKey = 'tokyo';
+        let wishlist = []; // 收藏清單 ID 陣列
+        let userOrders = []; // 用戶預約訂單陣列
+        let loggedInUser = null; // 當前登入用戶信箱
+        const markers = {};
+        let map;
+
+        function showToast(message) {
+            const toastBox = document.getElementById('toastBox');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:var(--primary-gold); margin-right:8px;"></i> ${message}`;
+            toastBox.appendChild(toast);
+            setTimeout(() => { toast.remove(); }, 3000);
+        }
+
+        // 登入 / 註冊 / 會員中心 Modal 控制
+        const authModal = document.getElementById('authModal');
+        const dashboardModal = document.getElementById('dashboardModal');
+        const wishlistModal = document.getElementById('wishlistModal');
+        const loginFormEl = document.getElementById('loginFormElement');
+        const registerFormEl = document.getElementById('registerFormElement');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSub = document.getElementById('modalSub');
+
+        function openAuthModal(mode) {
+            authModal.style.display = 'flex';
+            switchAuthMode(mode);
+        }
+
+        function closeAuthModal() { authModal.style.display = 'none'; }
+        function openDashboardModal() { dashboardModal.style.display = 'flex'; updateDashboardView(); }
+        function closeDashboardModal() { dashboardModal.style.display = 'none'; }
+        function openWishlistModal() { wishlistModal.style.display = 'flex'; updateWishlistView(); }
+        function closeWishlistModal() { wishlistModal.style.display = 'none'; }
+
+        function switchAuthMode(mode) {
+            if (mode === 'login') {
+                modalTitle.innerText = "VIP 會員登入";
+                modalSub.innerText = "尊享全球黑卡禮遇與私密航點權限";
+                loginFormEl.style.display = "block";
+                registerFormEl.style.display = "none";
+            } else {
+                modalTitle.innerText = "新貴賓註冊";
+                modalSub.innerText = "申請成為 AURA LUXURY 尊榮會員";
+                loginFormEl.style.display = "none";
+                registerFormEl.style.display = "block";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == authModal) closeAuthModal();
+            if (event.target == dashboardModal) closeDashboardModal();
+            if (event.target == wishlistModal) closeWishlistModal();
+        }
+
+        function handleLoginSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            loggedInUser = email;
+            closeAuthModal();
+            updateNavAuth();
+            showToast(`歡迎回來，尊榮貴賓 ${email}`);
+            event.target.reset();
+        }
+
+        function handleRegisterSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('regEmail').value;
+            const name = document.getElementById('regName').value;
+            loggedInUser = email;
+            closeAuthModal();
+            updateNavAuth();
+            showToast(`註冊成功！歡迎 ${name} 加入 AURA LUXURY`);
+            event.target.reset();
+        }
+
+        function handleLogout() {
+            loggedInUser = null;
+            closeDashboardModal();
+            updateNavAuth();
+            showToast("已安全登出會員帳戶");
+        }
+
+        // 更新頂部導覽列會員按鈕狀態
+        function updateNavAuth() {
+            const container = document.getElementById('authNavContainer');
+            if (loggedInUser) {
+                container.innerHTML = `
+                    <button class="btn-nav-outline" style="background:var(--primary-gold); color:var(--dark-bg);" onclick="openDashboardModal()">
+                        <i class="fa-solid fa-user"></i> 會員中心
+                    </button>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button class="btn-nav-outline" onclick="openAuthModal('login')">登入</button>
+                    <button class="btn-nav-outline" style="background:var(--primary-gold); color:var(--dark-bg);" onclick="openAuthModal('register')">註冊</button>
+                `;
+            }
+        }
+
+        // 更新會員儀表板內容
+        function updateDashboardView() {
+            document.getElementById('dashboardUserEmail').innerText = `登入帳號：${loggedInUser || 'VIP貴賓'}`;
+            const ordersList = document.getElementById('dashboardOrdersList');
+            if (userOrders.length === 0) {
+                ordersList.innerHTML = `<p style="font-size:0.85rem; color:var(--text-gray);">目前尚無預約紀錄。</p>`;
+            } else {
+                ordersList.innerHTML = userOrders.map(o => `
+                    <div class="order-item">
+                        <span><strong>${o.tour}</strong> (${o.qty}位)</span>
+                        <span style="color:var(--primary-gold);">${o.status}</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // 切換大洲
+        function filterContinent(continentKey) {
+            currentContinent = continentKey;
+            document.querySelectorAll('.continent-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderToursAndSelect();
+            const firstTour = continentTours[continentKey][0];
+            setActiveLocation(firstTour.id);
+        }
+
+        // 渲染 7 個行程卡片與下拉選單
+        function renderToursAndSelect() {
+            const grid = document.getElementById('toursGridContainer');
+            const select = document.getElementById('tourSelect');
+            
+            grid.innerHTML = '';
+            select.innerHTML = '<option value="">-- 請選擇您的尊榮行程 --</option>';
+
+            const tours = continentTours[currentContinent];
+
+            tours.forEach(tour => {
+                const isFavorited = wishlist.includes(tour.id);
+                const card = document.createElement('div');
+                card.className = 'luxury-card';
+                card.innerHTML = `
+                    <div class="card-img-wrapper">
+                        <span class="badge">${tour.badge}</span>
+                        <button class="wishlist-btn ${isFavorited ? 'active' : ''}" onclick="toggleWishlist('${tour.id}')" title="加入收藏">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <img src="${tour.img}" alt="${tour.name}">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>${tour.name}</h3>
+                            <p>${tour.desc}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">${tour.price}</div>
+                            <button class="btn-reserve" onclick="selectTour('${tour.name}', '${tour.id}')">預訂行程</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+
+                const option = document.createElement('option');
+                option.value = tour.name;
+                option.textContent = `${tour.name} (${tour.price})`;
+                select.appendChild(option);
+            });
+
+            updateMapMarkers();
+        }
+
+        // 切換收藏狀態 (Wishlist)
+        function toggleWishlist(tourId) {
+            const index = wishlist.indexOf(tourId);
+            let tourName = "";
+            // 尋找行程名稱
+            for (const c in continentTours) {
+                const f = continentTours[c].find(t => t.id === tourId);
+                if (f) tourName = f.name;
+            }
+
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                showToast(`已從收藏夾移除「${tourName}」`);
+            } else {
+                wishlist.push(tourId);
+                showToast(`已成功將「${tourName}」加入收藏夾 ❤️`);
+            }
+
+            document.getElementById('wishlistCount').innerText = wishlist.length;
+            renderToursAndSelect(); // 重新渲染以更新愛心按鈕樣式
+        }
+
+        // 更新收藏夾 Modal 內容
+        function updateWishlistView() {
+            const listContainer = document.getElementById('wishlistModalList');
+            if (wishlist.length === 0) {
+                listContainer.innerHTML = `<p style="text-align:center; color:var(--text-gray); font-size:0.9rem; padding:20px;">您的收藏夾目前空空如也，快去挑選心儀的奢華行程吧！</p>`;
+                return;
+            }
+
+            listContainer.innerHTML = '';
+            wishlist.forEach(id => {
+                let tour = null;
+                for (const c in continentTours) {
+                    const f = continentTours[c].find(t => t.id === id);
+                    if (f) { tour = f; break; }
+                }
+                if (tour) {
+                    const item = document.createElement('div');
+                    item.className = 'wishlist-item';
+                    item.innerHTML = `
+                        <div>
+                            <strong style="color:var(--text-light);">${tour.name}</strong>
+                            <div style="color:var(--primary-gold); font-size:0.85rem;">${tour.price}</div>
+                        </div>
+                        <div>
+                            <button class="btn-reserve" style="padding:4px 8px; margin-right:5px;" onclick="closeWishlistModal(); selectTour('${tour.name}', '${tour.id}')">預訂</button>
+                            <button class="btn-reserve" style="padding:4px 8px; border-color:#e74c3c; color:#e74c3c;" onclick="toggleWishlist('${tour.id}'); updateWishlistView();">移除</button>
+                        </div>
+                    `;
+                    listContainer.appendChild(item);
+                }
+            });
+        }
+
+        // 初始化真實地圖
+        function initMap() {
+            map = L.map('realMap').setView([35.6762, 139.6503], 3);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            updateMapMarkers();
+        }
+
+        function updateMapMarkers() {
+            if (!map) return;
+            for (const key in markers) { map.removeLayer(markers[key]); }
+
+            const goldIcon = L.divIcon({
+                className: 'custom-map-pin',
+                html: '<div style="background-color:#d4af37; width:16px; height:16px; border-radius:50%; border:2px solid #111; box-shadow:0 0 10px #d4af37;"></div>',
+                iconSize: [16, 16]
+            });
+
+            const tours = continentTours[currentContinent];
+            tours.forEach(tour => {
+                const marker = L.marker([tour.lat, tour.lng], { icon: goldIcon }).addTo(map);
+                marker.on('click', () => { setActiveLocation(tour.id); });
+                markers[tour.id] = marker;
+            });
+        }
+
+        function setActiveLocation(key) {
+            let data = null;
+            for (const cont in continentTours) {
+                const found = continentTours[cont].find(t => t.id === key);
+                if (found) { data = found; break; }
+            }
+            if (!data) return;
+
+            currentActiveKey = key;
+            document.getElementById('mapTitle').innerText = data.name;
+            document.getElementById('mapDesc').innerText = data.desc;
+            document.getElementById('itineraryMainTitle').innerText = `${data.name} - 每日詳細行程`;
+
+            const timelineContainer = document.getElementById('timelineContainer');
+            timelineContainer.innerHTML = '';
+            data.itinerary.forEach((item) => {
+                const parts = item.split('：');
+                const div = document.createElement('div');
+                div.className = 'timeline-item';
+                div.innerHTML = `<h4>${parts[0]}</h4><p>${parts[1] || ''}</p>`;
+                timelineContainer.appendChild(div);
+            });
+
+            if (map) {
+                map.flyTo([data.lat, data.lng], 5, { animate: true, duration: 1.5 });
+            }
+        }
+
+        function selectTour(tourName, tourId) {
+            const select = document.getElementById('tourSelect');
+            select.value = tourName;
+            if (tourId) setActiveLocation(tourId);
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectTourFromMap() {
+            let data = null;
+            for (const cont in continentTours) {
+                const found = continentTours[cont].find(t => t.id === currentActiveKey);
+                if (found) { data = found; break; }
+            }
+            if (data) selectTour(data.name, data.id);
+        }
+
+        // 預訂購票送出 (會同步記錄至會員歷史訂單)
+        function handleBooking(event) {
+            event.preventDefault();
+            const tour = document.getElementById('tourSelect').value;
+            const qty = document.getElementById('ticketQuantity').value;
+            const name = document.getElementById('buyerName').value;
+            
+            // 記錄至訂單
+            userOrders.push({
+                tour: tour,
+                qty: qty,
+                status: "⏳ 管家審核中"
+            });
+
+            showToast(`已成功收到 ${name} 貴賓的「${tour}」${qty} 位預約單！`);
+            event.target.reset();
+
+            if (!loggedInUser) {
+                showToast("提示：登入會員可至「會員中心」即時查看訂單進度！");
+            }
+        }
+
+        window.onload = function() {
+            initMap();
+            renderToursAndSelect();
+            setActiveLocation('tokyo');
+        };
+    </script>
+</body>
+</html>
