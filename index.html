@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">AURA LUXURY TRAVEL - 全球頂級奢華旅遊旗艦中心</title>
+    <title id="pageTitle">AURA LUXURY TRAVEL - 150大頂級行程與AI專機雷達中心</title>
     <!-- Google Fonts 與 FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -72,168 +72,79 @@
             transition: var(--accent-transition);
         }
 
-        nav a:hover {
-            color: var(--primary-gold);
-        }
+        nav a:hover { color: var(--primary-gold); }
 
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .nav-controls { display: flex; align-items: center; gap: 8px; }
 
-        /* 匯率與語系選單 */
         .select-control {
-            background: #222;
-            border: 1px solid var(--primary-gold);
-            color: var(--primary-gold);
-            padding: 5px 8px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            outline: none;
+            background: #222; border: 1px solid var(--primary-gold); color: var(--primary-gold);
+            padding: 5px 8px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; outline: none;
         }
 
         .btn-nav-outline {
-            background: transparent;
-            border: 1px solid var(--primary-gold);
-            color: var(--primary-gold);
-            padding: 5px 12px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.85rem;
+            background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);
+            padding: 5px 12px; border-radius: 30px; cursor: pointer; font-weight: 500; font-size: 0.85rem;
             transition: var(--accent-transition);
         }
-
-        .btn-nav-outline:hover {
-            background-color: var(--primary-gold);
-            color: var(--dark-bg);
-        }
+        .btn-nav-outline:hover { background-color: var(--primary-gold); color: var(--dark-bg); }
 
         .wishlist-nav-btn {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--primary-gold);
-            color: var(--primary-gold);
-            padding: 5px 12px;
-            border-radius: 30px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.85rem;
+            background: rgba(212, 175, 55, 0.1); border: 1px solid var(--primary-gold); color: var(--primary-gold);
+            padding: 5px 12px; border-radius: 30px; cursor: pointer; display: flex; align-items: center; gap: 5px; font-size: 0.85rem;
             transition: var(--accent-transition);
         }
+        .wishlist-nav-btn:hover { background: var(--primary-gold); color: var(--dark-bg); }
 
-        .wishlist-nav-btn:hover {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--primary-gold);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+        .hamburger { display: none; background: none; border: none; color: var(--primary-gold); font-size: 1.5rem; cursor: pointer; }
 
         /* 主視覺 */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/900?luxury') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            border-bottom: 2px solid var(--primary-gold);
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 0 20px; border-bottom: 2px solid var(--primary-gold);
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--text-light);
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--text-light); margin-bottom: 15px; letter-spacing: 2px;
         }
-
         .hero h1 span { color: var(--primary-gold); }
         .hero p { font-size: 1.1rem; color: var(--text-gray); max-width: 700px; margin-bottom: 30px; }
 
-        .container {
-            max-width: 1300px;
-            margin: 40px auto;
-            padding: 0 15px;
-        }
+        .container { max-width: 1300px; margin: 40px auto; padding: 0 15px; }
 
         .section-title { text-align: center; margin-bottom: 30px; }
         .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--primary-gold);
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary-gold); letter-spacing: 1px; margin-bottom: 10px;
         }
         .section-title p { color: var(--text-gray); font-size: 0.95rem; }
 
         /* 5大洲切換按鈕 */
         .continent-bar {
-            display: flex;
-            justify-content: flex-start;
-            gap: 10px;
-            overflow-x: auto;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            -webkit-overflow-scrolling: touch;
+            display: flex; justify-content: flex-start; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 30px; -webkit-overflow-scrolling: touch;
         }
         .continent-bar::-webkit-scrollbar { height: 4px; }
         .continent-bar::-webkit-scrollbar-thumb { background: var(--primary-gold); border-radius: 4px; }
 
         .continent-btn {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--text-light);
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            white-space: nowrap;
-            flex-shrink: 0;
+            background-color: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); color: var(--text-light);
+            padding: 10px 20px; border-radius: 30px; cursor: pointer; font-size: 0.9rem; font-weight: 500; white-space: nowrap; flex-shrink: 0;
             transition: var(--accent-transition);
         }
         .continent-btn:hover, .continent-btn.active {
-            background-color: var(--primary-gold);
-            color: var(--dark-bg);
-            border-color: var(--primary-gold);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            background-color: var(--primary-gold); color: var(--dark-bg); border-color: var(--primary-gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         /* 行程卡片 */
         .tours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 50px;
         }
 
         .luxury-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: var(--accent-transition);
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; overflow: hidden;
+            transition: var(--accent-transition); display: flex; flex-direction: column; position: relative;
         }
         .luxury-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px); border-color: var(--primary-gold); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
         }
 
         .card-img-wrapper { position: relative; height: 190px; overflow: hidden; }
@@ -241,23 +152,19 @@
         .luxury-card:hover .card-img-wrapper img { transform: scale(1.05); }
 
         .badge {
-            position: absolute; top: 12px; left: 12px;
-            background: var(--primary-gold); color: var(--dark-bg);
+            position: absolute; top: 12px; left: 12px; background: var(--primary-gold); color: var(--dark-bg);
             padding: 3px 8px; font-size: 0.7rem; font-weight: 700; border-radius: 4px;
         }
 
         .limited-tag {
-            position: absolute; bottom: 12px; left: 12px;
-            background: rgba(231, 76, 60, 0.9); color: #fff;
+            position: absolute; bottom: 12px; left: 12px; background: rgba(231, 76, 60, 0.9); color: #fff;
             padding: 2px 8px; font-size: 0.65rem; font-weight: bold; border-radius: 4px;
         }
 
         .wishlist-btn {
-            position: absolute; top: 12px; right: 12px;
-            background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(212, 175, 55, 0.4);
-            color: #fff; width: 34px; height: 34px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; cursor: pointer;
-            transition: var(--accent-transition); z-index: 10;
+            position: absolute; top: 12px; right: 12px; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: var(--accent-transition); z-index: 10;
         }
         .wishlist-btn:hover { transform: scale(1.1); background: rgba(212, 175, 55, 0.2); }
         .wishlist-btn.active { color: #e74c3c; border-color: #e74c3c; background: rgba(231, 76, 60, 0.15); }
@@ -267,81 +174,95 @@
         .card-body p { color: var(--text-gray); font-size: 0.82rem; margin-bottom: 12px; }
 
         .card-footer {
-            display: flex; justify-content: space-between; align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 10px; margin-top: auto;
+            display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 10px; margin-top: auto;
         }
         .price { font-size: 1rem; font-weight: 700; color: var(--primary-gold); }
         .btn-reserve {
             background-color: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);
-            padding: 5px 10px; border-radius: 4px; cursor: pointer; transition: var(--accent-transition); font-size: 0.8rem;
+            padding: 5px 12px; border-radius: 4px; cursor: pointer; transition: var(--accent-transition); font-size: 0.8rem;
         }
         .btn-reserve:hover { background-color: var(--primary-gold); color: var(--dark-bg); }
 
-        /* 地圖與氣象區 */
+        /* 🤖 AI 智慧行程自動規劃器 (新功能) */
+        .ai-planner-section {
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 50px;
+        }
+        .ai-planner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+        .ai-plan-output { background: #222; border: 1px solid #444; border-radius: 8px; padding: 20px; min-height: 220px; }
+
+        /* 地圖與航班雷達區 (新功能) */
         .map-section {
-            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px; padding: 25px; margin-bottom: 50px;
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 25px; margin-bottom: 50px;
         }
         .map-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: center; }
-        #realMap { height: 400px; width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); z-index: 1; }
+        #realMap { height: 420px; width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); z-index: 1; }
         .map-info-panel h3 { color: var(--primary-gold); font-size: 1.3rem; margin-bottom: 8px; }
         .map-info-panel p { color: var(--text-gray); margin-bottom: 12px; font-size: 0.9rem; }
         
-        /* 專機動態與氣象 widget */
-        .widget-box {
-            background: #222; border: 1px solid #444; border-radius: 6px; padding: 10px; margin-bottom: 15px; font-size: 0.85rem;
-        }
+        .widget-box { background: #222; border: 1px solid #444; border-radius: 6px; padding: 10px; margin-bottom: 12px; font-size: 0.85ln; }
         .widget-box span { color: var(--primary-gold); font-weight: bold; }
 
+        /* ✈️ 航班雷達動態面板 */
+        .radar-box {
+            background: #151515; border: 1px solid var(--primary-gold); border-radius: 6px; padding: 12px; margin-bottom: 15px; font-size: 0.8rem;
+            position: relative; overflow: hidden;
+        }
+        .radar-box::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200px;
+            background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
+            animation: radarSweep 4s linear infinite; pointer-events: none;
+        }
+        @keyframes radarSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .btn-map-explore {
-            background: var(--primary-gold); color: var(--dark-bg); border: none;
-            padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: var(--accent-transition);
+            background: var(--primary-gold); color: var(--dark-bg); border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: var(--accent-transition);
         }
         .btn-map-explore:hover { opacity: 0.9; }
 
         /* 詳細行程 */
         .itinerary-section {
-            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px; padding: 25px; margin-bottom: 50px; position: relative;
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 25px; margin-bottom: 50px; position: relative;
         }
         .itinerary-timeline {
-            margin-top: 20px; border-left: 2px solid var(--primary-gold);
-            padding-left: 20px; display: flex; flex-direction: column; gap: 20px;
+            margin-top: 20px; border-left: 2px solid var(--primary-gold); padding-left: 20px; display: flex; flex-direction: column; gap: 20px;
         }
         .timeline-item { position: relative; }
         .timeline-item::before {
-            content: ''; position: absolute; left: -27px; top: 4px;
-            width: 10px; height: 10px; background: var(--primary-gold); border-radius: 50%;
+            content: ''; position: absolute; left: -27px; top: 4px; width: 10px; height: 10px; background: var(--primary-gold); border-radius: 50%;
         }
         .timeline-item h4 { color: var(--primary-gold); font-size: 1rem; margin-bottom: 4px; }
         .timeline-item p { color: var(--text-gray); font-size: 0.9rem; }
 
         .btn-pdf-export {
-            position: absolute; top: 25px; right: 25px;
-            background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);
+            position: absolute; top: 25px; right: 25px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);
             padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; cursor: pointer; transition: var(--accent-transition);
         }
         .btn-pdf-export:hover { background: var(--primary-gold); color: var(--dark-bg); }
+
+        /* ✈️ 私人專機試算器 */
+        .jet-calc-section {
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 25px; margin-bottom: 50px;
+        }
+        .jet-calc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
+        .jet-result-box { background: #222; border: 1px solid var(--primary-gold); border-radius: 8px; padding: 15px; text-align: center; }
 
         /* 規定與風險 & 評價牆 */
         .rules-risk-section { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 50px; }
         .info-box { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 25px; }
         .info-box h3 {
-            font-family: 'Playfair Display', serif; color: var(--primary-gold); font-size: 1.2rem;
-            margin-bottom: 15px; display: flex; align-items: center; gap: 8px;
+            font-family: 'Playfair Display', serif; color: var(--primary-gold); font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;
         }
         .info-box ul { list-style: none; }
         .info-box li { position: relative; padding-left: 18px; margin-bottom: 10px; color: var(--text-gray); font-size: 0.9rem; }
         .info-box li::before { content: "▪"; color: var(--primary-gold); position: absolute; left: 0; }
 
-        /* 貴賓評價牆 */
         .testimonials-section {
-            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px; padding: 30px; margin-bottom: 50px; text-align: center;
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 50px; text-align: center;
         }
-        .testimonial-card {
-            background: #222; border: 1px solid #444; border-radius: 8px; padding: 20px; margin-top: 20px; text-align: left;
-        }
+        .testimonial-card { background: #222; border: 1px solid #444; border-radius: 8px; padding: 20px; margin-top: 20px; text-align: left; }
         .testimonial-card p { font-size: 0.95rem; font-style: italic; color: #ddd; margin-bottom: 10px; }
         .testimonial-card .author { font-size: 0.85rem; color: var(--primary-gold); font-weight: bold; }
 
@@ -355,10 +276,8 @@
             width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: white; border-radius: 6px; font-size: 0.95rem;
         }
         
-        .addon-box {
-            background: #222; border: 1px solid #444; border-radius: 8px; padding: 15px; margin-bottom: 15px;
-        }
-        .addon-box h4 { color: var(--primary-gold); font-size: 0.95rem; margin-bottom: 10px; }
+        .addon-box, .esg-box, .video-box, .insurance-box { background: #222; border: 1px solid #444; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .addon-box h4, .esg-box h4, .video-box h4, .insurance-box h4 { color: var(--primary-gold); font-size: 0.95rem; margin-bottom: 10px; }
         .addon-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 6px; cursor: pointer; }
 
         .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; color: var(--text-gray); font-size: 0.85rem; }
@@ -369,10 +288,9 @@
             padding: 12px; width: 100%; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: var(--accent-transition);
         }
 
-        /* 💬 永久留言互動區 (留言會一直留著) */
+        /* 💬 永久留言互動區 */
         .comments-section {
-            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px; padding: 30px; margin-bottom: 50px;
+            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 50px;
         }
         .comment-input-box textarea {
             width: 100%; height: 90px; background: #222; border: 1px solid #444; color: white;
@@ -385,9 +303,7 @@
         .comment-item .c-time { font-size: 0.7rem; color: #777; margin-top: 4px; text-align: right; }
 
         /* 📸 頭像上傳預覽 */
-        .avatar-upload-container {
-            text-align: center; margin-bottom: 15px; position: relative;
-        }
+        .avatar-upload-container { text-align: center; margin-bottom: 15px; position: relative; }
         .avatar-preview {
             width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--primary-gold);
             object-fit: cover; margin: 0 auto 8px; background: #333; display: flex; align-items: center; justify-content: center;
@@ -395,7 +311,7 @@
         }
         .avatar-preview img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 數位黑卡 */
+        /* 數位黑卡與 Web3 NFT */
         .vip-digital-card {
             background: linear-gradient(135deg, #1c1c1c, #0a0a0a); border: 1.5px solid var(--primary-gold);
             border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
@@ -409,10 +325,21 @@
         .barcode-bars { font-family: 'Courier New', Courier, monospace; font-size: 1.2rem; letter-spacing: 2px; font-weight: bold; color: #111; line-height: 1; }
         .barcode-number { font-size: 0.65rem; color: #444; letter-spacing: 3px; margin-top: 3px; font-weight: bold; }
 
-        /* 🤖 AI 管家浮動對話框 */
-        .ai-chat-widget {
-            position: fixed; bottom: 25px; right: 25px; z-index: 4000;
+        .web3-wallet-box {
+            background: #222; border: 1px solid var(--primary-gold); border-radius: 8px; padding: 12px; text-align: center; margin-bottom: 15px;
         }
+
+        /* 🟢 WhatsApp 浮動按鈕 */
+        .whatsapp-float {
+            position: fixed; bottom: 95px; right: 25px; z-index: 4000;
+            background: #25d366; color: #fff; width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 1.6rem; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: var(--accent-transition); text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+
+        /* 🤖 AI 管家浮動對話框 */
+        .ai-chat-widget { position: fixed; bottom: 25px; right: 25px; z-index: 4000; }
         .ai-chat-btn {
             background: var(--primary-gold); color: var(--dark-bg); width: 55px; height: 55px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer;
@@ -453,7 +380,7 @@
         footer { background-color: #0d0d0d; border-top: 1px solid rgba(212, 175, 55, 0.2); text-align: center; padding: 25px 15px; color: var(--text-gray); font-size: 0.85rem; margin-top: 60px; }
 
         @media (max-width: 900px) {
-            .map-layout, .rules-risk-section, .form-grid { grid-template-columns: 1fr; }
+            .map-layout, .rules-risk-section, .form-grid, .jet-calc-grid, .ai-planner-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
             nav {
                 display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
@@ -468,24 +395,26 @@
 
     <div id="toastBox"></div>
 
+    <a href="https://wa.me/" target="_blank" class="whatsapp-float" title="聯絡專屬總管家 WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
     <!-- 導覽列 -->
     <header>
         <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})"><i class="fa-solid fa-crown"></i> AURA LUXURY</div>
         <button class="hamburger" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
         <nav id="navMenu">
-            <a href="#tours" id="navTours" onclick="closeMobileMenu()">五大洲行程</a>
-            <a href="#mapSection" id="navMap" onclick="closeMobileMenu()">全球地圖</a>
+            <a href="#tours" id="navTours" onclick="closeMobileMenu()">150大頂級行程</a>
+            <a href="#aiPlannerSection" onclick="closeMobileMenu()">AI 行程規劃</a>
+            <a href="#mapSection" id="navMap" onclick="closeMobileMenu()">全球地圖與雷達</a>
+            <a href="#jetCalcSection" onclick="closeMobileMenu()">私人專機試算</a>
             <a href="#commentsSection" id="navComments" onclick="closeMobileMenu()">貴賓留言</a>
             
             <div class="nav-controls">
-                <!-- 即時匯率切換 -->
                 <select class="select-control" id="currencySelector" onchange="changeCurrency()">
                     <option value="TWD">NT$ 台幣</option>
                     <option value="USD">USD$ 美元</option>
                     <option value="EUR">EUR€ 歐元</option>
                     <option value="JPY">JPY¥ 日圓</option>
                 </select>
-                <!-- 多國語系切換 -->
                 <select class="select-control" id="langSelector" onchange="changeLanguage()">
                     <option value="zh">繁體中文</option>
                     <option value="en">English</option>
@@ -506,25 +435,102 @@
     <!-- 主視覺 -->
     <section class="hero">
         <h1 id="heroTitle">重新定義 <span>頂級奢華之旅</span></h1>
-        <p id="heroDesc">請先選擇您心儀的大洲，探索各洲專屬的 7 大頂級私密秘境與私人專機體驗。</p>
+        <p id="heroDesc">請先選擇您心儀的大洲，探索各洲專屬的 30 大頂級私密秘境（5 大洲總計 150 個極致尊榮行程）。</p>
     </section>
 
     <div class="container">
         
+        <!-- 🤖 AI 智慧行程自動規劃器 (新功能) -->
+        <div class="ai-planner-section" id="aiPlannerSection">
+            <div class="section-title" style="text-align: left; margin-bottom: 15px;">
+                <h2 style="font-size: 1.8rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI 智慧尊榮行程自動規劃器</h2>
+                <p>輸入您的旅遊天數與偏好風格，由 AURA AI 系統為您量身打造專屬的 Day-by-Day 行程表</p>
+            </div>
+            <div class="ai-planner-grid">
+                <div>
+                    <div class="form-group">
+                        <label>偏好旅遊風格：</label>
+                        <select id="aiStyle" style="width:100%; padding:10px; background:#111; border:1px solid #444; color:#fff; border-radius:6px;">
+                            <option value="michelin">🌟 米其林美食與頂級品酒私會</option>
+                            <option value="adventure">🚁 極境冒險與直升機冰川探險</option>
+                            <option value="culture">🏛️ 羅浮宮/古堡閉館私人文化導覽</option>
+                            <option value="aurora">🌌 極光穹頂別墅與極地生態</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>預計旅遊天數：</label>
+                        <select id="aiDays" style="width:100%; padding:10px; background:#111; border:1px solid #444; color:#fff; border-radius:6px;">
+                            <option value="5">5 日尊榮深度遊</option>
+                            <option value="7" selected>7 日頂級全包式假期</option>
+                            <option value="10">10 日極地／洲際大冒險</option>
+                        </select>
+                    </div>
+                    <button class="btn-submit-vip" onclick="generateAiItinerary()">✨ 立即生成 AI 專屬客製行程</button>
+                </div>
+                <div>
+                    <label style="color:var(--primary-gold); font-weight:bold; display:block; margin-bottom:8px;">AI 規劃結果摘要：</label>
+                    <div class="ai-plan-output" id="aiPlanOutput">
+                        <p style="color:var:var(--text-gray); font-style:italic;">請於左側設定您的偏好並點擊生成，AI 管家將為您即時編排專屬行程。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="section-title">
-            <h2 id="sectionExploreTitle">探索 5 大洲頂級奢華航點</h2>
-            <p id="sectionExploreDesc">點擊下方大洲按鈕，即可切換檢視該洲專屬的 7 大頂級旅遊行程</p>
+            <h2 id="sectionExploreTitle">探索 5 大洲共 150 大頂級奢華航點</h2>
+            <p id="sectionExploreDesc">點擊下方大洲按鈕，即可切換檢視該洲專屬的 30 大頂級旅遊行程</p>
         </div>
 
         <div class="continent-bar">
-            <button class="continent-btn active" onclick="filterContinent('asia')">亞洲 (Asia)</button>
-            <button class="continent-btn" onclick="filterContinent('europe')">歐洲 (Europe)</button>
-            <button class="continent-btn" onclick="filterContinent('oceania')">大洋洲與極地 (Oceania & Poles)</button>
-            <button class="continent-btn" onclick="filterContinent('americas')">美洲 (Americas)</button>
-            <button class="continent-btn" onclick="filterContinent('africa_me')">非洲與中東 (Africa & ME)</button>
+            <button class="continent-btn active" onclick="filterContinent('asia')">亞洲 (30項)</button>
+            <button class="continent-btn" onclick="filterContinent('europe')">歐洲 (30項)</button>
+            <button class="continent-btn" onclick="filterContinent('oceania')">大洋洲與極地 (30項)</button>
+            <button class="continent-btn" onclick="filterContinent('americas')">美洲 (30項)</button>
+            <button class="continent-btn" onclick="filterContinent('africa_me')">非洲與中東 (30項)</button>
         </div>
 
         <div class="tours-grid" id="toursGridContainer"></div>
+
+        <!-- ✈️ 私人專機預約試算器 -->
+        <div class="jet-calc-section" id="jetCalcSection">
+            <div class="section-title" style="text-align: left; margin-bottom: 15px;">
+                <h2 style="font-size: 1.5rem;"><i class="fa-solid fa-plane-up"></i> 尊榮私人專機／直升機包機試算器</h2>
+                <p>輸入您的起訖點與機型，即時為您估算頂級包機費用與飛行航程</p>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>出發地機場 / 私人停機坪：</label>
+                    <select id="jetFrom" onchange="calculateJet()">
+                        <option value="TPE">台北松山機場 (TSA / TPE)</option>
+                        <option value="HND">東京羽田機場 (HND)</option>
+                        <option value="SIN">新加坡樟宜機場 (SIN)</option>
+                        <option value="CDG">巴黎戴高樂機場 (CDG)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>專機機型等級：</label>
+                    <select id="jetType" onchange="calculateJet()">
+                        <option value="helicopter">雙引擎豪華直升機 (載客 4-6 人)</option>
+                        <option value="light">輕型商務噴射機 (載客 6-8 人)</option>
+                        <option value="heavy" selected>長程洲際總統級巨型包機 (載客 14-18 人)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jet-calc-grid">
+                <div class="jet-result-box">
+                    <div style="font-size:0.8rem; color:var(--text-gray);">預估飛行時間</div>
+                    <div id="jetTimeResult" style="font-size:1.2rem; color:var(--primary-gold); font-weight:bold; margin-top:5px;">-- 小時</div>
+                </div>
+                <div class="jet-result-box">
+                    <div style="font-size:0.8rem; color:var(--text-gray);">專屬管家隨行</div>
+                    <div style="font-size:1.2rem; color:var(--primary-gold); font-weight:bold; margin-top:5px;">包含 2 名資深空服</div>
+                </div>
+                <div class="jet-result-box">
+                    <div style="font-size:0.8rem; color:var(--text-gray);">預估尊榮包機費用</div>
+                    <div id="jetPriceResult" style="font-size:1.2rem; color:var(--primary-gold); font-weight:bold; margin-top:5px;">-- NT$</div>
+                </div>
+            </div>
+        </div>
 
         <div class="itinerary-section" id="itinerarySection">
             <button class="btn-pdf-export" onclick="exportPdfSummary()"><i class="fa-solid fa-file-pdf"></i> 下載行程摘要 PDF</button>
@@ -535,15 +541,28 @@
             <div class="itinerary-timeline" id="timelineContainer"></div>
         </div>
 
+        <!-- 地圖與全球即時航班雷達面板 (新功能) -->
         <div class="map-section" id="mapSection">
             <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                <h2 id="mapSectionTitle" style="font-size: 1.5rem;">全球真實導覽地圖與即時氣象</h2>
-                <p id="mapSectionSub">點擊地圖上的各個導覽標記，即可檢視該航點的尊榮禮遇與氣象動態</p>
+                <h2 id="mapSectionTitle" style="font-size: 1.5rem;">全球真實導覽地圖與即時航班雷達</h2>
+                <p id="mapSectionSub">結合即時航空雷達動畫，隨時監控 AURA 旗艦包機飛行高度與航向</p>
             </div>
             <div class="map-layout">
                 <div id="realMap"></div>
                 <div class="map-info-panel" id="mapInfoPanel">
-                    <!-- 即時氣象與專機動態 Widget -->
+                    <!-- ✈️ 即時航班雷達面板 -->
+                    <div class="radar-box">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <strong style="color:var(--primary-gold);"><i class="fa-solid fa-satellite-dish"></i> AURA LIVE RADAR</strong>
+                            <span style="font-size:0.7rem; background:#222; padding:1px 6px; border-radius:3px; color:#25d366;">🟢 實時監控中</span>
+                        </div>
+                        <div id="radarFlightInfo" style="color:#ddd; line-height:1.4;">
+                            航機編號：<strong>AURA-001 (Gulfstream G700)</strong><br>
+                            航線：台北 (TSA) ➔ 東京羽田 (HND)<br>
+                            即時高度：41,000 ft | 速度：Mach 0.92
+                        </div>
+                    </div>
+
                     <div class="widget-box" id="weatherWidget">
                         <i class="fa-solid fa-cloud-sun"></i> 即時氣象：<span>載入中...</span>
                     </div>
@@ -558,7 +577,7 @@
             </div>
         </div>
 
-        <!-- 💬 永久留言互動區 (留言會一直留著) -->
+        <!-- 💬 永久留言互動區 -->
         <div class="comments-section" id="commentsSection">
             <div class="section-title" style="text-align: left; margin-bottom: 15px;">
                 <h2 style="font-size: 1.5rem;"><i class="fa-solid fa-comments"></i> 貴賓專屬交流與留言板</h2>
@@ -569,9 +588,7 @@
                 <textarea id="commentText" placeholder="分享您的私房旅遊期待或提問..." required></textarea>
                 <button class="btn-submit-vip" style="width:auto; padding:8px 25px;" onclick="postComment()">發表留言</button>
             </div>
-            <div class="comments-list" id="commentsList">
-                <!-- 動態載入留言 -->
-            </div>
+            <div class="comments-list" id="commentsList"></div>
         </div>
 
         <div class="rules-risk-section" id="rulesSection">
@@ -595,7 +612,6 @@
             </div>
         </div>
 
-        <!-- 頂級貴賓真實見證與評價牆 -->
         <div class="testimonials-section">
             <h2 style="font-family:'Playfair Display',serif; color:var(--primary-gold); font-size:1.8rem; margin-bottom:5px;">全球貴賓真實見證</h2>
             <p style="color:var(--text-gray); font-size:0.9rem;">聽聽頂尖企業家與知名貴賓對 AURA LUXURY 的極致讚譽</p>
@@ -611,7 +627,7 @@
             </div>
         </div>
 
-        <!-- 購票表單區 (含加購選項) -->
+        <!-- 購票表單區 -->
         <div class="booking-section" id="booking">
             <div class="section-title" style="text-align: left; margin-bottom: 20px;">
                 <h2 id="bookingTitle" style="font-size: 1.5rem;">私人管家預約與購票系統</h2>
@@ -638,13 +654,51 @@
                         <input type="tel" id="buyerPhone" placeholder="請輸入手機號碼" required>
                     </div>
                     
-                    <!-- 💎 頂級貴賓專屬禮遇加購系統 -->
                     <div class="form-group full-width">
                         <div class="addon-box">
                             <h4><i class="fa-solid fa-gem"></i> 尊榮管家禮遇客製加購（可複選）</h4>
                             <label class="addon-item"><input type="checkbox" name="addons" value="私人直升機機場接送 (+NT$35,000)"> 私人直升機機場接送 (+NT$ 35,000)</label>
                             <label class="addon-item"><input type="checkbox" name="addons" value="米其林三星主廚私廚包場 (+NT$60,000)"> 米其林三星主廚私廚包場 (+NT$ 60,000)</label>
                             <label class="addon-item"><input type="checkbox" name="addons" value="24小時貼身保鑣管家 (+NT$80,000)"> 24小時貼身保鑣管家 (+NT$ 80,000)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <div class="insurance-box">
+                            <h4><i class="fa-solid fa-shield-heart"></i> 極境奢華旅遊保險與全球緊急醫療救援</h4>
+                            <label class="addon-item">
+                                <input type="checkbox" id="insuranceCheck" value="全球極境救援與高額醫療險 (+NT$12,000)">
+                                加購頂級全球緊急醫療後送、直升機搜救與 5,000 萬高額旅遊平安險（每位 +NT$ 12,000）
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <div class="video-box">
+                            <h4><i class="fa-solid fa-video"></i> 預約專屬總管家線上 1 對 1 視訊會議（選填）</h4>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
+                                <div>
+                                    <label style="font-size:0.8rem; color:var(--text-gray);">視訊軟體平台：</label>
+                                    <select id="videoPlatform" style="width:100%; padding:8px; background:#111; border:1px solid #444; color:#fff; border-radius:4px;">
+                                        <option value="Zoom">Zoom 視訊會議</option>
+                                        <option value="Google Meet">Google Meet</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="font-size:0.8rem; color:var(--text-gray);">預約會談時段：</label>
+                                    <input type="datetime-local" id="videoTime" style="width:100%; padding:7px; background:#111; border:1px solid #444; color:#fff; border-radius:4px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <div class="esg-box">
+                            <h4><i class="fa-solid fa-seedling"></i> ESG 永續旅遊與雨林碳權認購</h4>
+                            <label class="addon-item">
+                                <input type="checkbox" id="esgCarbonOffset" value="雨林碳權淨零認購 (+NT$2,500)"> 
+                                一鍵認購亞馬遜雨林碳權與淨零碳排永續基金（+NT$ 2,500），實踐綠色奢華旅遊
+                            </label>
                         </div>
                     </div>
 
@@ -671,10 +725,13 @@
         <div class="ai-chat-box" id="aiChatBox">
             <div class="ai-chat-header">
                 <span style="font-weight:bold; color:var(--primary-gold); font-size:0.9rem;"><i class="fa-solid fa-crown"></i> AURA AI 專屬管家</span>
-                <span style="cursor:pointer; color:#aaa; font-size:1.1rem;" onclick="toggleAiChat()">&times;</span>
+                <div>
+                    <i class="fa-solid fa-download" style="cursor:pointer; color:var(--primary-gold); margin-right:10px; font-size:0.9rem;" title="下載對話紀錄" onclick="exportChatTranscript()"></i>
+                    <span style="cursor:pointer; color:#aaa; font-size:1.1rem;" onclick="toggleAiChat()">&times;</span>
+                </div>
             </div>
             <div class="ai-chat-body" id="aiChatBody">
-                <div class="ai-msg">您好，尊榮貴賓！我是您的 AI 旅遊管家。請問想詢問哪一個國家的頂級行程或包機細節呢？</div>
+                <div class="ai-msg">您好，尊榮貴賓！我是您的 AI 旅遊管家。我們現已提供 150 大行程與 AI 行程自動規劃，請問想諮詢什麼呢？</div>
             </div>
             <div class="ai-chat-footer">
                 <input type="text" id="aiInputText" placeholder="輸入您的旅遊提問..." onkeypress="if(event.key==='Enter') sendAiMessage()">
@@ -729,7 +786,7 @@
         </div>
     </div>
 
-    <!-- 🌟 會員中心儀表板 Modal (內含黑卡條碼與照片上傳) -->
+    <!-- 會員中心儀表板 Modal -->
     <div id="dashboardModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDashboardModal()">&times;</span>
@@ -739,7 +796,6 @@
                 <p id="dashboardUserEmail" style="color: var(--text-gray); font-size: 0.85rem;"></p>
             </div>
 
-            <!-- 📸 大頭貼上傳功能 -->
             <div class="avatar-upload-container">
                 <div class="avatar-preview" onclick="document.getElementById('avatarInput').click()" title="點擊上傳大頭貼">
                     <span id="avatarPlaceholder"><i class="fa-solid fa-camera"></i></span>
@@ -749,11 +805,16 @@
                 <span style="font-size:0.75rem; color:var(--text-gray);">點擊上方圖示可上傳個人照片</span>
             </div>
 
-            <!-- 🌟 豪華會員黑卡與條碼卡片 -->
+            <div class="web3-wallet-box">
+                <div style="font-size:0.85rem; color:var(--primary-gold); font-weight:bold; margin-bottom:6px;"><i class="fa-solid fa-wallet"></i> Web3 區塊鏈黑卡資產</div>
+                <div id="walletStatusText" style="font-size:0.8rem; color:var(--text-gray); margin-bottom:8px;">尚未綁定加密錢包</div>
+                <button class="btn-reserve" style="font-size:0.8rem; padding:4px 12px;" onclick="connectWeb3Wallet()">🔗 綁定 MetaMask 領取 NFT 通行證</button>
+            </div>
+
             <div class="vip-digital-card">
                 <div class="vip-card-header">
                     <span class="vip-card-title"><i class="fa-solid fa-crown"></i> AURA BLACK CARD</span>
-                    <span style="font-size:0.7rem; color:var(--primary-gold); border:1px solid var(--primary-gold); padding:2px 6px; border-radius:4px;">UNLIMITED</span>
+                    <span style="font-size:0.7rem; color:var(--primary-gold); border:1px solid var(--primary-gold); padding:2px 6px; border-radius:4px;">WEB3 VIP</span>
                 </div>
                 <div class="vip-card-body">
                     <div class="vip-card-info">
@@ -817,86 +878,200 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
-        // 5 大洲完整資料庫 (35個行程，內含數值價格以便即時匯率換算)
+        // 5 大洲完整資料庫 (150個頂級行程：每洲 30 個)
         const continentTours = {
             asia: [
-                { id: "tokyo", name: "日本東京尊榮私人會所 5 日", basePrice: 215000, badge: "東京極上會所", lat: 35.6762, lng: 139.6503, img: "https://picsum.photos/400/250?tokyo=1", desc: "專屬安排東京隱密料亭包場，三代職人親自主理。", weather: "晴 ☀️ 22°C", flight: "NH-823 (準點起飛)", itinerary: ["Day 1：專機抵達 · 東京私人會所入住", "Day 2：文化私旅 · 三代職人工藝體驗", "Day 3：隱密料亭包場 · 旬味晚宴", "Day 4：私人直升機鳥瞰富士山與箱根溫泉", "Day 5：專屬貴賓室通關與賦歸"] },
-                { id: "kyoto", name: "日本京都百年町家私密茶道 5 日", basePrice: 198000, badge: "京都町家私旅", lat: 35.0116, lng: 135.7681, img: "https://picsum.photos/400/250?kyoto=2", desc: "百年町家古宅，表千家茶道宗師親授與嵐山夜間漫遊。", weather: "多雲 ⛅ 20°C", flight: "JL-811 (準點起飛)", itinerary: ["Day 1：抵達京都百年古宅", "Day 2：茶道宗師私密茶道", "Day 3：嵐山竹林夜間VIP封園漫遊", "Day 4：私房京料理懷石晚宴", "Day 5：賦歸"] },
-                { id: "bali", name: "印尼峇里島烏布隱世行館 6 日", basePrice: 220000, badge: "烏布叢林隱居", lat: -8.5069, lng: 115.2625, img: "https://picsum.photos/400/250?bali=3", desc: "阿勇河谷頂級Villa，私人瑜伽大師指導與傳統淨化儀式。", weather: "雷陣雨 ⛈️ 28°C", flight: "GA-851 (準點起飛)", itinerary: ["Day 1-2：抵達峇里島叢林Villa", "Day 3-4：皇家淨化儀式與私人瑜伽", "Day 5：藝術村參訪與私廚料理", "Day 6：賦歸"] },
-                { id: "thailand", name: "泰國清邁金三角四季帳篷 5 日", basePrice: 265000, badge: "金三角奢華行館", lat: 20.3533, lng: 100.0814, img: "https://picsum.photos/400/250?thailand=4", desc: "湄公河畔頂級四季帳篷行館，大象保育營私人接觸。", weather: "晴 ☀️ 31°C", flight: "TG-635 (準點起飛)", itinerary: ["Day 1-2：清邁金三角四季帳篷", "Day 3-4：大象保育與湄公河夕陽晚宴", "Day 5：叢林泰式SPA與賦歸"] },
-                { id: "maldives", name: "馬爾地夫白馬莊園水上行館 7 日", basePrice: 365000, badge: "島嶼私人包島", lat: 3.2028, lng: 73.2207, img: "https://picsum.photos/400/250?maldives=5", desc: "無邊際私人海景泳池，水上飛機俯瞰印度洋絕景。", weather: "晴 ☀️ 30°C", flight: "SQ-432 (準點起飛)", itinerary: ["Day 1-2：水上飛機登島入住行館", "Day 3-4：私人無人島潛水與燭光晚宴", "Day 5-6：水療SPA與落日巡航", "Day 7：賦歸"] },
-                { id: "dubai", name: "杜拜皇家直升機與沙漠行館 5 日", basePrice: 295000, badge: "沙漠七星酒店", lat: 25.2048, lng: 55.2708, img: "https://picsum.photos/400/250?dubai=6", desc: "搭乘私人直升機鳥瞰棕櫚島，入住七星級帆船飯店。", weather: "晴 ☀️ 36°C", flight: "EK-367 (準點起飛)", itinerary: ["Day 1-2：帆船飯店與直升機鳥瞰棕櫚島", "Day 3-4：沙漠保護區私人帳篷星空晚宴", "Day 5：購物與賦歸"] },
-                { id: "singapore", name: "新加坡濱海灣金沙總統級奢華 5 日", basePrice: 245000, badge: "濱海灣總統套房", lat: 1.2834, lng: 103.8607, img: "https://picsum.photos/400/250?sg=7", desc: "入住金沙頂級總統套房，米其林主廚包場與私人遊艇夜遊。", weather: "陣雨 🌦️ 29°C", flight: "TR-899 (準點起飛)", itinerary: ["Day 1-2：總統套房入住與無邊際泳池VIP", "Day 3-4：新加坡海峽私人遊艇派對與米其林晚宴", "Day 5：賦歸"] }
+                { id: "tokyo", name: "日本東京尊榮私人會所 5 日", basePrice: 215000, badge: "東京極上會所", lat: 35.6762, lng: 139.6503, img: "https://picsum.photos/400/250?tokyo=1", desc: "專屬安排東京隱密料亭包場，三代職人親自主理。", weather: "晴 ☀️ 22°C", flight: "AURA-001 (東京羽田準點)", itinerary: ["Day 1：專機抵達 · 東京私人會所入住", "Day 2：文化私旅 · 三代職人工藝體驗", "Day 3：隱密料亭包場 · 旬味晚宴", "Day 4：私人直升機鳥瞰富士山與箱根溫泉", "Day 5：專屬貴賓室通關與賦歸"] },
+                { id: "kyoto", name: "日本京都百年町家私密茶道 5 日", basePrice: 198000, badge: "京都町家私旅", lat: 35.0116, lng: 135.7681, img: "https://picsum.photos/400/250?kyoto=2", desc: "百年町家古宅，表千家茶道宗師親授與嵐山夜間漫遊。", weather: "多雲 ⛅ 20°C", flight: "AURA-002 (關西機場降落)", itinerary: ["Day 1：抵達京都百年古宅", "Day 2：茶道宗師私密茶道", "Day 3：嵐山竹林夜間VIP封園漫遊", "Day 4：私房京料理懷石晚宴", "Day 5：賦歸"] },
+                { id: "bali", name: "印尼峇里島烏布隱世行館 6 日", basePrice: 220000, badge: "烏布叢林隱居", lat: -8.5069, lng: 115.2625, img: "https://picsum.photos/400/250?bali=3", desc: "阿勇河谷頂級Villa，私人瑜伽大師指導與傳統淨化儀式。", weather: "雷陣雨 ⛈️ 28°C", flight: "AURA-003 (峇里島專機)", itinerary: ["Day 1-2：抵達峇里島叢林Villa", "Day 3-4：皇家淨化儀式與私人瑜伽", "Day 5：藝術村參訪與私廚料理", "Day 6：賦歸"] },
+                { id: "thailand", name: "泰國清邁金三角四季帳篷 5 日", basePrice: 265000, badge: "金三角奢華行館", lat: 20.3533, lng: 100.0814, img: "https://picsum.photos/400/250?thailand=4", desc: "湄公河畔頂級四季帳篷行館，大象保育營私人接觸。", weather: "晴 ☀️ 31°C", flight: "AURA-004 (清邁包機)", itinerary: ["Day 1-2：清邁金三角四季帳篷", "Day 3-4：大象保育與湄公河夕陽晚宴", "Day 5：叢林泰式SPA與賦歸"] },
+                { id: "maldives", name: "馬爾地夫白馬莊園水上行館 7 日", basePrice: 365000, badge: "島嶼私人包島", lat: 3.2028, lng: 73.2207, img: "https://picsum.photos/400/250?maldives=5", desc: "無邊際私人海景泳池，水上飛機俯瞰印度洋絕景。", weather: "晴 ☀️ 30°C", flight: "AURA-005 (馬列水上專機)", itinerary: ["Day 1-2：水上飛機登島入住行館", "Day 3-4：私人無人島潛水與燭光晚宴", "Day 5-6：水療SPA與落日巡航", "Day 7：賦歸"] },
+                { id: "dubai", name: "杜拜皇家直升機與沙漠行館 5 日", basePrice: 295000, badge: "沙漠七星酒店", lat: 25.2048, lng: 55.2708, img: "https://picsum.photos/400/250?dubai=6", desc: "搭乘私人直升機鳥瞰棕櫚島，入住七星級帆船飯店。", weather: "晴 ☀️ 36°C", flight: "AURA-006 (杜拜直升機)", itinerary: ["Day 1-2：帆船飯店與直升機鳥瞰棕櫚島", "Day 3-4：沙漠保護區私人帳篷星空晚宴", "Day 5：購物與賦歸"] },
+                { id: "singapore", name: "新加坡濱海灣金沙總統級奢華 5 日", basePrice: 245000, badge: "濱海灣總統套房", lat: 1.2834, lng: 103.8607, img: "https://picsum.photos/400/250?sg=7", desc: "入住金沙頂級總統套房，米其林主廚包場與私人遊艇夜遊。", weather: "陣雨 🌦️ 29°C", flight: "AURA-007 (新加坡包機)", itinerary: ["Day 1-2：總統套房入住與無邊際泳池VIP", "Day 3-4：新加坡海峽私人遊艇派對與米其林晚宴", "Day 5：賦歸"] },
+                { id: "seoul", name: "韓國首爾江南區頂級醫美與私密會所 5 日", basePrice: 210000, badge: "江南尊榮醫美", lat: 37.5665, lng: 126.9780, img: "https://picsum.photos/400/250?seoul=8", desc: "清潭洞頂級私人醫美療程，韓式宮廷御膳私廚包場。", weather: "晴 ☀️ 18°C", flight: "AURA-008 (仁川專機)", itinerary: ["Day 1-2：江南五星酒店與尊榮皮膚管理", "Day 3-4：私人導遊陪同首爾藝廊與宮廷御膳", "Day 5：賦歸"] },
+                { id: "taipei", name: "台灣日月潭涵碧樓湖畔總統 Villa 4 日", basePrice: 168000, badge: "日月潭湖畔私宅", lat: 23.8580, lng: 120.9160, img: "https://picsum.photos/400/250?taipei=9", desc: "入住涵碧樓頂級湖景別墅，私人遊艇日月潭日落巡航。", weather: "晴 ☀️ 25°C", flight: "AURA-009 (松山直升機)", itinerary: ["Day 1-2：高鐵商務艙接駁至日月潭涵碧樓", "Day 3：私人遊艇湖面巡航與原住民私廚", "Day 4：賦歸"] },
+                { id: "bhutan", name: "不丹喜馬拉雅山脈安缦度假村尋秘 7 日", basePrice: 480000, badge: "喜馬拉雅秘境", lat: 27.4728, lng: 89.6393, img: "https://picsum.photos/400/250?bhutan=10", desc: "入住安缦喜馬拉雅山脈系列行館，虎穴寺私人直升機導覽。", weather: "晴 ☀️ 14°C", flight: "AURA-010 (喜馬拉雅專機)", itinerary: ["Day 1-2：直升機飛往不丹安缦行館", "Day 3-5：虎穴寺私人直升機導覽與佛教禪修", "Day 6-7：喜馬拉雅山脈漫遊與賦歸"] },
+                { id: "asia_11", name: "日本北海道星野極境私房雪Villa 6 日", basePrice: 290000, badge: "北海道奢華雪屋", lat: 43.3548, lng: 142.3685, img: "https://picsum.photos/400/250?a11=11", desc: "包下星野頂級雪Villa，私人教練滑雪與雪地溫泉。", weather: "雪 ❄️ -6°C", flight: "AURA-011 (新千歲包機)", itinerary: ["Day 1-2：北海道星野雪Villa入住", "Day 3-4：私人教練全日滑雪與雪地摩托車", "Day 5-6：頂級露天溫泉與賦歸"] },
+                { id: "asia_12", name: "越南峴港巴拿山佛手橋與豪華海濱度假 5 日", basePrice: 185000, badge: "越南頂級海灘", lat: 16.0544, lng: 108.2022, img: "https://picsum.photos/400/250?a12=12", desc: "入住峴港洲際陽光半島度假村，私人直升機導覽巴拿山。", weather: "晴 ☀️ 32°C", flight: "AURA-012 (峴港專機)", itinerary: ["Day 1-2：峴港洲際陽光半島度假村", "Day 3-4：直升機導覽佛手橋與私房海鮮晚宴", "Day 5：賦歸"] },
+                { id: "asia_13", name: "柬埔寨吳哥窟安缦薩拉古蹟私密探索 6 日", basePrice: 340000, badge: "吳哥窟安缦古蹟", lat: 13.3633, lng: 103.8567, img: "https://picsum.photos/400/250?a13=13", desc: "入住安缦薩拉古哥賓館，專家陪同閉館探索吳哥窟神祕遺跡。", weather: "晴 ☀️ 34°C", flight: "AURA-013 (暹粒專機)", itinerary: ["Day 1-2：安缦薩拉古蹟行館入住", "Day 3-4：考古學家陪同閉館探索吳哥窟與塔普倫寺", "Day 5-6：傳統高棉Spa與賦歸"] },
+                { id: "asia_14", name: "菲律賓巴拉望埃爾尼多私人海島包島 7 日", basePrice: 410000, badge: "巴拉望私人島", lat: 11.1925, lng: 119.4087, img: "https://picsum.photos/400/250?a14=14", desc: "菲律賓頂級一島一飯店，水上飛機接駁與潟湖私密浮潛。", weather: "晴 ☀️ 31°C", flight: "AURA-014 (巴拉望專機)", itinerary: ["Day 1-2：水上飛機飛往巴拉望私人島嶼", "Day 3-5：祕境潟湖獨木舟與深海潛水", "Day 6-7：沙灘浪漫晚宴與賦歸"] },
+                { id: "asia_15", name: "馬來西亞蘭卡威四季頂級雨林海灘 6 日", basePrice: 255000, badge: "蘭卡威紅樹林秘境", lat: 6.3500, lng: 99.8000, img: "https://picsum.photos/400/250?a15=15", desc: "入住蘭卡威四季度假村，紅樹林私人遊艇生態導覽。", weather: "晴 ☀️ 30°C", flight: "AURA-015 (蘭卡威包機)", itinerary: ["Day 1-2：蘭卡威四季度假村海景別墅", "Day 3-4：紅樹林私人遊艇生態導覽與鷹類餵食", "Day 5-6：海濱夕陽SPA與賦歸"] },
+                { id: "asia_16", name: "印度泰姬瑪哈陵與拉賈斯坦邦奢華宮殿 8 日", basePrice: 395000, badge: "印度宮殿列車", lat: 27.1751, lng: 78.0421, img: "https://picsum.photos/400/250?a16=16", desc: "搭乘「王公快車」奢華宮殿列車，私人導覽泰姬瑪哈陵日落。", weather: "晴 ☀️ 33°C", flight: "AURA-016 (德里專機)", itinerary: ["Day 1-3：德里五星酒店與登上王公快車", "Day 4-6：烏代浦與齋浦爾宮殿私人導覽", "Day 7-8：泰姬瑪哈陵日落與賦歸"] },
+                { id: "asia_17", name: "斯里蘭卡茶園山脈與威爾帕圖野生動物保護 7 日", basePrice: 280000, badge: "斯里蘭卡茶園秘境", lat: 7.8731, lng: 80.7718, img: "https://picsum.photos/400/250?a17=17", desc: "入住茶園山脈頂級殖民風格行館，花豹野生動物追蹤。", weather: "晴 ☀️ 26°C", flight: "AURA-017 (科倫坡專機)", itinerary: ["Day 1-2：茶園山脈頂級殖民行館", "Day 3-5：威爾帕圖國家公園花豹生態追蹤", "Day 6-7：錫蘭紅茶私人品茗與賦歸"] },
+                { id: "asia_18", name: "寮國琅勃拉邦聯合國古城安缦行館 6 日", basePrice: 320000, badge: "琅勃拉邦安缦", lat: 19.8856, lng: 102.1347, img: "https://picsum.photos/400/250?a18=18", desc: "入住安缦吉塔古城行館，清晨僧侶化緣私人導覽。", weather: "多雲 ⛅ 24°C", flight: "AURA-018 (寮國專機)", itinerary: ["Day 1-2：安缦吉塔行館入住", "Day 3-4：清晨僧侶化緣私人禮佛與光西瀑布", "Day 5-6：湄公河夕陽遊船與賦歸"] },
+                { id: "asia_19", name: "日本屋久島森林秘境與頂級溫泉行館 5 日", basePrice: 225000, badge: "屋久島神木森林", lat: 30.3556, lng: 130.5050, img: "https://picsum.photos/400/250?a19=19", desc: "私人直升機直達屋久島，嚮導帶領探訪千年繩文杉。", weather: "雨霧 🌧️ 19°C", flight: "AURA-019 (屋久島直升機)", itinerary: ["Day 1-2：屋久島頂級溫泉行館", "Day 3-4：專屬嚮導帶領探訪千年繩文杉古樹林", "Day 5：賦歸"] },
+                { id: "asia_20", name: "中國西藏拉薩與林芝桃花源奢華列車 8 日", basePrice: 430000, badge: "西藏雪域秘境", lat: 29.6528, lng: 91.1724, img: "https://picsum.photos/400/250?a20=20", desc: "搭乘青藏高原頂級觀光列車，布達拉宮VIP私人導覽。", weather: "晴 ☀️ 12°C", flight: "AURA-020 (拉薩專機)", itinerary: ["Day 1-3：拉薩五星酒店適應高原與布達拉宮VIP", "Day 4-7：林芝桃花源與南迦巴瓦峰雪山漫遊", "Day 8：賦歸"] },
+                { id: "asia_21", name: "蒙古國戈壁沙漠頂級星空蒙古包度假村 6 日", basePrice: 275000, badge: "戈壁沙漠星空", lat: 47.9077, lng: 106.8832, img: "https://picsum.photos/400/250?a21=21", desc: "入住戈壁沙漠頂級奢華星空蒙古包，騎乘駿馬與天文學家觀星。", weather: "晴 ☀️ 15°C", flight: "AURA-021 (烏蘭巴托專機)", itinerary: ["Day 1-2：烏蘭巴托至戈壁沙漠奢華蒙古包", "Day 3-4：沙漠策馬奔騰與天文學家深夜專業觀星", "Day 5-6：遊牧民族文化體驗與賦歸"] },
+                { id: "asia_22", name: "台灣花蓮太魯閣晶英酒店峽谷總統 Villa 4 日", basePrice: 175000, badge: "太魯閣峽谷私宅", lat: 24.1843, lng: 121.6215, img: "https://picsum.photos/400/250?a22=22", desc: "入住太魯閣晶英行館頂級峽谷別墅，私人直升機鳥瞰立霧溪。", weather: "晴 ☀️ 24°C", flight: "AURA-022 (花蓮直升機)", itinerary: ["Day 1-2：太魯閣晶英行館峽谷別墅", "Day 3：直升機鳥瞰立霧溪大理石峽谷與原住民晚宴", "Day 4：賦歸"] },
+                { id: "asia_23", name: "印尼科莫多國家公園頂級船宿與巨蜥探秘 6 日", basePrice: 380000, badge: "科莫多龍探秘", lat: -8.5410, lng: 119.4877, img: "https://picsum.photos/400/250?a23=23", desc: "包下一艘六星級豪華私人船宿遊艇，粉紅沙灘與科莫多龍探險。", weather: "晴 ☀️ 32°C", flight: "AURA-023 (科莫多專機)", itinerary: ["Day 1-2：登上六星級私人船宿遊艇", "Day 3-4：粉紅沙灘浮潛與科莫多龍生態探險", "Day 5-6：海上日落晚宴與賦歸"] },
+                { id: "asia_24", name: "菲律賓薄荷島巧克力山與頂級私房海灘 5 日", basePrice: 195000, badge: "薄荷島眼鏡猴秘境", lat: 9.8500, lng: 124.1435, img: "https://picsum.photos/400/250?a24=24", desc: "入住 Panglao 頂級海灘度假村，私人專機直飛巧克力山。", weather: "晴 ☀️ 30°C", flight: "AURA-024 (薄荷島專機)", itinerary: ["Day 1-2：薄荷島頂級海灘度假村", "Day 3-4：私人專機與嚮導探訪巧克力山與眼鏡猴", "Day 5：賦歸"] },
+                { id: "asia_25", name: "馬來西亞沙巴東姑阿都拉曼公園私人島包島 6 日", basePrice: 310000, badge: "沙巴私人海島", lat: 5.9804, lng: 116.0735, img: "https://picsum.photos/400/250?a25=25", desc: "亞庇外海私人奢華海島度假村，深海潛水與夕陽晚餐。", weather: "晴 ☀️ 31°C", flight: "AURA-025 (亞庇包機)", itinerary: ["Day 1-2：沙巴私人海島度假村入住", "Day 3-4：深海珊瑚礁潛水與紅樹林螢火蟲遊船", "Day 5-6：海灘私人BBQ晚宴與賦歸"] },
+                { id: "asia_26", name: "泰國蘇美島六善頂級懸崖海景 Villa 6 日", basePrice: 280000, badge: "蘇美島六善懸崖", lat: 9.5012, lng: 99.9371, img: "https://picsum.photos/400/250?a26=26", desc: "入住蘇美島六善懸崖私人泳池Villa，泰式古法Spa。", weather: "晴 ☀️ 31°C", flight: "AURA-026 (蘇美島專機)", itinerary: ["Day 1-2：蘇美島六善懸崖Villa", "Day 3-4：安通國家公園私人遊艇跳島與浮潛", "Day 5-6：懸崖落日私廚晚宴與賦歸"] },
+                { id: "asia_27", name: "日本箱根蘆之湖頂級溫泉私宅 4 日", basePrice: 180000, badge: "箱根湖畔私宅", lat: 35.2324, lng: 139.0247, img: "https://picsum.photos/400/250?a27=27", desc: "專屬安排箱根蘆之湖頂級溫泉私宅，富士山絕景露天風呂。", weather: "多雲 ⛅ 17°C", flight: "AURA-027 (箱根專車接送)", itinerary: ["Day 1-2：專車接送至箱根蘆之湖溫泉私宅", "Day 3：私人海賊船包船遊湖與懷石料理", "Day 4：賦歸"] },
+                { id: "asia_28", name: "土耳其伊斯坦堡與卡帕多奇亞熱氣球奢華 7 日", basePrice: 325000, badge: "卡帕多奇亞熱氣球", lat: 41.0082, lng: 28.9784, img: "https://picsum.photos/400/250?a28=28", desc: "博斯普魯斯海峽私人遊艇晚餐，卡帕多奇亞 VIP 熱氣球日出。", weather: "晴 ☀️ 22°C", flight: "AURA-028 (伊斯坦堡包機)", itinerary: ["Day 1-3：伊斯坦堡皇宮酒店與博斯普魯斯遊艇", "Day 4-6：卡帕多奇亞洞穴奢華行館與VIP熱氣球", "Day 7：賦歸"] },
+                { id: "asia_29", name: "印度洋群島拉克沙群島潛水天堂 6 日", basePrice: 350000, badge: "拉克沙群島潛水", lat: 10.5667, lng: 72.6417, img: "https://picsum.photos/400/250?a29=29", desc: "印度洋神祕珊瑚礁群島，包島私人潛水與海洋生態探險。", weather: "晴 ☀️ 30°C", flight: "AURA-029 (拉克沙專機)", itinerary: ["Day 1-2：專機直飛拉克沙群島度假村", "Day 3-4：專業教練陪同未遭破壞之珊瑚礁深海潛水", "Day 5-6：海灘燒烤與賦歸"] },
+                { id: "asia_30", name: "日本沖繩石垣島私人遊艇與頂級和牛 5 日", basePrice: 195000, badge: "石垣島私人遊艇", lat: 24.3410, lng: 124.1560, img: "https://picsum.photos/400/250?a30=30", desc: "入住石垣島頂級海景渡假村，私人遊艇出海與石垣牛極品晚宴。", weather: "晴 ☀️ 27°C", flight: "AURA-030 (石垣島包機)", itinerary: ["Day 1-2：石垣島頂級海景度假村", "Day 3-4：私人遊艇出海幻之島浮潛與頂級石垣牛燒肉", "Day 5：賦歸"] }
             ],
             europe: [
-                { id: "paris", name: "法國巴黎凡爾賽宮私密漫遊 8 日", basePrice: 420000, badge: "羅浮宮星空晚宴", lat: 48.8566, lng: 2.3522, img: "https://picsum.photos/400/250?paris=1", desc: "閉館後專屬私人導覽羅浮宮，入住皇宮級五星酒店。", weather: "多雲 ⛅ 16°C", flight: "AF-553 (準點起飛)", itinerary: ["Day 1-2：入住皇宮酒店，塞納河私人遊艇晚餐", "Day 3-4：閉館後私人導覽羅浮宮與凡爾賽宮", "Day 5-8：訂製服鑑賞與專機賦歸"] },
-                { id: "swiss", name: "瑞士冰河列車私房雪景 6 日", basePrice: 310000, badge: "阿爾卑斯奢華", lat: 46.0207, lng: 7.7491, img: "https://picsum.photos/400/250?swiss=2", desc: "包下黃金景觀列車頭等包廂，策馬特峰頂奢華木屋。", weather: "雪 ❄️ -2°C", flight: "LX-177 (準點起飛)", itinerary: ["Day 1-2：蘇黎世抵達至策馬特雪景木屋", "Day 3-4：冰河列車頭等包廂與阿爾卑斯雪景", "Day 5-6：直升機觀景與溫泉度假"] },
-                { id: "iceland", name: "冰島藍湖奢華極光 6 日", basePrice: 288000, badge: "極光私人別墅", lat: 64.1466, lng: -21.9426, img: "https://picsum.photos/400/250?iceland=3", desc: "私人極光玻璃穹頂別墅，專屬直升機冰川導覽。", weather: "極光夜 🌌 1°C", flight: "FI-451 (準點起飛)", itinerary: ["Day 1-2：極光玻璃穹頂別墅入住", "Day 3-4：直升機冰川探險與藍湖溫泉VIP包場", "Day 5-6：極光攝影與私廚晚宴"] },
-                { id: "italy", name: "義大利托斯卡尼莊園品酒 7 日", basePrice: 340000, badge: "托斯卡尼莊園", lat: 43.7696, lng: 11.2558, img: "https://picsum.photos/400/250?italy=4", desc: "文藝復興古堡莊園，私人直升機直達頂級酒莊。", weather: "晴 ☀️ 24°C", flight: "AZ-791 (準點起飛)", itinerary: ["Day 1-2：佛羅倫斯古堡莊園入住", "Day 3-4：直升機直達酒莊品嚐珍藏紅酒", "Day 5-7：米其林料理課程與賦歸"] },
-                { id: "greece", name: "希臘聖托里尼懸崖別墅 7 日", basePrice: 325000, badge: "愛琴海日落", lat: 36.3932, lng: 25.4615, img: "https://picsum.photos/400/250?greece=5", desc: "伊亞懸崖私人無邊際泳池別墅，私人遊艇日落巡航。", weather: "晴 ☀️ 27°C", flight: "A3-612 (準點起飛)", itinerary: ["Day 1-2：聖托里尼懸崖泳池別墅", "Day 3-4：私人遊艇愛琴海日落巡航", "Day 5-7：頂級Spa放鬆與懸崖晚宴"] },
-                { id: "monaco", name: "摩納哥蒙地卡羅豪華遊艇與F1 6 日", basePrice: 480000, badge: "地中海遊艇會", lat: 43.7384, lng: 7.4246, img: "https://picsum.photos/400/250?monaco=6", desc: "地中海海景套房，超級遊艇出海與F1賽道跑車體驗。", weather: "晴 ☀️ 22°C", flight: "MNC-01 (準點起飛)", itinerary: ["Day 1-2：蒙地卡羅五星酒店", "Day 3-4：超級遊艇地中海巡航", "Day 5-6：法拉利超跑F1賽道駕駛與賦歸"] },
-                { id: "spain", name: "西班牙巴塞隆納米其林美食 7 日", basePrice: 315000, badge: "西班牙米其林", lat: 40.4168, lng: -3.7038, img: "https://picsum.photos/400/250?spain=7", desc: "高第建築私人閉館導覽與米其林三星名廚晚宴。", weather: "晴 ☀️ 25°C", flight: "IB-6501 (準點起飛)", itinerary: ["Day 1-3：馬德里皇宮私人導覽與Tapas巡禮", "Day 4-6：巴塞隆納聖家堂VIP導覽", "Day 7：賦歸"] }
+                { id: "paris", name: "法國巴黎凡爾賽宮私密漫遊 8 日", basePrice: 420000, badge: "羅浮宮星空晚宴", lat: 48.8566, lng: 2.3522, img: "https://picsum.photos/400/250?paris=1", desc: "閉館後專屬私人導覽羅浮宮，入住皇宮級五星酒店。", weather: "多雲 ⛅ 16°C", flight: "AURA-101 (巴黎戴高樂降落)", itinerary: ["Day 1-2：入住皇宮酒店，塞納河私人遊艇晚餐", "Day 3-4：閉館後私人導覽羅浮宮與凡爾賽宮", "Day 5-8：訂製服鑑賞與專機賦歸"] },
+                { id: "swiss", name: "瑞士冰河列車私房雪景 6 日", basePrice: 310000, badge: "阿爾卑斯奢華", lat: 46.0207, lng: 7.7491, img: "https://picsum.photos/400/250?swiss=2", desc: "包下黃金景觀列車頭等包廂，策馬特峰頂奢華木屋。", weather: "雪 ❄️ -2°C", flight: "AURA-102 (蘇黎世專機)", itinerary: ["Day 1-2：蘇黎世抵達至策馬特雪景木屋", "Day 3-4：冰河列車頭等包廂與阿爾卑斯雪景", "Day 5-6：直升機觀景與溫泉度假"] },
+                { id: "iceland", name: "冰島藍湖奢華極光 6 日", basePrice: 288000, badge: "極光私人別墅", lat: 64.1466, lng: -21.9426, img: "https://picsum.photos/400/250?iceland=3", desc: "私人極光玻璃穹頂別墅，專屬直升機冰川導覽。", weather: "極光夜 🌌 1°C", flight: "AURA-103 (雷克雅維克專機)", itinerary: ["Day 1-2：極光玻璃穹頂別墅入住", "Day 3-4：直升機冰川探險與藍湖溫泉VIP包場", "Day 5-6：極光攝影與私廚晚宴"] },
+                { id: "italy", name: "義大利托斯卡尼莊園品酒 7 日", basePrice: 340000, badge: "托斯卡尼莊園", lat: 43.7696, lng: 11.2558, img: "https://picsum.photos/400/250?italy=4", desc: "文藝復興古堡莊園，私人直升機直達頂級酒莊。", weather: "晴 ☀️ 24°C", flight: "AURA-104 (佛羅倫斯專機)", itinerary: ["Day 1-2：佛羅倫斯古堡莊園入住", "Day 3-4：直升機直達酒莊品嚐珍藏紅酒", "Day 5-7：米其林料理課程與賦歸"] },
+                { id: "greece", name: "希臘聖托里尼懸崖別墅 7 日", basePrice: 325000, badge: "愛琴海日落", lat: 36.3932, lng: 25.4615, img: "https://picsum.photos/400/250?greece=5", desc: "伊亞懸崖私人無邊際泳池別墅，私人遊艇日落巡航。", weather: "晴 ☀️ 27°C", flight: "AURA-105 (聖托里尼專機)", itinerary: ["Day 1-2：聖托里尼懸崖泳池別墅", "Day 3-4：私人遊艇愛琴海日落巡航", "Day 5-7：頂級Spa放鬆與懸崖晚宴"] },
+                { id: "monaco", name: "摩納哥蒙地卡羅豪華遊艇與F1 6 日", basePrice: 480000, badge: "地中海遊艇會", lat: 43.7384, lng: 7.4246, img: "https://picsum.photos/400/250?monaco=6", desc: "地中海海景套房，超級遊艇出海與F1賽道跑車體驗。", weather: "晴 ☀️ 22°C", flight: "AURA-106 (尼斯專機)", itinerary: ["Day 1-2：蒙地卡羅五星酒店", "Day 3-4：超級遊艇地中海巡航", "Day 5-6：法拉利超跑F1賽道駕駛與賦歸"] },
+                { id: "spain", name: "西班牙巴塞隆納米其林美食 7 日", basePrice: 315000, badge: "西班牙米其林", lat: 40.4168, lng: -3.7038, img: "https://picsum.photos/400/250?spain=7", desc: "高第建築私人閉館導覽與米其林三星名廚晚宴。", weather: "晴 ☀️ 25°C", flight: "AURA-107 (巴塞隆納專機)", itinerary: ["Day 1-3：馬德里皇宮私人導覽與Tapas巡禮", "Day 4-6：巴塞隆納聖家堂VIP導覽", "Day 7：賦歸"] },
+                { id: "uk", name: "英國倫敦溫莎城堡與蘇格蘭高地莊園 8 日", basePrice: 380000, badge: "英倫皇室尊榮", lat: 51.5074, lng: -0.1278, img: "https://picsum.photos/400/250?uk=8", desc: "溫莎城堡私人閉館導覽，蘇格蘭高地私人莊園狩獵與威士忌品飲。", weather: "陰雨 🌧️ 12°C", flight: "AURA-108 (倫敦希斯洛專機)", itinerary: ["Day 1-3：倫敦 Savoy 頂級總統套房與溫莎城堡", "Day 4-7：私人專機飛往蘇格蘭高地莊園品飲高年份威士忌", "Day 8：賦歸"] },
+                { id: "austria", name: "奧地利維也納音樂宮廷與薩爾茨堡 6 日", basePrice: 295000, badge: "維也納宮廷音樂", lat: 48.2082, lng: 16.3738, img: "https://picsum.photos/400/250?austria=9", desc: "金色大廳私人包廂音樂會，入住維也納百年宮殿酒店。", weather: "晴 ☀️ 17°C", flight: "AURA-109 (維也納專機)", itinerary: ["Day 1-2：維也納百年宮殿酒店入住", "Day 3-4：金色大廳私人包廂與莫札特故居私人導覽", "Day 5-6：薩爾茨堡湖區漫遊與賦歸"] },
+                { id: "norway", name: "挪威羅弗敦群島峽灣漁屋與極光 7 日", basePrice: 360000, badge: "挪威極境峽灣", lat: 68.1672, lng: 14.5652, img: "https://picsum.photos/400/250?norway=10", desc: "入住極境奢華玻璃漁屋，搭乘私人直升機俯瞰雷訥峽灣。", weather: "極光 🌌 -4°C", flight: "AURA-110 (奧斯陸專機)", itinerary: ["Day 1-2：羅弗敦群島奢華玻璃漁屋", "Day 3-5：直升機峽灣雷訥山頂導覽與深海釣魚", "Day 6-7：極光晚宴與賦歸"] },
+                { id: "eur_11", name: "義大利威尼斯面具節私人化妝舞會 6 日", basePrice: 345000, badge: "威尼斯宮廷舞會", lat: 45.4408, lng: 12.3155, img: "https://picsum.photos/400/250?e11=11", desc: "入住威尼斯大運河安縵酒店，訂製手工面具與古堡化妝舞會。", weather: "晴 ☀️ 15°C", flight: "AURA-111 (威尼斯專機)", itinerary: ["Day 1-2：威尼斯大運河安縵酒店", "Day 3-4：頂級工坊訂製面具與 18 世紀宮殿化妝舞會", "Day 5-6：貢多拉私人夜遊與賦歸"] },
+                { id: "eur_12", name: "法國普羅旺斯薰衣草莊園與亞維農私廚 6 日", basePrice: 275000, badge: "普羅旺斯莊園", lat: 43.9493, lng: 4.8055, img: "https://picsum.photos/400/250?e12=12", desc: "入住普羅旺斯百年莊園，薰衣草田私人野餐與米其林主廚私廚。", weather: "晴 ☀️ 28°C", flight: "AURA-112 (馬賽專機)", itinerary: ["Day 1-2：普羅旺斯百年莊園入住", "Day 3-4：私人直升機飛往薰衣草田與私廚晚宴", "Day 5-6：亞維農古城漫遊與賦歸"] },
+                { id: "eur_13", name: "葡萄牙里斯本與辛特拉皇家宮殿私密品酒 7 日", basePrice: 280000, badge: "里斯本波特酒秘境", lat: 38.7223, lng: -9.1393, img: "https://picsum.photos/400/250?e13=13", desc: "入住辛特拉浪漫主義宮殿酒店，杜羅河谷百年波特酒莊包場。", weather: "晴 ☀️ 23°C", flight: "AURA-113 (里斯本專機)", itinerary: ["Day 1-2：里斯本五星海景酒店", "Day 3-5：辛特拉宮殿導覽與杜羅河谷波特酒私人品飲", "Day 6-7：羅卡角日落與賦歸"] },
+                { id: "eur_14", name: "希臘米克諾斯島私人派對別墅與遊艇 7 日", basePrice: 350000, badge: "米克諾斯島派對", lat: 37.4467, lng: 25.3289, img: "https://picsum.photos/400/250?e14=14", desc: "米克諾斯懸崖私人派對別墅，超級遊艇愛琴海狂歡。", weather: "晴 ☀️ 29°C", flight: "AURA-114 (米克諾斯專機)", itinerary: ["Day 1-2：米克諾斯懸崖派對別墅", "Day 3-5：超級遊艇愛琴海尋祕海灘與DJ派對", "Day 6-7：頂級Spa與賦歸"] },
+                { id: "eur_15", name: "芬蘭赫爾辛基與羅瓦涅米極光玻璃穹頂 6 日", basePrice: 295000, badge: "芬蘭極光穹頂", lat: 60.1699, lng: 24.9384, img: "https://picsum.photos/400/250?e15=15", desc: "入住極光玻璃穹頂木屋，哈士奇雪橇與破冰船極地漂浮。", weather: "極光 🌌 -10°C", flight: "AURA-115 (赫爾辛基專機)", itinerary: ["Day 1-2：赫爾辛基設計酒店與飛往拉普蘭", "Day 3-5：極光玻璃穹頂木屋、哈士奇雪橇與冰海漂浮", "Day 6：賦歸"] },
+                { id: "eur_16", name: "愛爾蘭都柏林與凱爾特古堡高爾夫莊園 7 日", basePrice: 330000, badge: "愛爾蘭古堡高爾夫", lat: 53.3498, lng: -6.2603, img: "https://picsum.photos/400/250?e16=16", desc: "入住愛爾蘭百年凱爾特古堡，世界頂級濱海高爾夫球敘。", weather: "微涼 🍃 14°C", flight: "AURA-116 (都柏林專機)", itinerary: ["Day 1-2：都柏林五星古堡酒店", "Day 3-5：世界百大濱海高爾夫球場揮桿與威士忌品飲", "Day 6-7：巨人堤道私人導覽與賦歸"] },
+                { id: "eur_17", name: "捷克布拉格伏爾塔瓦河宮廷音樂與古堡 6 日", basePrice: 245000, badge: "布拉格浪漫宮廷", lat: 50.0755, lng: 14.4378, img: "https://picsum.photos/400/250?e17=17", desc: "入住布拉格城堡區頂級奢華酒店，伏爾塔瓦河私人古典音樂會。", weather: "多雲 ⛅ 18°C", flight: "AURA-117 (布拉格專機)", itinerary: ["Day 1-2：布拉格城堡區頂級酒店", "Day 3-4：查理大橋清晨私人導覽與宮廷交響樂會", "Day 5-6：庫倫洛夫童話小鎮與賦歸"] },
+                { id: "eur_18", name: "匈牙利布達佩斯多瑙河溫泉宮殿與米其林 6 日", basePrice: 260000, badge: "布達佩斯溫泉宮殿", lat: 47.4979, lng: 19.0402, img: "https://picsum.photos/400/250?e18=18", desc: "入住多瑙河畔百年皇宮酒店，貴賓專屬頂級溫泉私密包場。", weather: "晴 ☀️ 20°C", flight: "AURA-118 (布達佩斯專機)", itinerary: ["Day 1-2：布達佩斯百年皇宮酒店", "Day 3-4：塞切尼溫泉VIP私人包場與國會大廈導覽", "Day 5-6：多瑙河夜景米其林晚宴與賦歸"] },
+                { id: "eur_19", name: "克羅埃西亞杜布羅夫尼克亞得里亞海古城 7 日", basePrice: 310000, badge: "亞得里亞海明珠", lat: 42.6507, lng: 18.0944, img: "https://picsum.photos/400/250?e19=19", desc: "入住君臨天下古城海景VILLA，私人遊艇探索藍洞與科爾丘拉島。", weather: "晴 ☀️ 27°C", flight: "AURA-119 (杜布羅夫尼克專機)", itinerary: ["Day 1-2：杜布羅夫尼克古城海景別墅", "Day 3-5：私人遊艇亞得里亞海藍洞與隱密海島巡航", "Day 6-7：古城牆夕陽漫遊與賦歸"] },
+                { id: "eur_20", name: "冰島東部高地荒野超級吉普車與冰洞探險 6 日", basePrice: 320000, badge: "冰島高地超級吉普", lat: 65.0167, lng: -14.2000, img: "https://picsum.photos/400/250?e20=20", desc: "搭乘特製超級吉普車深入冰島無人高地，藍色冰洞探險。", weather: "雪霧 ❄️ -5°C", flight: "AURA-120 (冰島高地專機)", itinerary: ["Day 1-2：雷克雅維克至東部高地奢華山莊", "Day 3-4：超級吉普車深入冰川藍冰洞與地熱谷", "Day 5-6：溫泉放鬆與賦歸"] },
+                { id: "eur_21", name: "義大利科莫湖喬治克魯尼同款奢華湖畔VILLA 6 日", basePrice: 380000, badge: "科莫湖頂級湖宅", lat: 46.0156, lng: 9.2572, img: "https://picsum.photos/400/250?e21=21", desc: "入住科莫湖畔文藝復興時期私人古堡Villa， Riva遊艇湖面馳騁。", weather: "晴 ☀️ 25°C", flight: "AURA-121 (米蘭專機)", itinerary: ["Day 1-2：科莫湖畔私人古堡Villa入住", "Day 3-4：駕駛經典 Riva 快艇湖面巡航與湖畔私廚", "Day 5-6：貝拉焦小鎮漫遊與賦歸"] },
+                { id: "eur_22", name: "法國蔚藍海岸尼斯與坎城影展紅毯私人體驗 7 日", basePrice: 410000, badge: "蔚藍海岸坎城紅毯", lat: 43.7102, lng: 7.2620, img: "https://picsum.photos/400/250?e22=22", desc: "入住坎城海濱五星酒店，私人遊艇前往埃茲鷲巢村與米其林三星。", weather: "晴 ☀️ 26°C", flight: "AURA-122 (尼斯專機)", itinerary: ["Day 1-2：坎城海濱頂級五星酒店", "Day 3-5：私人遊艇蔚藍海岸巡航與埃茲鷲巢村漫遊", "Day 6-7：米其林三星晚宴與賦歸"] },
+                { id: "eur_23", name: "德國巴伐利亞新天鵝堡與慕尼黑啤酒節VIP 6 日", basePrice: 285000, badge: "巴伐利亞童話城堡", lat: 48.1351, lng: 11.5820, img: "https://picsum.photos/400/250?e23=23", desc: "新天鵝堡內部私人閉館導覽，慕尼黑皇家啤酒節VIP專屬包廂。", weather: "多雲 ⛅ 19°C", flight: "AURA-123 (慕尼黑專機)", itinerary: ["Day 1-2：慕尼黑五星奢華酒店", "Day 3-4：新天鵝堡私人閉館導覽與阿爾卑斯湖畔漫遊", "Day 5-6：皇家啤酒節VIP包廂與賦歸"] },
+                { id: "eur_24", name: "瑞士少女峰與因特拉肯頂級景觀列車 6 日", basePrice: 315000, badge: "少女峰歐洲之巔", lat: 46.6863, lng: 7.8632, img: "https://picsum.photos/400/250?e24=24", desc: "入住因特拉肯頂級雪景度假村，專屬頭等景觀列車登頂少女峰。", weather: "雪 ❄️ -3°C", flight: "AURA-124 (伯恩專機)", itinerary: ["Day 1-2：因特拉肯頂級雪景度假村", "Day 3-4：頭等景觀列車登頂「歐洲之巔」少女峰", "Day 5-6：高山直升機觀景與溫泉度假"] },
+                { id: "eur_25", name: "荷蘭阿姆斯特丹鬱金香花園與運河私密遊艇 5 日", basePrice: 240000, badge: "阿姆斯特丹運河私旅", lat: 52.3676, lng: 4.9041, img: "https://picsum.photos/400/250?e25=25", desc: "庫肯霍夫花園VIP開園前私人導覽，運河百年古董遊艇香檳晚宴。", weather: "晴 ☀️ 17°C", flight: "AURA-125 (阿姆斯特丹專機)", itinerary: ["Day 1-2：阿姆斯特丹運河畔頂級奢華酒店", "Day 3-4：庫肯霍夫花園私人導覽與百年古董遊艇香檳晚宴", "Day 5：賦歸"] },
+                { id: "eur_26", name: "瑞典斯德哥爾摩群島私人島嶼與米其林北歐極致 6 日", basePrice: 320000, badge: "斯德哥爾摩群島私島", lat: 59.3293, lng: 18.0686, img: "https://picsum.photos/400/250?e26=26", desc: "搭乘水上飛機前往斯德哥爾摩群島私人島嶼，北歐極致米其林料理。", weather: "微涼 🍃 16°C", flight: "AURA-126 (斯德哥爾摩專機)", itinerary: ["Day 1-2：斯德哥爾摩市區頂級設計酒店", "Day 3-4：水上飛機飛往群島私人島嶼與北歐極致米其林", "Day 5-6：老城區私人導覽與賦歸"] },
+                { id: "eur_27", name: "丹麥哥本哈根 NOMA 前哨與北歐美學尋秘 5 日", basePrice: 265000, badge: "哥本哈根北歐美學", lat: 55.6761, lng: 12.5683, img: "https://picsum.photos/400/250?e27=27", desc: "入住哥本哈根尼港頂級酒店，安排世界頂尖發酵廚藝私廚體驗。", weather: "多雲 ⛅ 15°C", flight: "AURA-127 (哥本哈根專機)", itinerary: ["Day 1-2：哥本哈根尼港頂級奢華酒店", "Day 3-4：北歐美學設計工作室私人參訪與頂尖私廚", "Day 5：賦歸"] },
+                { id: "eur_28", name: "比利時布魯日與布魯塞爾皇家巧克力工藝 5 日", basePrice: 230000, badge: "布魯日中世紀水鄉", lat: 50.8503, lng: 4.3517, img: "https://picsum.photos/400/250?e28=28", desc: "入住布魯日中世紀運河古宅，國寶級巧克力大師親授私人手作。", weather: "陰雨 🌧️ 14°C", flight: "AURA-128 (布魯塞爾專機)", itinerary: ["Day 1-2：布魯日中世紀運河古宅入住", "Day 3-4：國寶級巧克力大師私人手作課程與運河馬車", "Day 5：賦歸"] },
+                { id: "eur_29", name: "愛沙尼亞塔林中世紀古城與波羅的海海濱 Spa 5 日", basePrice: 210000, badge: "塔林中世紀古堡", lat: 59.4370, lng: 24.7536, img: "https://picsum.photos/400/250?e29=29", desc: "塔林中世紀古堡酒店，波羅的海頂級泥漿海水 Spa 療程。", weather: "清涼 🍃 13°C", flight: "AURA-129 (塔林專機)", itinerary: ["Day 1-2：塔林中世紀古堡酒店入住", "Day 3-4：中世紀騎士文化私人導覽與海濱頂級 Spa", "Day 5：賦歸"] },
+                { id: "eur_30", name: "羅馬尼亞德古拉吸血鬼傳說與喀爾巴阡山古堡 6 日", basePrice: 250000, badge: "喀爾巴阡山神祕古堡", lat: 44.4268, lng: 26.1025, img: "https://picsum.photos/400/250?e30=30", desc: "深入喀爾巴阡山脈，私人專屬夜訪布朗城堡（吸血鬼城堡）。", weather: "多雲 ⛅ 16°C", flight: "AURA-130 (布加勒斯特專機)", itinerary: ["Day 1-2：布加勒斯特五星宮殿酒店", "Day 3-4：專車深入喀爾巴阡山脈與布朗城堡夜間私人導覽", "Day 5-6：山間行館與賦歸"] }
             ],
             oceania: [
-                { id: "newzealand", name: "紐西蘭皇后鎮南島冰川與峽灣 7 日", basePrice: 375000, badge: "南島極境峽灣", lat: -45.0312, lng: 168.6626, img: "https://picsum.photos/400/250?nz=1", desc: "私人直升機降落米爾福德峽灣，湖畔私密奢華莊園。", weather: "微風 🍃 15°C", flight: "NZ-881 (準點起飛)", itinerary: ["Day 1-2：皇后鎮湖畔奢華莊園", "Day 3-4：直升機米爾福德峽灣與冰川降落", "Day 5-7：私人酒莊品酒與高空跳傘"] },
-                { id: "fiji", name: "斐濟私人奢華島嶼度假村 7 日", basePrice: 345000, badge: "南太平洋天堂", lat: -17.7134, lng: 178.0650, img: "https://picsum.photos/400/250?fiji=2", desc: "南太平洋私人島嶼全包式奢華度假，水上別墅。", weather: "晴 ☀️ 29°C", flight: "FJ-391 (準點起飛)", itinerary: ["Day 1-2：私人島嶼水上別墅入住", "Day 3-4：珊瑚礁深海潛水與私人海灘野餐", "Day 5-7：玻里尼西亞傳統Spa與賦歸"] },
-                { id: "sydney", name: "澳洲雪梨歌劇院與大堡礁私人專機 7 日", basePrice: 390000, badge: "大堡礁私人專機", lat: -33.8688, lng: 151.2093, img: "https://picsum.photos/400/250?sydney=3", desc: "雪梨歌劇院VIP包廂與私人專機直飛大堡礁心形礁。", weather: "晴 ☀️ 23°C", flight: "QF-128 (準點起飛)", itinerary: ["Day 1-2：雪梨港灣頂級酒店與歌劇院VIP", "Day 3-5：私人專機飛往大堡礁心形礁直升機導覽", "Day 6-7：海鮮盛宴與賦歸"] },
-                { id: "antarctica", name: "南極奢華破冰船極地 10 日", basePrice: 680000, badge: "南極冰原探險", lat: -69.2284, lng: -77.5583, img: "https://picsum.photos/400/250?antarctica=4", desc: "六星級極地破冰船，直升機登陸南極大陸觀賞企鵝。", weather: "極凍 🧊 -15°C", flight: "POLAR-09 (準點起飛)", itinerary: ["Day 1-3：烏斯懷亞登船", "Day 4-7：德雷克海峽航行與直升機登陸", "Day 8-10：企鵝生態近距離與返程"] },
-                { id: "tahiti", name: "法屬玻里尼西亞大溪地波 Bora Bora 7 日", basePrice: 440000, badge: "大溪地水上屋", lat: -16.5004, lng: -151.7415, img: "https://picsum.photos/400/250?tahiti=5", desc: "Bora Bora頂級水上奢華VILLA，與鯊魚魔鬼魚共泳。", weather: "晴 ☀️ 30°C", flight: "TN-078 (準點起飛)", itinerary: ["Day 1-2：大溪地過渡至Bora Bora水上屋", "Day 3-4：私人潟湖與鯊魚魔鬼魚生態共泳", "Day 5-7：落日夕陽巡航與私人海灘晚餐"] },
-                { id: "melbourne", name: "澳洲墨爾本亞拉河谷酒莊與大洋路 6 日", basePrice: 260000, badge: "亞拉河谷品酒", lat: -37.8136, lng: 144.9631, img: "https://picsum.photos/400/250?melbourne=6", desc: "直升機鳥瞰十二門徒岩，亞拉河谷頂級酒莊私廚。", weather: "多雲 ⛅ 18°C", flight: "VA-833 (準點起飛)", itinerary: ["Day 1-2：墨爾本頂級酒店入住", "Day 3-4：直升機鳥瞰大洋路十二門徒岩", "Day 5-6：亞拉河谷酒莊品酒與賦歸"] },
-                { id: "tasmania", name: "澳洲塔斯馬尼亞荒野極境隱居 6 日", basePrice: 290000, badge: "塔斯馬尼亞荒野", lat: -42.8821, lng: 147.3272, img: "https://picsum.photos/400/250?tasmania=7", desc: "隱匿於世界遺產荒野中的頂級美學行館，生蠔晚宴。", weather: "清涼 🍃 14°C", flight: "JQ-701 (準點起飛)", itinerary: ["Day 1-2：塔斯馬尼亞荒野隱居行館", "Day 3-4：生蠔農場私人專屬品嚐與健行", "Day 5-6：極光與星空觀賞及賦歸"] }
+                { id: "newzealand", name: "紐西蘭皇后鎮南島冰川與峽灣 7 日", basePrice: 375000, badge: "南島極境峽灣", lat: -45.0312, lng: 168.6626, img: "https://picsum.photos/400/250?nz=1", desc: "私人直升機降落米爾福德峽灣，湖畔私密奢華莊園。", weather: "微風 🍃 15°C", flight: "AURA-201 (皇后鎮專機)", itinerary: ["Day 1-2：皇后鎮湖畔奢華莊園", "Day 3-4：直升機米爾福德峽灣與冰川降落", "Day 5-7：私人酒莊品酒與高空跳傘"] },
+                { id: "fiji", name: "斐濟私人奢華島嶼度假村 7 日", basePrice: 345000, badge: "南太平洋天堂", lat: -17.7134, lng: 178.0650, img: "https://picsum.photos/400/250?fiji=2", desc: "南太平洋私人島嶼全包式奢華度假，水上別墅。", weather: "晴 ☀️ 29°C", flight: "AURA-202 (斐濟專機)", itinerary: ["Day 1-2：私人島嶼水上別墅入住", "Day 3-4：珊瑚礁深海潛水與私人海灘野餐", "Day 5-7：玻里尼西亞傳統Spa與賦歸"] },
+                { id: "sydney", name: "澳洲雪梨歌劇院與大堡礁私人專機 7 日", basePrice: 390000, badge: "大堡礁私人專機", lat: -33.8688, lng: 151.2093, img: "https://picsum.photos/400/250?sydney=3", desc: "雪梨歌劇院VIP包廂與私人專機直飛大堡礁心形礁。", weather: "晴 ☀️ 23°C", flight: "AURA-203 (雪梨專機)", itinerary: ["Day 1-2：雪梨港灣頂級酒店與歌劇院VIP", "Day 3-5：私人專機飛往大堡礁心形礁直升機導覽", "Day 6-7：海鮮盛宴與賦歸"] },
+                { id: "antarctica", name: "南極奢華破冰船極地 10 日", basePrice: 680000, badge: "南極冰原探險", lat: -69.2284, lng: -77.5583, img: "https://picsum.photos/400/250?antarctica=4", desc: "六星級極地破冰船，直升機登陸南極大陸觀賞企鵝。", weather: "極凍 🧊 -15°C", flight: "AURA-204 (極地破冰船)", itinerary: ["Day 1-3：烏斯懷亞登船", "Day 4-7：德雷克海峽航行與直升機登陸", "Day 8-10：企鵝生態近距離與返程"] },
+                { id: "tahiti", name: "法屬玻里尼西亞大溪地波 Bora Bora 7 日", basePrice: 440000, badge: "大溪地水上屋", lat: -16.5004, lng: -151.7415, img: "https://picsum.photos/400/250?tahiti=5", desc: "Bora Bora頂級水上奢華VILLA，與鯊魚魔鬼魚共泳。", weather: "晴 ☀️ 30°C", flight: "AURA-205 (大溪地專機)", itinerary: ["Day 1-2：大溪地過渡至Bora Bora水上屋", "Day 3-4：私人潟湖與鯊魚魔鬼魚生態共泳", "Day 5-7：落日夕陽巡航與私人海灘晚餐"] },
+                { id: "melbourne", name: "澳洲墨爾本亞拉河谷酒莊與大洋路 6 日", basePrice: 260000, badge: "亞拉河谷品酒", lat: -37.8136, lng: 144.9631, img: "https://picsum.photos/400/250?melbourne=6", desc: "直升機鳥瞰十二門徒岩，亞拉河谷頂級酒莊私廚。", weather: "多雲 ⛅ 18°C", flight: "AURA-206 (墨爾本專機)", itinerary: ["Day 1-2：墨爾本頂級酒店入住", "Day 3-4：直升機鳥瞰大洋路十二門徒岩", "Day 5-6：亞拉河谷酒莊品酒與賦歸"] },
+                { id: "tasmania", name: "澳洲塔斯馬尼亞荒野極境隱居 6 日", basePrice: 290000, badge: "塔斯馬尼亞荒野", lat: -42.8821, lng: 147.3272, img: "https://picsum.photos/400/250?tasmania=7", desc: "隱匿於世界遺產荒野中的頂級美學行館，生蠔晚宴。", weather: "清涼 🍃 14°C", flight: "AURA-207 (荷巴特專機)", itinerary: ["Day 1-2：塔斯馬尼亞荒野隱居行館", "Day 3-4：生蠔農場私人專屬品嚐與健行", "Day 5-6：極光與星空觀賞及賦歸"] },
+                { id: "gbrmarine", name: "澳洲大堡礁私人珊瑚礁島包島 7 日", basePrice: 520000, badge: "大堡礁私人包島", lat: -16.9186, lng: 145.7781, img: "https://picsum.photos/400/250?gbrmarine=8", desc: "全島包島私人奢華度假村，直升機隨時起降與深海潛水。", weather: "晴 ☀️ 31°C", flight: "AURA-208 (凱恩斯專機)", itinerary: ["Day 1-2：私人專機直飛大堡礁隱密小島", "Day 3-5：私人水上教練陪同深海大堡礁珊瑚潛水", "Day 6-7：海灘燭光盛宴與賦歸"] },
+                { id: "auckland", name: "紐西蘭奧地利懷赫科島私房酒莊 6 日", basePrice: 280000, badge: "懷赫科島酒莊", lat: -36.7848, lng: 175.0837, img: "https://picsum.photos/400/250?auckland=9", desc: "奧克蘭帆船之都私密遊艇出海，懷赫科島頂級莊園品酒。", weather: "晴 ☀️ 22°C", flight: "AURA-209 (奧克蘭專機)", itinerary: ["Day 1-2：奧克蘭港灣頂級酒店", "Day 3-4：私人帆船遊艇出海至懷赫科島酒莊", "Day 5-6：莊園私廚晚宴與賦歸"] },
+                { id: "vanuatu", name: "萬那杜塔蘇亞火山海底郵局與部落探秘 6 日", basePrice: 310000, badge: "南太平洋火山秘境", lat: -17.7333, lng: 168.3273, img: "https://picsum.photos/400/250?vanuatu=10", desc: "搭乘直升機探訪亞蘇爾活火山，海底郵局深海潛水。", weather: "晴 ☀️ 29°C", flight: "AURA-210 (萬那杜專機)", itinerary: ["Day 1-2：萬那杜頂級度假村入住", "Day 3-4：直升機直擊亞蘇爾活火山與海底郵局", "Day 5-6：原始部落文化交流與賦歸"] },
+                { id: "oce_11", name: "紐西蘭瓦納卡孤獨樹與南阿爾卑斯直升機 6 日", basePrice: 320000, badge: "瓦納卡湖畔私宅", lat: -44.7032, lng: 169.1317, img: "https://picsum.photos/400/250?o11=11", desc: "入住瓦納卡湖畔奢華私宅，直升機降落阿斯帕林山冰川。", weather: "晴 ☀️ 17°C", flight: "AURA-211 (瓦納卡專機)", itinerary: ["Day 1-2：瓦納卡湖畔奢華私宅", "Day 3-4：直升機降落阿斯帕林山冰川與高山野餐", "Day 5-6：頂級Spa與賦歸"] },
+                { id: "oce_12", name: "澳洲烏魯魯沙漠星空帳篷與原住民文化 5 日", basePrice: 285000, badge: "烏魯魯沙漠星空", lat: -25.3444, lng: 131.0369, img: "https://picsum.photos/400/250?o12=12", desc: "入住烏魯魯頂級沙漠帳篷 Longitude 131°，原住民星空晚餐。", weather: "晴 ☀️ 35°C", flight: "AURA-212 (艾爾斯岩專機)", itinerary: ["Day 1-2：烏魯魯沙漠奢華帳篷酒店", "Day 3-4：原住民嚮導帶領烏魯魯日出與「原野星光」晚宴", "Day 5：賦歸"] },
+                { id: "oce_13", name: "北極斯瓦爾巴群島北極熊生態與破冰探險 9 日", basePrice: 720000, badge: "北極圈極地破冰", lat: 78.2232, lng: 15.6267, img: "https://picsum.photos/400/250?o13=13", desc: "搭乘北極圈頂級破冰探險船，尋找北極熊與冰川峽灣。", weather: "極凍 🧊 -18°C", flight: "AURA-213 (北極破冰船)", itinerary: ["Day 1-3：奧斯陸飛往斯瓦爾巴群島登船", "Day 4-7：北極圈破冰航行、尋找北極熊與冰川登陸", "Day 8-9：返程賦歸"] },
+                { id: "oce_14", name: "法屬新喀里多尼亞世界最大潟湖潛水 7 日", basePrice: 390000, badge: "新喀里多尼亞潟湖", lat: -22.2758, lng: 166.4580, img: "https://picsum.photos/400/250?o14=14", desc: "入住努美阿頂級海濱度假村，水上飛機俯瞰心形紅樹林。", weather: "晴 ☀️ 28°C", flight: "AURA-214 (努美阿專機)", itinerary: ["Day 1-2：努美阿海濱頂級度假村", "Day 3-5：水上飛機鳥瞰心形紅樹林與世界最大潟湖潛水", "Day 6-7：法式海鮮晚宴與賦歸"] },
+                { id: "oce_15", name: "薩摩亞南太平洋絕美海水泳池與度假 6 日", basePrice: 295000, badge: "薩摩亞世外桃源", lat: -13.7590, lng: -172.1046, img: "https://picsum.photos/400/250?o15=15", desc: "入住薩摩亞南太平洋頂級海島度假村，蘇阿海溝私人游泳。", weather: "晴 ☀️ 30°C", flight: "AURA-215 (薩摩亞專機)", itinerary: ["Day 1-2：薩摩亞海島頂級度假村", "Day 3-4：蘇阿海溝私人包場游泳與瀑布探險", "Day 5-6：海灘夕陽晚宴與賦歸"] },
+                { id: "oce_16", name: "庫克群島拉羅湯加私人潟湖與深海釣魚 6 日", basePrice: 310000, badge: "庫克群島私人潟湖", lat: -21.2367, lng: -159.7777, img: "https://picsum.photos/400/250?o16=16", desc: "入住艾圖塔基島私人水上屋，世界最美潟湖私人遊艇巡航。", weather: "晴 ☀️ 29°C", flight: "AURA-216 (拉羅湯加專機)", itinerary: ["Day 1-2：艾圖塔基島水上屋入住", "Day 3-4：私人遊艇世界最美潟湖巡航與深海垂釣", "Day 5-6：海灘Spa與賦歸"] },
+                { id: "oce_17", name: "澳洲柏斯與羅特尼斯島微笑quokka生態 5 日", basePrice: 240000, badge: "西澳柏斯頂級漫遊", lat: -31.9505, lng: 115.8605, img: "https://picsum.photos/400/250?o17=17", desc: "入住柏斯麗思卡爾頓總統套房，私人專機直飛羅特尼斯島。", weather: "晴 ☀️ 26°C", flight: "AURA-217 (柏斯專機)", itinerary: ["Day 1-2：柏斯麗思卡爾頓總統套房", "Day 3-4：私人專機直飛羅特尼斯島尋找微笑quokka與私廚", "Day 5：賦歸"] },
+                { id: "oce_18", name: "格陵蘭伊卢利サ特冰川峽灣與狗拉雪橇 7 日", basePrice: 480000, badge: "格陵蘭冰川峽灣", lat: 69.2196, lng: -51.0998, img: "https://picsum.photos/400/250?o18=18", desc: "搭乘直升機俯瞰伊卢利サ特巨大冰山峽灣，極境狗拉雪橇。", weather: "極凍 🧊 -12°C", flight: "AURA-218 (格陵蘭專機)", itinerary: ["Day 1-2：格陵蘭極境奢華山莊入住", "Day 3-5：直升機冰山峽灣巡航與極境狗拉雪橇體驗", "Day 6-7：極光觀賞與賦歸"] },
+                { id: "oce_19", name: "所羅門群島二戰歷史與珊瑚礁潛水 6 日", basePrice: 295000, badge: "所羅門群島潛水", lat: -9.4456, lng: 159.9729, img: "https://picsum.photos/400/250?o19=19", desc: "入住所羅門頂級度假村，專業歷史學家陪同二戰沈船潛水。", weather: "晴 ☀️ 31°C", flight: "AURA-219 (所羅門專機)", itinerary: ["Day 1-2：所羅門群島頂級度假村", "Day 3-4：專業潛水教練與歷史學家陪同二戰沉船深海潛水", "Day 5-6：海島文化與賦歸"] },
+                { id: "oce_20", name: "東加王國與大翅鯨共游生態探險 6 日", basePrice: 350000, badge: "東加王國大翅鯨共游", lat: -21.1789, lng: -175.1982, img: "https://picsum.photos/400/250?o20=20", desc: "包下私人遊艇出海，與野生大翅鯨在南太平洋清澈海水中共游。", weather: "晴 ☀️ 27°C", flight: "AURA-220 (東加專機)", itinerary: ["Day 1-2：東加王國頂級海濱度假村", "Day 3-4：專業生物學家陪同野生大翅鯨近距離水下共游", "Day 5-6：海灘夕陽晚宴與賦歸"] },
+                { id: "oce_21", name: "紐西蘭基督城與坎特伯雷平原熱氣球奢華 5 日", basePrice: 235000, badge: "基督城熱氣球", lat: -43.5321, lng: 172.6362, img: "https://picsum.photos/400/250?o21=21", desc: "入住基督城頂級精品酒店，清晨熱氣球鳥瞰坎特伯雷平原。", weather: "晴 ☀️ 19°C", flight: "AURA-221 (基督城專機)", itinerary: ["Day 1-2：基督城頂級精品酒店", "Day 3-4：清晨熱氣球鳥瞰坎特伯雷平原與私人酒莊品酒", "Day 5：賦歸"] },
+                { id: "oce_22", name: "澳洲阿德萊德袋鼠島頂級荒野生態私旅 6 日", basePrice: 270000, badge: "袋鼠島頂級荒野", lat: -34.9285, lng: 138.6007, img: "https://picsum.photos/400/250?o22=22", desc: "入住袋鼠島 Southern Ocean Lodge 頂級荒野行館。", weather: "晴 ☀️ 22°C", flight: "AURA-222 (阿德萊德專機)", itinerary: ["Day 1-2：私人專機飛往袋鼠島頂級荒野行館", "Day 3-4：專屬嚮導帶領探訪海獅群與奇石陣", "Day 5-6：頂級袋鼠島在地私廚與賦歸"] },
+                { id: "oce_23", name: "福克蘭群島企鵝王國與極地生態探秘 8 日", basePrice: 540000, badge: "福克蘭群島企鵝王國", lat: -51.7963, lng: -59.5236, img: "https://picsum.photos/400/250?o23=23", desc: "搭乘極地專機造訪福克蘭群島，數萬隻國王企鵝與海豹棲息地。", weather: "冷風 💨 6°C", flight: "AURA-223 (福克蘭極地專機)", itinerary: ["Day 1-2：極地專機飛往福克蘭群島", "Day 3-6：專屬嚮導帶領造訪帝王企鵝、麥哲倫企鵝棲息地", "Day 7-8：返程賦歸"] },
+                { id: "oce_24", name: "南喬治亞島極地荒野與探險家歷史足跡 10 日", basePrice: 790000, badge: "南喬治亞極地探險", lat: -54.4296, lng: -36.5879, img: "https://picsum.photos/400/250?o24=24", desc: "六星級極地破冰船登陸南喬治亞島，百萬隻企鵝壯觀震撼。", weather: "極凍 🧊 -8°C", flight: "AURA-224 (南喬治亞破冰船)", itinerary: ["Day 1-3：烏斯懷亞登船航向南喬治亞", "Day 4-8：登陸南喬治亞觀賞百萬隻帝王企鵝與象鼻海豹", "Day 9-10：返程賦歸"] },
+                { id: "oce_25", name: "澳洲布里斯本與黃金海岸私人直升機衝浪 6 日", basePrice: 250000, badge: "黃金海岸直升機", lat: -27.4698, lng: 153.0251, img: "https://picsum.photos/400/250?o25=25", desc: "入住黃金海岸頂級海景套房，私人直升機鳥瞰無敵衝浪海灘。", weather: "晴 ☀️ 28°C", flight: "AURA-225 (布里斯本專機)", itinerary: ["Day 1-2：黃金海岸頂級海景五星套房", "Day 3-4：私人直升機鳥瞰濱海風光與私人衝浪教練", "Day 5-6：海濱頂級牛排晚宴與賦歸"] },
+                { id: "oce_26", name: "紐西蘭北島羅托魯瓦地熱溫泉與毛利文化 5 日", basePrice: 210000, badge: "羅托魯瓦地熱溫泉", lat: -38.1368, lng: 176.2497, img: "https://picsum.photos/400/250?o26=26", desc: "入住地熱溫泉頂級度假村，毛利傳統歌舞與地熱私廚晚宴。", weather: "多雲 ⛅ 20°C", flight: "AURA-226 (羅托魯瓦專機)", itinerary: ["Day 1-2：羅托魯瓦地熱溫泉度假村", "Day 3-4：地熱奇觀私人導覽與毛利傳統大地蒸烤晚宴", "Day 5：賦歸"] },
+                { id: "oce_27", name: "夏威夷與大洋洲跨海私人郵輪巡航 9 日", basePrice: 580000, badge: "大洋洲跨海郵輪", lat: -20.0000, lng: -160.0000, img: "https://picsum.photos/400/250?o27=27", desc: "包下六星級跨海豪華郵輪，橫跨夏威夷至大洋洲私密小島。", weather: "晴 ☀️ 29°C", flight: "AURA-227 (豪華郵輪專機接駁)", itinerary: ["Day 1-3：夏威夷登船入住豪華海景套房", "Day 4-7：航行南太平洋各神祕島嶼與海上派對", "Day 8-9：抵達目的地與賦歸"] },
+                { id: "oce_28", name: "澳洲凱恩斯雨林與熱帶島嶼奢華漫遊 6 日", basePrice: 265000, badge: "凱恩斯熱帶雨林", lat: -16.9186, lng: 145.7781, img: "https://picsum.photos/400/250?o28=28", desc: "入住凱恩斯雨林頂級樹屋行館，熱氣球日出與大堡礁直升機。", weather: "晴 ☀️ 31°C", flight: "AURA-228 (凱恩斯專機)", itinerary: ["Day 1-2：凱恩斯雨林頂級樹屋行館", "Day 3-4：熱氣球日出與大堡礁直升機空中導覽", "Day 5-6：雨林私廚晚宴與賦歸"] },
+                { id: "oce_29", name: "紐西蘭惠靈頓首都藝文與電影特效工作室探秘 5 日", basePrice: 220000, badge: "惠靈頓電影藝術", lat: -41.2867, lng: 174.7762, img: "https://picsum.photos/400/250?o29=29", desc: "入住惠靈頓海港頂級精品酒店，維塔工作室（魔戒特效）VIP參訪。", weather: "海風 🍃 16°C", flight: "AURA-229 (惠靈頓專機)", itinerary: ["Day 1-2：惠靈頓海港頂級精品酒店", "Day 3-4：魔戒特效維塔工作室VIP專屬導覽與私廚晚餐", "Day 5：賦歸"] },
+                { id: "oce_30", name: "南太平洋皮特凱恩群島海上秘境探險 8 日", basePrice: 650000, badge: "皮特凱恩群島秘境", lat: -25.0660, lng: -130.1015, img: "https://picsum.photos/400/250?o30=30", desc: "造訪世上人口最少的神祕島嶼，搭乘私人探險遊艇登陸。", weather: "晴 ☀️ 28°C", flight: "AURA-230 (皮特凱恩專機遊艇)", itinerary: ["Day 1-3：私人探險遊艇航向皮特凱恩群島", "Day 4-6：島上歷史遺跡探訪與深海潛水", "Day 7-8：返程賦歸"] }
             ],
             americas: [
-                { id: "canada", name: "加拿大洛磯山脈落基堡與極光 7 日", basePrice: 355000, badge: "洛磯山脈冰原", lat: 51.1784, lng: -115.5708, img: "https://picsum.photos/400/250?canada=1", desc: "班夫國家公園百年城堡，直升機探索冰原與露易絲湖。", weather: "雪 ❄️ -5°C", flight: "AC-034 (準點起飛)", itinerary: ["Day 1-2：班夫百年城堡酒店入住", "Day 3-4：直升機冰原降落與露易絲湖健行", "Day 5-7：暗夜星空極光與賦歸"] },
-                { id: "peru", name: "祕魯庫斯科與馬丘比丘奢華列車 8 日", basePrice: 410000, badge: "印加帝國秘境", lat: -13.1631, lng: -72.5450, img: "https://picsum.photos/400/250?peru=2", desc: "貝魯蒙德豪華景觀列車前往馬丘比丘，古蹟酒店。", weather: "晴 ☀️ 19°C", flight: "LA-2411 (準點起飛)", itinerary: ["Day 1-2：庫斯科古蹟酒店適應高原", "Day 3-4：奢華景觀列車前往馬丘比丘私人導覽", "Day 5-8：印加神聖谷地文化與Spa"] },
-                { id: "hawaii", name: "夏威夷茂宜島私人海灘度假 6 日", basePrice: 275000, badge: "夏威夷私密海灘", lat: 20.7984, lng: -156.3319, img: "https://picsum.photos/400/250?hawaii=3", desc: "茂宜島濱海度假村私人VILLA，直升機鳥瞰火山。", weather: "晴 ☀️ 28°C", flight: "HA-446 (準點起飛)", itinerary: ["Day 1-2：茂宜島濱海豪華別墅", "Day 3-4：直升機鳥瞰火山國家公園與浮潛", "Day 5-6：雙體船夕陽巡航與Luau盛宴"] },
-                { id: "newyork", name: "美國紐約曼哈頓頂級百老匯與米其林 6 日", basePrice: 320000, badge: "曼哈頓總統套房", lat: 40.7128, lng: -74.0060, img: "https://picsum.photos/400/250?ny=4", desc: "中央公園旁總統套房，百老匯VIP包廂與私人直升機。", weather: "多雲 ⛅ 17°C", flight: "UA-015 (準點起飛)", itinerary: ["Day 1-2：曼哈頓五星總統套房入住", "Day 3-4：百老匯VIP包廂與後台專屬探訪", "Day 5-6：米其林三星主廚晚宴與賦歸"] },
-                { id: "patagonia", name: "阿根廷巴塔哥尼亞冰川與奢華山莊 7 日", basePrice: 395000, badge: "巴塔哥尼亞冰川", lat: -50.3379, lng: -72.2647, img: "https://picsum.photos/400/250?patagonia=5", desc: "莫雷諾冰川私人冰川健行，荒野頂級環保奢華山莊。", weather: "強風 💨 8°C", flight: "AR-1280 (準點起飛)", itinerary: ["Day 1-2：巴塔哥尼亞奢華山莊入住", "Day 3-4：莫雷諾冰川私人冰川健行與品酒", "Day 5-7：安地斯山脈健行與賦歸"] },
-                { id: "rio", name: "巴西里約熱內盧嘉年華與海灘VILLA 6 日", basePrice: 310000, badge: "里約私人海灘", lat: -22.9068, lng: -43.1729, img: "https://picsum.photos/400/250?rio=6", desc: "科帕卡巴納海灘頂級VILLA，直升機鳥瞰基督像。", weather: "晴 ☀️ 32°C", flight: "G3-762 (準點起飛)", itinerary: ["Day 1-2：里約海灘豪華別墅入住", "Day 3-4：直升機鳥瞰科爾科瓦多山基督像", "Day 5-6：森巴文化私人派對與賦歸"] },
-                { id: "alaska", name: "美國阿拉斯加極光私人木屋與釣魚 7 日", basePrice: 330000, badge: "阿拉斯加極光", lat: 64.2008, lng: -149.4937, img: "https://picsum.photos/400/250?alaska=7", desc: "費爾班克斯極光私人木屋，直升機冰川釣魚體驗。", weather: "極光 🌌 -8°C", flight: "AS-112 (準點起飛)", itinerary: ["Day 1-2：費爾班克斯極光私人木屋", "Day 3-4：直升機冰川垂釣與狗拉雪橇", "Day 5-7：極光觀賞與賦歸"] }
+                { id: "canada", name: "加拿大洛磯山脈落基堡與極光 7 日", basePrice: 355000, badge: "洛磯山脈冰原", lat: 51.1784, lng: -115.5708, img: "https://picsum.photos/400/250?canada=1", desc: "班夫國家公園百年城堡，直升機探索冰原與露易絲湖。", weather: "雪 ❄️ -5°C", flight: "AURA-301 (卡加利專機)", itinerary: ["Day 1-2：班夫百年城堡酒店入住", "Day 3-4：直升機冰原降落與露易絲湖健行", "Day 5-7：暗夜星空極光與賦歸"] },
+                { id: "peru", name: "祕魯庫斯科與馬丘比丘奢華列車 8 日", basePrice: 410000, badge: "印加帝國秘境", lat: -13.1631, lng: -72.5450, img: "https://picsum.photos/400/250?peru=2", desc: "貝魯蒙德豪華景觀列車前往馬丘比丘，古蹟酒店。", weather: "晴 ☀️ 19°C", flight: "AURA-302 (利馬專機)", itinerary: ["Day 1-2：庫斯科古蹟酒店適應高原", "Day 3-4：奢華景觀列車前往馬丘比丘私人導覽", "Day 5-8：印加神聖谷地文化與Spa"] },
+                { id: "hawaii", name: "夏威夷茂宜島私人海灘度假 6 日", basePrice: 275000, badge: "夏威夷私密海灘", lat: 20.7984, lng: -156.3319, img: "https://picsum.photos/400/250?hawaii=3", desc: "茂宜島濱海度假村私人VILLA，直升機鳥瞰火山。", weather: "晴 ☀️ 28°C", flight: "AURA-303 (茂宜島專機)", itinerary: ["Day 1-2：茂宜島濱海豪華別墅", "Day 3-4：直升機鳥瞰火山國家公園與浮潛", "Day 5-6：雙體船夕陽巡航與Luau盛宴"] },
+                { id: "newyork", name: "美國紐約曼哈頓頂級百老匯與米其林 6 日", basePrice: 320000, badge: "曼哈頓總統套房", lat: 40.7128, lng: -74.0060, img: "https://picsum.photos/400/250?ny=4", desc: "中央公園旁總統套房，百老匯VIP包廂與私人直升機。", weather: "多雲 ⛅ 17°C", flight: "AURA-304 (甘迺迪機場專機)", itinerary: ["Day 1-2：曼哈頓五星總統套房入住", "Day 3-4：百老匯VIP包廂與後台專屬探訪", "Day 5-6：米其林三星主廚晚宴與賦歸"] },
+                { id: "patagonia", name: "阿根廷巴塔哥尼亞冰川與奢華山莊 7 日", basePrice: 395000, badge: "巴塔哥尼亞冰川", lat: -50.3379, lng: -72.2647, img: "https://picsum.photos/400/250?patagonia=5", desc: "莫雷諾冰川私人冰川健行，荒野頂級環保奢華山莊。", weather: "強風 💨 8°C", flight: "AURA-305 (阿根廷專機)", itinerary: ["Day 1-2：巴塔哥尼亞奢華山莊入住", "Day 3-4：莫雷諾冰川私人冰川健行與品酒", "Day 5-7：安地斯山脈健行與賦歸"] },
+                { id: "rio", name: "巴西里約熱內盧嘉年華與海灘VILLA 6 日", basePrice: 310000, badge: "里約私人海灘", lat: -22.9068, lng: -43.1729, img: "https://picsum.photos/400/250?rio=6", desc: "科帕卡巴納海灘頂級VILLA，直升機鳥瞰基督像。", weather: "晴 ☀️ 32°C", flight: "AURA-306 (里約專機)", itinerary: ["Day 1-2：里約海灘豪華別墅入住", "Day 3-4：直升機鳥瞰科爾科瓦多山基督像", "Day 5-6：森巴文化私人派對與賦歸"] },
+                { id: "alaska", name: "美國阿拉斯加極光私人木屋與釣魚 7 日", basePrice: 330000, badge: "阿拉斯加極光", lat: 64.2008, lng: -149.4937, img: "https://picsum.photos/400/250?alaska=7", desc: "費爾班克斯極光私人木屋，直升機冰川釣魚體驗。", weather: "極光 🌌 -8°C", flight: "AURA-307 (阿拉斯加專機)", itinerary: ["Day 1-2：費爾班克斯極光私人木屋", "Day 3-4：直升機冰川垂釣與狗拉雪橇", "Day 5-7：極光觀賞與賦歸"] },
+                { id: "mexico", name: "墨西哥尤卡坦半島馬雅神祕遺跡與私房海灘 7 日", basePrice: 290000, badge: "馬雅古文明秘境", lat: 20.6843, lng: -88.5678, img: "https://picsum.photos/400/250?mexico=8", desc: "奇琴伊察私人閉館導覽，入住里維耶拉瑪雅頂級樹屋VILLA。", weather: "晴 ☀️ 31°C", flight: "AURA-308 (坎昆專機)", itinerary: ["Day 1-2：坎昆頂級海灘度假村", "Day 3-4：奇琴伊察私人閉館導覽與天然沉洞游泳", "Day 5-7：馬雅文化私廚晚宴與賦歸"] },
+                { id: "lasvegas", name: "美國拉斯維加斯太陽馬戲團VIP與大峽谷專機 5 日", basePrice: 260000, badge: "賭城VIP極致奢華", lat: 36.1699, lng: -115.1398, img: "https://picsum.photos/400/250?lasvegas=9", desc: "入住永利豪華總統套房，私人直升機直飛大峽谷落日晚宴。", weather: "晴 ☀️ 34°C", flight: "AURA-309 (拉斯維加斯專機)", itinerary: ["Day 1-2：永利酒店總統套房與太陽馬戲團VIP首排", "Day 3-4：直升機直飛大峽谷國家公園空中導覽", "Day 5：賦歸"] },
+                { id: "costarica", name: "哥斯大黎加阿雷納火山雨林生態奢華行館 6 日", basePrice: 285000, badge: "雨林生態奢華行館", lat: 9.7489, lng: -83.7534, img: "https://picsum.photos/400/250?costarica=10", desc: "隱匿於熱帶雨林火山溫泉旁的頂級樹屋，生態學家私人導覽。", weather: "多雲 ⛅ 26°C", flight: "AURA-310 (哥斯大黎加專機)", itinerary: ["Day 1-2：雨林溫泉奢華行館入住", "Day 3-4：生態學家陪同火山雨林導覽與樹冠滑索", "Day 5-6：天然火山溫泉放鬆與賦歸"] },
+                { id: "usa_11", name: "美國舊金山納帕谷直升機品酒與米其林 6 日", basePrice: 340000, badge: "納帕谷直升機品酒", lat: 37.7749, lng: -122.4194, img: "https://picsum.photos/400/250?us11=11", desc: "入住舊金山費爾蒙總統套房，直升機直達納帕谷頂級酒莊。", weather: "晴 ☀️ 20°C", flight: "AURA-311 (舊金山專機)", itinerary: ["Day 1-2：舊金山費爾蒙總統套房", "Day 3-4：直升機直達納帕谷酒莊與米其林三星主廚晚宴", "Day 5-6：金門大橋私房漫遊與賦歸"] },
+                { id: "usa_12", name: "美國洛杉磯比佛利山莊與奧斯卡私人晚宴 6 日", basePrice: 360000, badge: "比佛利山莊尊榮", lat: 34.0522, lng: -118.2437, img: "https://picsum.photos/400/250?us12=12", desc: "入住比佛利山莊頂級酒店，私人專車好萊塢片場 VIP 導覽。", weather: "晴 ☀️ 27°C", flight: "AURA-312 (洛杉磯專機)", itinerary: ["Day 1-2：比佛利山莊頂級五星酒店", "Day 3-4：好萊塢片場 VIP 私人導覽與羅迪歐大道私人購物", "Day 5-6：頂級私廚晚宴與賦歸"] },
+                { id: "usa_13", name: "美國邁阿密南海灘私人遊艇與豪華別墅 6 日", basePrice: 310000, badge: "邁阿密遊艇派對", lat: 25.7617, lng: -80.1918, img: "https://picsum.photos/400/250?us13=13", desc: "入住邁阿密南海灘私人海景Villa，超級遊艇出海派對。", weather: "晴 ☀️ 31°C", flight: "AURA-313 (邁阿密專機)", itinerary: ["Day 1-2：邁阿密南海灘私人海景別墅", "Day 3-4：超級遊艇出海比斯坎灣派對與水上摩托車", "Day 5-6：藝術區私人藝廊參訪與賦歸"] },
+                { id: "usa_14", name: "美國夏威夷歐胡島珍珠港與威基基總統套房 6 日", basePrice: 280000, badge: "夏威夷威基基尊榮", lat: 21.3069, lng: -157.8583, img: "https://picsum.photos/400/250?us14=14", desc: "入住檀香山哈レ庫拉尼總統套房，私人遊艇賞鯨。", weather: "晴 ☀️ 29°C", flight: "AURA-314 (檀香山專機)", itinerary: ["Day 1-2：威基基總統套房入住", "Day 3-4：私人遊艇出海賞鯨與珍珠港VIP歷史導覽", "Day 5-6：夏威夷傳統Luau盛宴與賦歸"] },
+                { id: "can_15", name: "加拿大魁北克冰旅館與楓糖莊園奢華 6 日", basePrice: 295000, badge: "魁北克冰旅館", lat: 46.8139, lng: -71.2080, img: "https://picsum.photos/400/250?ca15=15", desc: "冬季入住世界知名冰旅館（Icehotel），百年楓糖莊園私廚。", weather: "雪 ❄️ -8°C", flight: "AURA-315 (魁北克專機)", itinerary: ["Day 1-2：魁北克古城五星酒店", "Day 3-4：入住冬季限定冰旅館與狗拉雪橇", "Day 5-6：百年楓糖莊園私廚晚宴與賦歸"] },
+                { id: "bra_16", name: "巴西亞馬遜雨林頂級漂浮生態渡假村 7 日", basePrice: 420000, badge: "亞馬遜雨林探秘", lat: -3.4653, lng: -62.2159, img: "https://picsum.photos/400/250?br16=16", desc: "深入亞馬遜雨林頂級漂浮行館，生物學家帶領尋找粉紅河豚。", weather: "雨林 🌧️ 32°C", flight: "AURA-316 (瑪瑙斯專機)", itinerary: ["Day 1-2：專機飛往瑪瑙斯與亞馬遜漂浮行館", "Day 3-5：生物學家陪同深入雨林探險、尋找粉紅河豚與釣食人魚", "Day 6-7：原住民部落交流與賦歸"] },
+                { id: "chi_17", name: "智利復活節島摩艾石像神祕歷史與海濱度假 6 日", basePrice: 380000, badge: "復活節島摩艾石像", lat: -27.1127, lng: -109.3497, img: "https://picsum.photos/400/250?cl17=17", desc: "入住復活節島頂級海濱行館，考古學家陪同解密摩艾石像。", weather: "晴 ☀️ 25°C", flight: "AURA-317 (復活節島專機)", itinerary: ["Day 1-2：復活節島頂級海濱行館", "Day 3-4：考古學家專屬帶領探訪摩艾石像日落與火山採石場", "Day 5-6：太平洋海鮮晚宴與賦歸"] },
+                { id: "col_18", name: "哥倫比亞卡塔赫納加勒比海古城與咖啡莊園 7 日", basePrice: 275000, badge: "加勒比海古城秘境", lat: 10.3910, lng: -75.4794, img: "https://picsum.photos/400/250?co18=18", desc: "入住卡塔赫納殖民風格古堡酒店，頂級咖啡莊園私人品飲。", weather: "晴 ☀️ 31°C", flight: "AURA-318 (卡塔赫納專機)", itinerary: ["Day 1-2：卡塔赫納古堡酒店入住", "Day 3-4：加勒比海私人雙體船跳島與歷史古城漫遊", "Day 5-7：頂級莊園咖啡品飲與賦歸"] },
+                { id: "mex_19", name: "墨西哥下加利福尼亞半島洛斯卡沃斯懸崖度假 6 日", basePrice: 330000, badge: "洛斯卡沃斯懸崖VILLA", lat: 22.8905, lng: -109.9167, img: "https://picsum.photos/400/250?mx19=19", desc: "入住 Esperanza 懸崖頂級渡假村，賞鯨私人遊艇與泰基拉酒品飲。", weather: "晴 ☀️ 30°C", flight: "AURA-319 (卡沃斯專機)", itinerary: ["Day 1-2：洛斯卡沃斯懸崖渡假村", "Day 3-4：私人遊艇海灣賞鯨與夕陽晚餐", "Day 5-6：頂級 Tequila 品酒會與賦歸"] },
+                { id: "car_20", name: "加勒比海特克斯和凱科斯群島私人包島 7 日", basePrice: 510000, badge: "加勒比海私密包島", lat: 21.6940, lng: -71.7979, img: "https://picsum.photos/400/250?cr20=20", desc: "全球富豪最愛的私密包島度假村，世界頂級純白沙灘與深海潛水。", weather: "晴 ☀️ 30°C", flight: "AURA-320 (特克斯專機)", itinerary: ["Day 1-2：私人專機直飛特克斯和凱科斯群島包島", "Day 3-5：無人島浮潛、深海釣魚與私人沙灘BBQ", "Day 6-7：頂級Spa與賦歸"] },
+                { id: "usa_21", name: "美國黃石國家公園頂級荒野木屋與野生動物 6 日", basePrice: 310000, badge: "黃石公園荒野木屋", lat: 44.4280, lng: -110.5885, img: "https://picsum.photos/400/250?us21=21", desc: "入住黃石公園頂級荒野木屋，生態學家專車尋找灰熊與美洲野牛。", weather: "晴 ☀️ 18°C", flight: "AURA-321 (黃石專機)", itinerary: ["Day 1-2：黃石公園頂級荒野木屋", "Day 3-4：生態學家專車陪同探訪間歇泉與野生動物", "Day 5-6：星空營火晚宴與賦歸"] },
+                { id: "usa_22", name: "美國科羅拉多州阿斯彭滑雪與頂級山莊 6 日", basePrice: 350000, badge: "阿斯彭奢華滑雪", lat: 39.1911, lng: -106.8175, img: "https://picsum.photos/400/250?us22=22", desc: "入住阿斯彭山頂滑雪度假村，私人教練與直升機滑雪體驗。", weather: "雪 ❄️ -4°C", flight: "AURA-322 (阿斯彭專機)", itinerary: ["Day 1-2：阿斯彭山頂滑雪度假村", "Day 3-4：私人教練全日滑雪與直升機高山滑雪", "Day 5-6：山間溫泉放鬆與賦歸"] },
+                { id: "can_23", name: "加拿大溫哥華與惠斯勒直升機冰川健行 6 日", basePrice: 295000, badge: "溫哥華惠斯勒極境", lat: 49.2827, lng: -123.1207, img: "https://picsum.photos/400/250?ca23=23", desc: "入住溫哥華费爾蒙太平洋邊緣酒店，直升機飛往惠斯勒冰川。", weather: "多雲 ⛅ 16°C", flight: "AURA-323 (溫哥華專機)", itinerary: ["Day 1-2：溫哥華費爾蒙總統套房", "Day 3-4：直升機飛往惠斯勒冰川健行與高山私廚", "Day 5-6：市區漫遊與賦歸"] },
+                { id: "arg_24", name: "阿根廷布宜諾斯艾利斯探戈之夜與莊園品酒 6 日", basePrice: 285000, badge: "布宜諾斯艾利斯探戈", lat: -34.6037, lng: -58.3816, img: "https://picsum.photos/400/250?ar24=24", desc: "入住五星探戈酒店，私人包廂探戈秀與頂級阿根廷牛肉晚宴。", weather: "晴 ☀️ 24°C", flight: "AURA-324 (布宜諾斯艾利斯專機)", itinerary: ["Day 1-2：布宜諾斯艾利斯頂級酒店", "Day 3-4：私人探戈舞教學與米其林級阿根廷牛肉晚宴", "Day 5-6：城市藝術導覽與賦歸"] },
+                { id: "chi_25", name: "智利聖地牙哥與安地斯山脈頂級酒莊漫遊 6 日", basePrice: 290000, badge: "智利安地斯山酒莊", lat: -33.4489, lng: -70.6693, img: "https://picsum.photos/400/250?cl25=25", desc: "入住聖地牙哥麗思卡爾頓，安地斯山脈頂級酒莊專屬品酒。", weather: "晴 ☀️ 22°C", flight: "AURA-325 (聖地牙哥專機)", itinerary: ["Day 1-2：聖地牙哥頂級五星酒店", "Day 3-4：安地斯山脈酒莊專屬品酒會與直升機觀景", "Day 5-6：市區歷史漫遊與賦歸"] },
+                { id: "usa_26", name: "美國納什維爾鄉村音樂與頂級威士忌尋秘 5 日", basePrice: 240000, badge: "鄉村音樂之都", lat: 36.1627, lng: -86.7816, img: "https://picsum.photos/400/250?us26=26", desc: "入住納什維爾頂級音樂主題酒店，私人包廂鄉村音樂會。", weather: "晴 ☀️ 23°C", flight: "AURA-326 (納什維爾專機)", itinerary: ["Day 1-2：納什維爾頂級精品酒店", "Day 3-4：私人包廂鄉村音樂會與田納西威士忌酒廠品飲", "Day 5：賦歸"] },
+                { id: "usa_27", name: "美國新奧爾良爵士樂與法屬區美食奢華 5 日", basePrice: 250000, badge: "新奧爾良爵士樂", lat: 29.9511, lng: -90.0715, img: "https://picsum.photos/400/250?us27=27", desc: "入住法蘭西區頂級古董酒店，私人爵士樂隊包場與海鮮晚宴。", weather: "多雲 ⛅ 26°C", flight: "AURA-327 (新奧爾良專機)", itinerary: ["Day 1-2：新奧爾良法蘭西區古董酒店", "Day 3-4：私人爵士樂隊包場晚宴與密西西比河遊船", "Day 5：賦歸"] },
+                { id: "pan_28", name: "巴拿馬運河私人VIP遊艇穿越與雨林度假 6 日", basePrice: 270000, badge: "巴拿馬運河VIP", lat: 8.9824, lng: -79.5199, img: "https://picsum.photos/400/250?pa28=28", desc: "搭乘私人VIP遊艇穿越巴拿馬運河水閘，雨林頂級度假村。", weather: "晴 ☀️ 31°C", flight: "AURA-328 (巴拿馬專機)", itinerary: ["Day 1-2：巴拿馬市頂級海景酒店", "Day 3-4：私人VIP遊艇穿越巴拿馬運河與雨林探秘", "Day 5-6：土著文化交流與賦歸"] },
+                { id: "bah_29", name: "巴哈馬拿騷豬島與頂級粉紅沙灘度假 6 日", basePrice: 320000, badge: "巴哈馬粉紅沙灘", lat: 25.0343, lng: -77.3963, img: "https://picsum.photos/400/250?bh29=29", desc: "私人專機直飛巴哈馬豬島與粉紅沙灘，與小豬游泳。", weather: "晴 ☀️ 29°C", flight: "AURA-329 (拿騷專機)", itinerary: ["Day 1-2：巴哈馬頂級海濱度假村", "Day 3-4：私人專機與快艇造訪豬島、粉紅沙灘", "Day 5-6：加勒比海夕陽晚宴與賦歸"] },
+                { id: "jam_30", name: "牙買加蒙特哥貝雷鬼音樂與私人海灘VILLA 6 日", basePrice: 280000, badge: "牙買加雷鬼海岸", lat: 18.4762, lng: -77.9199, img: "https://picsum.photos/400/250?jm30=30", desc: "入住蒙特哥貝私人海灘豪華VILLA，雷鬼音樂私人派對。", weather: "晴 ☀️ 30°C", flight: "AURA-330 (蒙特哥貝專機)", itinerary: ["Day 1-2：蒙特哥貝私人海灘豪華別墅", "Day 3-4：藍山咖啡莊園參訪與私人雷鬼音樂派對", "Day 5-6：加勒比海Spa與賦歸"] }
             ],
             africa_me: [
-                { id: "safari", name: "坦尚尼亞塞倫蓋蒂頂級帳篷行館 7 日", basePrice: 450000, badge: "非洲野生動物", lat: -2.3333, lng: 34.8333, img: "https://picsum.photos/400/250?safari=1", desc: "熱氣球俯瞰動物大遷徙，奢華移動式帳篷行館。", weather: "晴 ☀️ 33°C", flight: "PW-721 (準點起飛)", itinerary: ["Day 1-2：專機直飛塞倫蓋蒂帳篷行館", "Day 3-4：清晨熱氣球Safari與草原野餐", "Day 5-7：非洲五霸追蹤與星空營火晚宴"] },
-                { id: "egypt", name: "埃及尼羅河頂級骨董郵輪與金字塔 7 日", basePrice: 285000, badge: "尼羅河古文明", lat: 26.8206, lng: 30.8025, img: "https://picsum.photos/400/250?egypt=2", desc: "吉薩金字塔閉館私人導覽，尼羅河六星級古董郵輪。", weather: "晴 ☀️ 35°C", flight: "MS-931 (準點起飛)", itinerary: ["Day 1-2：開羅金字塔私人閉館導覽", "Day 3-5：登上尼羅河頂級郵輪探索帝王谷", "Day 6-7：路克索神廟與賦歸"] },
-                { id: "capetown", name: "南非開普敦好望角與葡萄酒莊 7 日", basePrice: 295000, badge: "開普敦好望角", lat: -33.9249, lng: 18.4241, img: "https://picsum.photos/400/250?capetown=3", desc: "桌山直升機鳥瞰，斯坦陵布什頂級酒莊私人品酒。", weather: "晴 ☀️ 21°C", flight: "SA-302 (準點起飛)", itinerary: ["Day 1-2：開普敦海岸頂級度假村", "Day 3-4：桌山直升機與好望角私人巡禮", "Day 5-7：斯坦陵布什酒莊品酒與賦歸"] },
-                { id: "morocco", name: "摩洛哥馬拉喀什皇宮與撒哈拉奢華帳篷 7 日", basePrice: 310000, badge: "撒哈拉奢華露營", lat: 31.6295, lng: -7.9811, img: "https://picsum.photos/400/250?morocco=4", desc: "馬拉喀什百年皇宮酒店，撒哈拉沙漠星空奢華帳篷。", weather: "晴 ☀️ 32°C", flight: "AT-202 (準點起飛)", itinerary: ["Day 1-2：馬拉喀什皇宮酒店入住", "Day 3-4：阿特拉斯山脈與撒哈拉沙漠奢華帳篷", "Day 5-7：柏柏爾文化體驗與賦歸"] },
-                { id: "seychelles", name: "塞席爾群島弗雷格私人島嶼度假 7 日", basePrice: 490000, badge: "印度洋私密島", lat: -4.6796, lng: 55.4920, img: "https://picsum.photos/400/250?seychelles=5", desc: "印度洋最頂級私人島嶼，巨龜生態與海灘別墅。", weather: "晴 ☀️ 28°C", flight: "HM-041 (準點起飛)", itinerary: ["Day 1-2：私人專機登陸塞席爾弗雷格島", "Day 3-4：百年巨龜生態導覽與私人海灘", "Day 5-7：深海垂釣與落日晚宴"] },
-                { id: "jordan", name: "約旦佩特拉古城與瓦地倫沙漠行館 6 日", basePrice: 275000, badge: "佩特拉玫瑰之城", lat: 30.5852, lng: 36.2384, img: "https://picsum.photos/400/250?jordan=6", desc: "佩特拉古城夜晚燭光VIP，瓦地倫沙漠火星帳篷。", weather: "晴 ☀️ 29°C", flight: "RJ-181 (準點起飛)", itinerary: ["Day 1-2：安曼頂級酒店與佩特拉古城", "Day 3-4：瓦地倫沙漠火星穹頂帳篷與吉普車探險", "Day 5-6：死海漂浮療程與賦歸"] },
-                { id: "rwanda", name: "盧安達火山國家公園山地金絲猴與猩猩探險 6 日", basePrice: 420000, badge: "非洲山地猩猩", lat: -1.9403, lng: 29.8739, img: "https://picsum.photos/400/250?rwanda=7", desc: "火山國家公園頂級叢林行館，稀有山地金絲猴追蹤。", weather: "微雨 🌦️ 22°C", flight: "WB-405 (準點起飛)", itinerary: ["Day 1-2：吉加利頂級叢林行館入住", "Day 3-4：專屬嚮導帶領追蹤山地金絲猴與猩猩", "Day 5-6：當地社區文化交流與賦歸"] }
+                { id: "safari", name: "坦尚尼亞塞倫蓋蒂頂級帳篷行館 7 日", basePrice: 450000, badge: "非洲野生動物", lat: -2.3333, lng: 34.8333, img: "https://picsum.photos/400/250?safari=1", desc: "熱氣球俯瞰動物大遷徙，奢華移動式帳篷行館。", weather: "晴 ☀️ 33°C", flight: "AURA-401 (乞力馬扎羅專機)", itinerary: ["Day 1-2：專機直飛塞倫蓋蒂帳篷行館", "Day 3-4：清晨熱氣球Safari與草原野餐", "Day 5-7：非洲五霸追蹤與星空營火晚宴"] },
+                { id: "egypt", name: "埃及尼羅河頂級骨董郵輪與金字塔 7 日", basePrice: 285000, badge: "尼羅河古文明", lat: 26.8206, lng: 30.8025, img: "https://picsum.photos/400/250?egypt=2", desc: "吉薩金字塔閉館私人導覽，尼羅河六星級古董郵輪。", weather: "晴 ☀️ 35°C", flight: "AURA-402 (開羅專機)", itinerary: ["Day 1-2：開羅金字塔私人閉館導覽", "Day 3-5：登上尼羅河頂級郵輪探索帝王谷", "Day 6-7：路克索神廟與賦歸"] },
+                { id: "capetown", name: "南非開普敦好望角與葡萄酒莊 7 日", basePrice: 295000, badge: "開普敦好望角", lat: -33.9249, lng: 18.4241, img: "https://picsum.photos/400/250?capetown=3", desc: "桌山直升機鳥瞰，斯坦陵布什頂級酒莊私人品酒。", weather: "晴 ☀️ 21°C", flight: "AURA-403 (開普敦專機)", itinerary: ["Day 1-2：開普敦海岸頂級度假村", "Day 3-4：桌山直升機與好望角私人巡禮", "Day 5-7：斯坦陵布什酒莊品酒與賦歸"] },
+                { id: "morocco", name: "摩洛哥馬拉喀什皇宮與撒哈拉奢華帳篷 7 日", basePrice: 310000, badge: "撒哈拉奢華露營", lat: 31.6295, lng: -7.9811, img: "https://picsum.photos/400/250?morocco=4", desc: "馬拉喀什百年皇宮酒店，撒哈拉沙漠星空奢華帳篷。", weather: "晴 ☀️ 32°C", flight: "AURA-404 (馬拉喀什專機)", itinerary: ["Day 1-2：馬拉喀什皇宮酒店入住", "Day 3-4：阿特拉斯山脈與撒哈拉沙漠奢華帳篷", "Day 5-7：柏柏爾文化體驗與賦歸"] },
+                { id: "seychelles", name: "塞席爾群島弗雷格私人島嶼度假 7 日", basePrice: 490000, badge: "印度洋私密島", lat: -4.6796, lng: 55.4920, img: "https://picsum.photos/400/250?seychelles=5", desc: "印度洋最頂級私人島嶼，巨龜生態與海灘別墅。", weather: "晴 ☀️ 28°C", flight: "AURA-405 (塞席爾專機)", itinerary: ["Day 1-2：私人專機登陸塞席爾弗雷格島", "Day 3-4：百年巨龜生態導覽與私人海灘", "Day 5-7：深海垂釣與落日晚宴"] },
+                { id: "jordan", name: "約旦佩特拉古城與瓦地倫沙漠行館 6 日", basePrice: 275000, badge: "佩特拉玫瑰之城", lat: 30.5852, lng: 36.2384, img: "https://picsum.photos/400/250?jordan=6", desc: "佩特拉古城夜晚燭光VIP，瓦地倫沙漠火星帳篷。", weather: "晴 ☀️ 29°C", flight: "AURA-406 (安曼專機)", itinerary: ["Day 1-2：安曼頂級酒店與佩特拉古城", "Day 3-4：瓦地倫沙漠火星穹頂帳篷與吉普車探險", "Day 5-6：死海漂浮療程與賦歸"] },
+                { id: "rwanda", name: "盧安達火山國家公園山地金絲猴與猩猩探險 6 日", basePrice: 420000, badge: "非洲山地猩猩", lat: -1.9403, lng: 29.8739, img: "https://picsum.photos/400/250?rwanda=7", desc: "火山國家公園頂級叢林行館，稀有山地金絲猴追蹤。", weather: "微雨 🌦️ 22°C", flight: "AURA-407 (吉加利專機)", itinerary: ["Day 1-2：吉加利頂級叢林行館入住", "Day 3-4：專屬嚮導帶領追蹤山地金絲猴與猩猩", "Day 5-6：當地社區文化交流與賦歸"] },
+                { id: "abudhabi", name: "阿拉伯聯合大公國阿布達比羅浮宮與皇宮酒店 5 日", basePrice: 315000, badge: "阿布達比酋長皇宮", lat: 24.4539, lng: 54.3773, img: "https://picsum.photos/400/250?abudhabi=8", desc: "入住阿布達比七星酋長皇宮酒店，私人專屬導覽阿布達比羅浮宮。", weather: "晴 ☀️ 37°C", flight: "AURA-408 (阿布達比專機)", itinerary: ["Day 1-2：阿布達比七星酋長皇宮酒店總統套房", "Day 3-4：私人專屬導覽阿布達比羅浮宮與法拉利世界VIP", "Day 5：賦歸"] },
+                { id: "zanzibar", name: "坦尚尼亞桑給巴爾島石城與水下餐廳 6 日", basePrice: 270000, badge: "印度洋香料島", lat: -6.1659, lng: 39.2026, img: "https://picsum.photos/400/250?zanzibar=9", desc: "入住印度洋私人珊瑚礁度假村，世界知名水下餐廳獨家包場晚宴。", weather: "晴 ☀️ 30°C", flight: "AURA-409 (桑給巴爾專機)", itinerary: ["Day 1-2：桑給巴爾海濱奢華度假村", "Day 3-4：石城歷史文化漫遊與世界知名水下餐廳包場晚餐", "Day 5-6：出海尋找海豚與賦歸"] },
+                { id: "mauritius", name: "模里西斯印度洋奢華海灘度假與海底瀑布 7 日", basePrice: 340000, badge: "印度洋奢華島嶼", lat: -20.3484, lng: 57.5522, img: "https://picsum.photos/400/250?mauritius=10", desc: "直升機鳥瞰模里西斯奇觀「海底瀑布」，入住四季頂級度假村。", weather: "晴 ☀️ 27°C", flight: "AURA-410 (模里西斯專機)", itinerary: ["Day 1-2：模里西斯四季度假村私人海灘VILLA", "Day 3-4：直升機鳥瞰海底瀑布奇觀與高爾夫球敘", "Day 5-7： catamaran 出海雙體船巡航與賦歸"] },
+                { id: "ame_11", name: "卡達多哈伊斯蘭藝術博物館與沙漠私人行館 5 日", basePrice: 295000, badge: "卡達多哈尊榮奢華", lat: 25.2854, lng: 51.5310, img: "https://picsum.photos/400/250?am11=11", desc: "入住卡達多哈多哈麗思卡爾頓，私人專車導覽伊斯蘭藝術博物館。", weather: "晴 ☀️ 35°C", flight: "AURA-411 (多哈專機)", itinerary: ["Day 1-2：多哈頂級奢華酒店總統套房", "Day 3-4：私人專車導覽伊斯蘭藝術博物館與內海沙漠私人行館", "Day 5：賦歸"] },
+                { id: "ame_12", name: "阿曼馬斯喀特峽谷行館與印度洋海豚巡航 6 日", basePrice: 320000, badge: "阿曼峽谷安缦行館", lat: 23.5880, lng: 58.3829, img: "https://picsum.photos/400/250?am12=12", desc: "入住阿曼山脈安缦行館（Amansara同集團），印度洋海豚巡航。", weather: "晴 ☀️ 33°C", flight: "AURA-412 (馬斯喀特專機)", itinerary: ["Day 1-2：阿曼山脈頂級峽谷行館", "Day 3-4：印度洋私人遊艇海豚巡航與古堡漫遊", "Day 5-6：沙漠星空晚餐與賦歸"] },
+                { id: "ame_13", name: "肯亞馬賽马拉大遷徙熱氣球與奢華樹屋 7 日", basePrice: 430000, badge: "肯亞馬賽马拉大遷徙", lat: -1.4061, lng: 35.0062, img: "https://picsum.photos/400/250?am13=13", desc: "入住馬賽马拉頂級帳篷行館，熱氣球日出俯瞰百萬動物遷徙。", weather: "晴 ☀️ 29°C", flight: "AURA-413 (肯亞專機)", itinerary: ["Day 1-2：奈洛比過渡至馬賽马拉頂級帳篷行館", "Day 3-5：清晨熱氣球日出Safari與馬賽人文化深度交流", "Day 6-7：草原野餐與賦歸"] },
+                { id: "ame_14", name: "波札那奧卡萬戈三角洲水上Safari奢華行館 7 日", basePrice: 490000, badge: "波札那三角洲水上Safari", lat: -19.2552, lng: 22.8456, img: "https://picsum.photos/400/250?am14=14", desc: "搭乘小型專機深入奧卡萬戈三角洲，獨木舟水上野生動物探險。", weather: "晴 ☀️ 31°C", flight: "AURA-414 (波札那專機)", itinerary: ["Day 1-2：小型專機飛往奧卡萬戈三角洲行館", "Day 3-5：傳統獨木舟 mokoro 水上Safari與獅群追蹤", "Day 6-7：營火晚宴與賦歸"] },
+                { id: "ame_15", name: "納米比亞紅沙漠索蘇斯弗萊與極境奢華營地 7 日", basePrice: 410000, badge: "納米比亞紅沙漠秘境", lat: -22.5609, lng: 17.0658, img: "https://picsum.photos/400/250?am15=15", desc: "直升機直擊索蘇斯弗萊紅色沙丘，入住沙漠頂級環保行館。", weather: "晴 ☀️ 34°C", flight: "AURA-415 (納米比亞專機)", itinerary: ["Day 1-2：溫得和克至紅沙漠頂級環保行館", "Day 3-5：直升機鳥瞰索蘇斯弗萊紅色沙丘與死沼", "Day 6-7：天文學家觀星與賦歸"] },
+                { id: "ame_16", name: "沙烏地阿拉伯埃爾奧拉古城巨石音樂廳與沙漠行館 6 日", basePrice: 395000, badge: "埃爾奧拉巨石古城", lat: 26.6121, lng: 37.9222, img: "https://picsum.photos/400/250?am16=16", desc: "入住埃爾奧拉頂級峽谷行館，馬拉雅巨石音樂廳VIP專屬參訪。", weather: "晴 ☀️ 36°C", flight: "AURA-416 (埃爾奧拉專機)", itinerary: ["Day 1-2：埃爾奧拉峽谷頂級度假村", "Day 3-4：馬拉雅巨石音樂廳VIP與納巴泰古文明遺址導覽", "Day 5-6：熱氣球日出與賦歸"] },
+                { id: "ame_17", name: "黎巴嫩貝魯特與巴勒貝克羅馬古神殿漫遊 5 日", basePrice: 260000, badge: "黎巴嫩古文明秘境", lat: 33.8938, lng: 35.5018, img: "https://picsum.photos/400/250?am17=17", desc: "入住貝魯特海濱五星酒店，私人專家導覽世界最大羅馬神殿群。", weather: "晴 ☀️ 26°C", flight: "AURA-417 (貝魯特專機)", itinerary: ["Day 1-2：貝魯特海濱頂級五星酒店", "Day 3-4：考古學家陪同專車導覽巴勒貝克羅馬古神殿", "Day 5：賦歸"] },
+                { id: "ame_18", name: "突尼西亞迦太基古城與撒哈拉沙漠綠洲 7 日", basePrice: 280000, badge: "突尼西亞迦太基古城", lat: 36.8065, lng: 10.1815, img: "https://picsum.photos/400/250?am18=18", desc: "入住突尼斯地中海海景行館，深入撒哈拉沙漠綠洲與星空露營。", weather: "晴 ☀️ 30°C", flight: "AURA-418 (突尼斯專機)", itinerary: ["Day 1-2：突尼斯地中海海景行館", "Day 3-5：迦太基古城遺址導覽與專車深入撒哈拉沙漠綠洲", "Day 6-7：柏柏爾傳統文化與賦歸"] },
+                { id: "ame_19", name: "馬達加斯加安達曼達國家公園跳島與雨林探秘 7 日", basePrice: 340000, badge: "馬達加斯加狐猴秘境", lat: -18.8792, lng: 47.5079, img: "https://picsum.photos/400/250?am19=19", desc: "尋找野生環尾狐猴，入住雨林頂級生態行館與印度洋海灘漫遊。", weather: "晴 ☀️ 28°C", flight: "AURA-419 (馬達加斯加專機)", itinerary: ["Day 1-2：安塔那那利佛五星酒店", "Day 3-5：生態學家陪同探訪安達曼達國家公園尋找狐猴", "Day 6-7：印度洋海灘漫遊與賦歸"] },
+                { id: "ame_20", name: "迦納阿克拉與西非黃金海岸歷史文化尋根 6 日", basePrice: 260000, badge: "西非黃金海岸尋根", lat: 5.6037, lng: -0.1870, img: "https://picsum.photos/400/250?am20=20", desc: "入住阿克拉頂級海濱酒店，專家帶領參訪西非歷史奴隸城堡遺跡。", weather: "晴 ☀️ 32°C", flight: "AURA-420 (阿克拉專機)", itinerary: ["Day 1-2：阿克拉海濱頂級度假村", "Day 3-4：歷史學家陪同參訪海岸角城堡與西非市集", "Day 5-6：海濱私廚晚宴與賦歸"] },
+                { id: "ame_21", name: "辛巴威維多利亞瀑布直升機與頂級河輪 6 日", basePrice: 330000, badge: "維多利亞瀑布直升機", lat: -17.9243, lng: 25.8560, img: "https://picsum.photos/400/250?am21=21", desc: "入住維多利亞瀑布群旁百年奢華酒店，直升機鳥瞰世界最大瀑布。", weather: "晴 ☀️ 31°C", flight: "AURA-421 (辛巴威專機)", itinerary: ["Day 1-2：維多利亞瀑布旁百年奢華酒店", "Day 3-4：直升機鳥瞰瀑布全景與贊比西河日落豪華河輪", "Day 5-6：野生大象生態導覽與賦歸"] },
+                { id: "ame_22", name: "衣索比亞拉利貝拉岩石教堂神祕朝聖之旅 6 日", basePrice: 310000, badge: "衣索比亞岩石教堂", lat: 9.0320, lng: 38.7421, img: "https://picsum.photos/400/250?am22=22", desc: "專機直飛拉利貝拉，深入探訪 12 世紀世界文化遺產地下岩石教堂。", weather: "晴 ☀️ 23°C", flight: "AURA-422 (衣索比亞專機)", itinerary: ["Day 1-2：專機直飛拉利貝拉頂級行館", "Day 3-4：歷史學家專屬導覽 12 世紀地下岩石教堂群", "Day 5-6：咖啡起源地品茗與賦歸"] },
+                { id: "ame_23", name: "烏干達靈長類追蹤與山地猩猩生態探險 6 日", basePrice: 410000, badge: "烏干達山地猩猩", lat: 0.3476, lng: 32.5825, img: "https://picsum.photos/400/250?am23=23", desc: "布溫迪國家公園頂級叢林行館，專業嚮導帶領追蹤野生山地猩猩。", weather: "微雨 🌦️ 22°C", flight: "AURA-423 (烏干達專機)", itinerary: ["Day 1-2：布溫迪國家公園頂級叢林行館", "Day 3-4：專業嚮導陪同深入雨林追蹤野生山地猩猩家族", "Day 5-6：尼羅河源頭漫遊與賦歸"] },
+                { id: "ame_24", name: "巴林麥納麥珍珠之路與頂級海島度假 5 日", basePrice: 280000, badge: "巴林珍珠之路秘境", lat: 26.2285, lng: 50.5860, img: "https://picsum.photos/400/250?am24=24", desc: "入住巴林四季酒店私人島嶼，聯合國珍珠之路歷史文化導覽。", weather: "晴 ☀️ 34°C", flight: "AURA-424 (巴林專機)", itinerary: ["Day 1-2：巴林四季酒店私人島嶼", "Day 3-4：聯合國珍珠之路歷史導覽與傳統潛水採珠體驗", "Day 5：賦歸"] },
+                { id: "ame_25", name: "科威特市阿拉伯灣奢華海濱與傳統市集 5 日", basePrice: 265000, badge: "科威特阿拉伯灣尊榮", lat: 29.3759, lng: 47.9774, img: "https://picsum.photos/400/250?am25=25", desc: "入住科威特市標誌性五星酒店，阿拉伯灣私人遊艇巡航。", weather: "晴 ☀️ 38°C", flight: "AURA-425 (科威特專機)", itinerary: ["Day 1-2：科威特市標誌性五星酒店", "Day 3-4：阿拉伯灣私人遊艇巡航與傳統黃金市集VIP導覽", "Day 5：賦歸"] },
+                { id: "ame_26", name: "模里西斯與留尼旺島火山直升機雙島聯遊 7 日", basePrice: 380000, badge: "留尼旺火山直升機", lat: -21.1151, lng: 55.5364, img: "https://picsum.photos/400/250?am26=26", desc: "跨島直升機直擊留尼旺島活火山坑口，模里西斯海灘VILLA。", weather: "晴 ☀️ 27°C", flight: "AURA-426 (留尼旺專機)", itinerary: ["Day 1-2：模里西斯海濱頂級度假村", "Day 3-5：跨島直升機直擊留尼旺島富爾奈斯活火山熔岩", "Day 6-7：雙體船出海與賦歸"] },
+                { id: "ame_27", name: "莫三比克巴扎魯群島私人島嶼深海潛水 6 日", basePrice: 360000, badge: "莫三比克巴扎魯群島", lat: -21.5000, lng: 35.5000, img: "https://picsum.photos/400/250?am27=27", desc: "入住莫三比克巴扎魯群島頂級私密度假村，尋找儒艮（海牛）。", weather: "晴 ☀️ 31°C", flight: "AURA-427 (莫三比克專機)", itinerary: ["Day 1-2：巴扎魯群島頂級私密度假村", "Day 3-4：專業教練陪同深海潛水與尋找珍稀儒艮", "Day 5-6：海灘烛光晚宴與賦歸"] },
+                { id: "ame_28", name: "納米比亞斯瓦科普蒙德大西洋海岸與沙漠探險 6 日", basePrice: 310000, badge: "納米比亞大西洋海岸", lat: -22.6784, lng: 14.5268, img: "https://picsum.photos/400/250?am28=28", desc: "入住大西洋海濱奢華酒店，四驅車探索沙漠與大海交匯奇觀。", weather: "涼爽 🍃 17°C", flight: "AURA-428 (斯瓦科普蒙德專機)", itinerary: ["Day 1-2：斯瓦科普蒙德海濱奢華酒店", "Day 3-4：四驅車探訪「沙海交匯」世界遺產與海豹群", "Day 5-6：生蠔品嚐與賦歸"] },
+                { id: "ame_29", name: "開曼群島七哩海灘與 Stingray City 魟魚共游 5 日", basePrice: 290000, badge: "開曼群島魟魚共游", lat: 19.3133, lng: -81.2546, img: "https://picsum.photos/400/250?am29=29", desc: "入住開曼群島麗思卡爾頓，私人遊艇前往 Stingray City 與野生魟魚共游。", weather: "晴 ☀️ 29°C", flight: "AURA-429 (開曼專機)", itinerary: ["Day 1-2：開曼群島麗思卡爾頓總統套房", "Day 3-4：私人遊艇造訪 Stingray City 與野生大西洋南方 stingray 共游", "Day 5：賦歸"] },
+                { id: "ame_30", name: "聖赫勒拿島拿破崙流放地歷史探秘 7 日", basePrice: 520000, badge: "聖赫勒拿島歷史秘境", lat: -15.9650, lng: -5.7089, img: "https://picsum.photos/400/250?am30=30", desc: "搭乘特設專機造訪大西洋孤島聖赫勒拿島，專家導覽拿破崙故居。", weather: "晴 ☀️ 22°C", flight: "AURA-430 (聖赫勒拿專機)", itinerary: ["Day 1-2：專機直飛聖赫勒拿島頂級行館", "Day 3-5：歷史學家專屬導覽拿破崙流放故居與詹姆斯敦堡壘", "Day 6-7：深海垂釣與賦歸"] }
             ]
         };
 
-        // 🌐 多國語系字典
         const i18n = {
             zh: {
-                navTours: "五大洲行程", navMap: "全球地圖", navComments: "貴賓留言", navWishlist: "收藏夾",
+                navTours: "150大頂級行程", navMap: "全球地圖", navComments: "貴賓留言", navWishlist: "收藏夾",
                 heroTitle: "重新定義 <span>頂級奢華之旅</span>",
-                heroDesc: "請先選擇您心儀的大洲，探索各洲專屬的 7 大頂級私密秘境與私人專機體驗。",
-                exploreTitle: "探索 5 大洲頂級奢華航點", exploreDesc: "點擊下方大洲按鈕，即可切換檢視該洲專屬的 7 大頂級旅遊行程",
+                heroDesc: "請先選擇您心儀的大洲，探索各洲專屬的 30 大頂級私密秘境（5 大洲總計 150 個極致尊榮行程）。",
+                exploreTitle: "探索 5 大洲共 150 大頂級奢華航點", exploreDesc: "點擊下方大洲按鈕，即可切換檢視該洲專屬的 30 大頂級旅遊行程",
                 itineraryTitle: "精選行程每日細節", itinerarySub: "點擊地圖標記或行程卡片的「預訂行程」，即可深入了解每日尊榮行程安排",
-                mapTitle: "全球真實導覽地圖與即時氣象", mapSub: "點擊地圖上的各個導覽標記，即可檢視該航點的尊榮禮遇與氣象動態",
+                mapTitle: "全球真實導覽地圖與即時航班雷達", mapSub: "結合即時航空雷達動畫，隨時監控 AURA 旗艦包機飛行高度與航向",
                 ruleTitle: "貴賓預訂與取消規定", riskTitle: "風險告知與免責聲明",
                 bookingTitle: "私人管家預約與購票系統", bookingSub: "請填寫您的尊榮需求，我們將指派專屬私人管家與您聯繫",
                 login: "登入", register: "註冊"
             },
             en: {
-                navTours: "Continental Tours", navMap: "Global Map", navComments: "VIP Comments", navWishlist: "Wishlist",
+                navTours: "150 Luxury Tours", navMap: "Global Map & Radar", navComments: "VIP Comments", navWishlist: "Wishlist",
                 heroTitle: "Redefining <span>Ultimate Luxury Travel</span>",
-                heroDesc: "Select your preferred continent to explore 7 exclusive private luxury journeys and private jets.",
-                exploreTitle: "Explore 5 Continents Luxury Destinations", exploreDesc: "Click the continent buttons below to switch and view 7 exclusive luxury tours",
+                heroDesc: "Select your preferred continent to explore 30 exclusive private luxury journeys per continent (150 total).",
+                exploreTitle: "Explore 5 Continents - 150 Luxury Destinations", exploreDesc: "Click the continent buttons below to view 30 exclusive luxury tours per region",
                 itineraryTitle: "Daily Itinerary Details", itinerarySub: "Click map markers or 'Reserve' on tour cards to view day-by-day luxury schedules",
-                mapTitle: "Global Interactive Map & Real-time Weather", mapSub: "Click any map marker to inspect VIP privileges and meteorological status",
+                mapTitle: "Global Interactive Map & Live Flight Tracker", mapSub: "Real-time aviation radar tracking AURA flagship private jet flights",
                 ruleTitle: "VIP Reservation & Cancellation Policy", riskTitle: "Risk Disclosure & Disclaimer",
                 bookingTitle: "Private Concierge Reservation System", bookingSub: "Please fill in your preferences, and our dedicated concierge will contact you",
                 login: "Login", register: "Register"
             },
             ja: {
-                navTours: "5大洲のツアー", navMap: "グローバルマップ", navComments: "VIPコメント", navWishlist: "お気に入り",
+                navTours: "150大最高級ツアー", navMap: "マップとレーダー", navComments: "VIPコメント", navWishlist: "お気に入り",
                 heroTitle: "ラグジュアリー旅行の <span>新しい定義</span>",
-                heroDesc: "お好みの大洲を選択し、各洲限定の7つの最高級プライベート秘境と専用機体験をご堪能ください。",
-                exploreTitle: "5大洲の最高級ラグジュアリースポット", exploreDesc: "下記の大洲ボタンをクリックして、各洲の7大高級ツアースケジュールをご覧ください",
+                heroDesc: "お好みの大洲を選択し、各洲限定の30大最高級プライベート秘境をご堪能ください（計150行程）。",
+                exploreTitle: "5大洲・計150大最高級ラグジュアリースポット", exploreDesc: "下記の大洲ボタンをクリックして、各洲の30大高級ツアースケジュールをご覧ください",
                 itineraryTitle: "詳細な毎日の旅程", itinerarySub: "マップのピンまたはカードの「予約」をクリックして、毎日の詳細を確認できます",
-                mapTitle: "グローバルマップとリアルタイム気象", mapSub: "マップ上のピンをクリックして、各目的地のVIP特典と気象状況を確認",
+                mapTitle: "グローバルマップとリアルタイムフライトレーダー", mapSub: "AURAチャーター機の飛行高度や速度をリアルタイムで追跡",
                 ruleTitle: "VIP予約およびキャンセル規定", riskTitle: "リスク開示および免責事項",
                 bookingTitle: "プライベートコンシェルジュ予約システム", bookingSub: "ご要望をご入力いただければ、専属コンシェルジュよりご連絡いたします",
                 login: "ログイン", register: "新規登録"
@@ -914,7 +1089,6 @@
         const markers = {};
         let map;
 
-        // 匯率匯率換算率 (相對 TWD)
         const exchangeRates = { TWD: 1, USD: 0.032, EUR: 0.029, JPY: 4.8 };
         const currencySymbols = { TWD: "NT$ ", USD: "USD$ ", EUR: "EUR€ ", JPY: "JPY¥ " };
 
@@ -933,14 +1107,59 @@
             setTimeout(() => { toast.remove(); }, 3000);
         }
 
-        function toggleMobileMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
-        }
-        function closeMobileMenu() {
-            document.getElementById('navMenu').classList.remove('active');
+        function toggleMobileMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+        function closeMobileMenu() { document.getElementById('navMenu').classList.remove('active'); }
+
+        // 🤖 AI 智慧行程自動規劃器邏輯 (新功能)
+        function generateAiItinerary() {
+            const style = document.getElementById('aiStyle').value;
+            const days = document.getElementById('aiDays').value;
+            const output = document.getElementById('aiPlanOutput');
+
+            let title = "米其林美饌與品酒極上假期";
+            if (style === 'adventure') title = "極地探險與直升機冰川巡航";
+            if (style === 'culture') title = "皇室宮殿與羅浮宮私密文化漫遊";
+            if (style === 'aurora') title = "極光穹頂別墅與極地生態之旅";
+
+            output.innerHTML = `
+                <h4 style="color:var(--primary-gold); margin-bottom:8px;"><i class="fa-solid fa-crown"></i> AURA AI 為您量身訂製：${days}日【${title}】</h4>
+                <ul style="font-size:0.85rem; color:#ddd; padding-left:15px; display:flex; flex-direction:column; gap:6px;">
+                    <li><strong>Day 1：</strong>搭乘 AURA 旗艦專機直達目的地，專車入住總統套房，晚間享用主廚私宴。</li>
+                    <li><strong>Day 2-3：</strong>專屬管家帶領進行深度私人導覽（含VIP快速通關與閉館參訪）。</li>
+                    <li><strong>Day 4-${days-1}：</strong>安排頂級 Spa、私人直升機鳥瞰奇觀、米其林三星主廚無菜單料理。</li>
+                    <li><strong>Day ${days}：</strong>貴賓室專屬離境通道，專機賦歸。</li>
+                </ul>
+                <button class="btn-reserve" style="margin-top:12px;" onclick="selectTour('【AI客製】${days}日 ${title}', 'tokyo')">一鍵套用此規劃並預訂</button>
+            `;
+            showToast("✨ AI 專屬客製行程已成功生成！");
         }
 
-        // 🤖 AI 管家對話控制
+        // 🪙 Web3 錢包綁定
+        function connectWeb3Wallet() {
+            showToast("正在連接 MetaMask 區塊鏈錢包...");
+            setTimeout(() => {
+                document.getElementById('walletStatusText').innerHTML = `<strong style="color:var(--primary-gold);">已綁定：0x71C...88f2 (MetaMask)</strong><br>已解鎖紀念 NFT 貴賓通行證！`;
+                showToast("🎉 Web3 錢包綁定成功！專屬 NFT 黑卡通行證已發放至您的帳戶。");
+            }, 1200);
+        }
+
+        // ✈️ 私人專機試算器
+        function calculateJet() {
+            const type = document.getElementById('jetType').value;
+            let baseCost = 450000;
+            let timeStr = "2.5 小時";
+            if (type === 'helicopter') { baseCost = 180000; timeStr = "1.2 小時"; }
+            else if (type === 'light') { baseCost = 320000; timeStr = "2.0 小時"; }
+            else if (type === 'heavy') { baseCost = 850000; timeStr = "4.5 小時"; }
+
+            const rate = exchangeRates[currentCurrency];
+            const finalCost = Math.round(baseCost * rate);
+            document.getElementById('jetTimeResult').innerText = timeStr;
+            document.getElementById('jetPriceResult').innerText = currencySymbols[currentCurrency] + finalCost.toLocaleString();
+        }
+
+        // 🤖 AI 管家對話與對話紀錄匯出
+        let chatTranscript = [];
         function toggleAiChat() {
             const box = document.getElementById('aiChatBox');
             box.style.display = box.style.display === 'block' ? 'none' : 'block';
@@ -953,19 +1172,26 @@
 
             const body = document.getElementById('aiChatBody');
             body.innerHTML += `<div class="ai-msg user">${text}</div>`;
+            chatTranscript.push(`貴賓：${text}`);
             input.value = "";
             body.scrollTop = body.scrollHeight;
 
             setTimeout(() => {
                 let reply = "收到您的需求！AURA 總管家已為您筆記，將為您安排專屬私人包機與米其林餐宴。";
-                if(text.includes('冰島') || text.includes('極光')) reply = "冰島極光私人別墅行程非常搶手，建議提早 3 個月預訂以保留極光玻璃穹頂房型！";
-                if(text.includes('多少錢') || text.includes('價格')) reply = "所有行程均可透過右上角即時切換匯率（台幣/美元/歐元/日圓）檢視詳細報價！";
+                if(text.includes('南極') || text.includes('破冰船')) reply = "南極奢華破冰船為六星級極地規格，每年僅航行特定月份，建議即刻預約保留專屬直升機登陸席位！";
+                if(text.includes('東京') || text.includes('日本')) reply = "日本東京行程包含三代職人料亭包場與直升機鳥瞰富士山，非常適合頂級度假！";
                 body.innerHTML += `<div class="ai-msg">${reply}</div>`;
+                chatTranscript.push(`AI管家：${reply}`);
                 body.scrollTop = body.scrollHeight;
             }, 800);
         }
 
-        // 🌐 切換語系
+        function exportChatTranscript() {
+            if(chatTranscript.length === 0) { showToast("目前尚無對話紀錄可供下載。"); return; }
+            showToast("正在下載 AI 管家對話諮詢紀錄...");
+            setTimeout(() => { showToast("✅ 對話紀錄 PDF/TXT 已順利下載！"); }, 1000);
+        }
+
         function changeLanguage() {
             currentLang = document.getElementById('langSelector').value;
             const t = i18n[currentLang];
@@ -991,13 +1217,12 @@
             }
         }
 
-        // 💱 切換匯率
         function changeCurrency() {
             currentCurrency = document.getElementById('currencySelector').value;
             renderToursAndSelect();
+            calculateJet();
         }
 
-        // 📄 下載行程 PDF 摘要
         function exportPdfSummary() {
             let data = null;
             for (const cont in continentTours) {
@@ -1007,47 +1232,32 @@
             if(!data) return;
 
             showToast(`正在產生「${data.name}」精美行程摘要 PDF，請稍候...`);
-            setTimeout(() => {
-                showToast("✅ 行程 PDF 已成功下載至您的裝置！");
-            }, 1200);
+            setTimeout(() => { showToast("✅ 行程 PDF 已成功下載至您的裝置！"); }, 1200);
         }
 
-        // 💬 永久留言功能 (LocalStorage 持久化儲存)
         function postComment() {
             const nameInput = document.getElementById('commentName');
             const textInput = document.getElementById('commentText');
             const name = nameInput.value.trim();
             const text = textInput.value.trim();
 
-            if(!name || !text) {
-                showToast("請完整填寫姓名與留言內容！");
-                return;
-            }
+            if(!name || !text) { showToast("請完整填寫姓名與留言內容！"); return; }
 
-            const comments = JSON.parse(localStorage.getItem('aura_comments') || '[]');
-            const newComment = {
-                name: name,
-                text: text,
-                time: new Date().toLocaleString()
-            };
-            comments.unshift(newComment);
-            localStorage.setItem('aura_comments', JSON.stringify(comments));
+            const comments = JSON.parse(localStorage.getItem('aura_comments_150') || '[]');
+            comments.unshift({ name, text, time: new Date().toLocaleString() });
+            localStorage.setItem('aura_comments_150', JSON.stringify(comments));
 
-            nameInput.value = "";
-            textInput.value = "";
+            nameInput.value = ""; textInput.value = "";
             loadComments();
             showToast("感謝您的留言！內容已成功發布並永久儲存。");
         }
 
         function loadComments() {
             const list = document.getElementById('commentsList');
-            const comments = JSON.parse(localStorage.getItem('aura_comments') || '[]');
-            
-            // 預設示範留言
+            const comments = JSON.parse(localStorage.getItem('aura_comments_150') || '[]');
             if(comments.length === 0) {
-                comments.push({ name: "Howard Wang", text: "請問南極破冰船行程可以客製化私人直升機登陸次數嗎？", time: "2026/09/05 14:20" });
+                comments.push({ name: "Howard Wang", text: "150個行程太驚人了！想諮詢北極斯瓦爾巴群島與南極的聯程包機方案。", time: "2026/09/05 14:20" });
             }
-
             list.innerHTML = comments.map(c => `
                 <div class="comment-item">
                     <div class="c-name"><i class="fa-solid fa-user-circle"></i> ${c.name}</div>
@@ -1057,7 +1267,6 @@
             `).join('');
         }
 
-        // 📸 照片上傳大頭貼
         function uploadAvatar(event) {
             const file = event.target.files[0];
             if (file) {
@@ -1072,7 +1281,6 @@
             }
         }
 
-        // Modal 控制
         const authModal = document.getElementById('authModal');
         const dashboardModal = document.getElementById('dashboardModal');
         const wishlistModal = document.getElementById('wishlistModal');
@@ -1111,10 +1319,8 @@
         function handleLoginSubmit(event) {
             event.preventDefault();
             const email = document.getElementById('loginEmail').value;
-            loggedInUser = email;
-            loggedInName = email.split('@')[0].toUpperCase();
-            closeAuthModal();
-            updateNavAuth();
+            loggedInUser = email; loggedInName = email.split('@')[0].toUpperCase();
+            closeAuthModal(); updateNavAuth();
             showToast(`歡迎回來，尊榮貴賓 ${email}`);
             event.target.reset();
         }
@@ -1123,19 +1329,15 @@
             event.preventDefault();
             const email = document.getElementById('regEmail').value;
             const name = document.getElementById('regName').value;
-            loggedInUser = email;
-            loggedInName = name;
-            closeAuthModal();
-            updateNavAuth();
+            loggedInUser = email; loggedInName = name;
+            closeAuthModal(); updateNavAuth();
             showToast(`註冊成功！歡迎 ${name} 加入 AURA LUXURY`);
             event.target.reset();
         }
 
         function handleLogout() {
-            loggedInUser = null;
-            loggedInName = "VIP 貴賓";
-            closeDashboardModal();
-            updateNavAuth();
+            loggedInUser = null; loggedInName = "VIP 貴賓";
+            closeDashboardModal(); updateNavAuth();
             showToast("已安全登出會員帳戶");
         }
 
@@ -1323,9 +1525,15 @@
             document.getElementById('mapDesc').innerText = data.desc;
             document.getElementById('itineraryMainTitle').innerText = `${data.name} - 每日詳細行程`;
 
-            // 更新即時氣象與專機動態 widget
             document.getElementById('weatherWidget').innerHTML = `<i class="fa-solid fa-cloud-sun"></i> 即時氣象：<span>${data.weather}</span>`;
             document.getElementById('flightWidget').innerHTML = `<i class="fa-solid fa-plane-departure"></i> 專機動態：<span>${data.flight}</span>`;
+            
+            // 更新雷達面板動態
+            document.getElementById('radarFlightInfo').innerHTML = `
+                航機編號：<strong>${data.flight.split(' ')[0]} (Gulfstream G700)</strong><br>
+                航线：航向目的地 (${data.name.substring(0, 4)})<br>
+                即時高度：41,000 ft | 速度：Mach 0.92
+            `;
 
             const timelineContainer = document.getElementById('timelineContainer');
             timelineContainer.innerHTML = '';
@@ -1364,22 +1572,33 @@
             const qty = document.getElementById('ticketQuantity').value;
             const name = document.getElementById('buyerName').value;
             
-            // 收集加購選項
             const selectedAddons = [];
             document.querySelectorAll('input[name="addons"]:checked').forEach(cb => {
                 selectedAddons.push(cb.value);
             });
 
+            const insuranceChecked = document.getElementById('insuranceCheck').checked;
+            const videoPlatform = document.getElementById('videoPlatform').value;
+            const videoTime = document.getElementById('videoTime').value;
+            const esgChecked = document.getElementById('esgCarbonOffset').checked;
+
+            let extraInfo = "";
+            if (selectedAddons.length > 0) extraInfo += " (含加購禮遇)";
+            if (insuranceChecked) extraInfo += " (含極境救援險)";
+            if (videoTime) extraInfo += ` (已預約${videoPlatform}視訊)`;
+            if (esgChecked) extraInfo += " (已認購ESG碳權)";
+
             userOrders.push({
                 tour: tour,
                 qty: qty,
-                status: "⏳ 管家審核中" + (selectedAddons.length > 0 ? ` (含加購)` : "")
+                status: "⏳ 管家審核中" + extraInfo
             });
 
             showToast(`已成功收到 ${name} 貴賓的「${tour}」${qty} 位預約單！`);
             event.target.reset();
-            // 重置加購勾選
             document.querySelectorAll('input[name="addons"]').forEach(cb => cb.checked = false);
+            document.getElementById('insuranceCheck').checked = false;
+            document.getElementById('esgCarbonOffset').checked = false;
         }
 
         window.onload = function() {
@@ -1387,6 +1606,7 @@
             renderToursAndSelect();
             setActiveLocation('tokyo');
             loadComments();
+            calculateJet();
         };
     </script>
 </body>
