@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">AURA LUXURY TRAVEL - 150大頂級行程與AI專機雷達中心</title>
+    <title id="pageTitle">AURA LUXURY TRAVEL - 150大全球頂級奢華旅遊與區塊鏈護照中心</title>
     <!-- Google Fonts 與 FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,6 +33,43 @@
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* 📱 手機版專屬禁止使用警告遮罩 */
+        #mobileBlocker {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: #0d0d0d;
+            z-index: 99999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+        }
+
+        #mobileBlocker i {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        #mobileBlocker h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        #mobileBlocker p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            max-width: 400px;
+            line-height: 1.8;
         }
 
         /* 導覽列 */
@@ -183,14 +220,7 @@
         }
         .btn-reserve:hover { background-color: var(--primary-gold); color: var(--dark-bg); }
 
-        /* 🤖 AI 智慧行程自動規劃器 (新功能) */
-        .ai-planner-section {
-            background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 50px;
-        }
-        .ai-planner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
-        .ai-plan-output { background: #222; border: 1px solid #444; border-radius: 8px; padding: 20px; min-height: 220px; }
-
-        /* 地圖與航班雷達區 (新功能) */
+        /* 地圖與氣象區 */
         .map-section {
             background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 25px; margin-bottom: 50px;
         }
@@ -199,7 +229,7 @@
         .map-info-panel h3 { color: var(--primary-gold); font-size: 1.3rem; margin-bottom: 8px; }
         .map-info-panel p { color: var(--text-gray); margin-bottom: 12px; font-size: 0.9rem; }
         
-        .widget-box { background: #222; border: 1px solid #444; border-radius: 6px; padding: 10px; margin-bottom: 12px; font-size: 0.85ln; }
+        .widget-box { background: #222; border: 1px solid #444; border-radius: 6px; padding: 10px; margin-bottom: 12px; font-size: 0.85rem; }
         .widget-box span { color: var(--primary-gold); font-weight: bold; }
 
         /* ✈️ 航班雷達動態面板 */
@@ -329,6 +359,20 @@
             background: #222; border: 1px solid var(--primary-gold); border-radius: 8px; padding: 12px; text-align: center; margin-bottom: 15px;
         }
 
+        /* 📜 區塊鏈虛擬旅遊紀念護照與集章冊 (新功能樣式) */
+        .blockchain-passport-box {
+            background: #222; border: 1px solid var(--primary-gold); border-radius: 8px; padding: 15px; margin-bottom: 15px;
+        }
+        .passport-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; text-align: center;
+        }
+        .stamp-badge {
+            background: #111; border: 1px dashed #444; border-radius: 6px; padding: 8px 4px; font-size: 0.75rem; color: #777;
+        }
+        .stamp-badge.unlocked {
+            border: 1px solid var(--primary-gold); color: var(--primary-gold); background: rgba(212,175,55,0.1); font-weight: bold;
+        }
+
         /* 🟢 WhatsApp 浮動按鈕 */
         .whatsapp-float {
             position: fixed; bottom: 95px; right: 25px; z-index: 4000;
@@ -379,19 +423,19 @@
 
         footer { background-color: #0d0d0d; border-top: 1px solid rgba(212, 175, 55, 0.2); text-align: center; padding: 25px 15px; color: var(--text-gray); font-size: 0.85rem; margin-top: 60px; }
 
-        @media (max-width: 900px) {
-            .map-layout, .rules-risk-section, .form-grid, .jet-calc-grid, .ai-planner-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.2rem; }
-            nav {
-                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
-                background: rgba(17, 17, 17, 0.98); border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; gap: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            }
-            nav.active { display: flex; }
-            .hamburger { display: block; }
+        @media (max-width: 768px), (pointer: coarse) {
+            #mobileBlocker { display: flex !important; }
         }
     </style>
 </head>
 <body>
+
+    <!-- 📱 手機禁止使用警告畫面 -->
+    <div id="mobileBlocker">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h2>存取受限</h2>
+        <p>本網頁禁止在手機上使用，如造成不便敬請見諒。<br>請改用桌上型電腦或筆記型電腦進行瀏覽。</p>
+    </div>
 
     <div id="toastBox"></div>
 
@@ -403,7 +447,6 @@
         <button class="hamburger" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
         <nav id="navMenu">
             <a href="#tours" id="navTours" onclick="closeMobileMenu()">150大頂級行程</a>
-            <a href="#aiPlannerSection" onclick="closeMobileMenu()">AI 行程規劃</a>
             <a href="#mapSection" id="navMap" onclick="closeMobileMenu()">全球地圖與雷達</a>
             <a href="#jetCalcSection" onclick="closeMobileMenu()">私人專機試算</a>
             <a href="#commentsSection" id="navComments" onclick="closeMobileMenu()">貴賓留言</a>
@@ -440,42 +483,6 @@
 
     <div class="container">
         
-        <!-- 🤖 AI 智慧行程自動規劃器 (新功能) -->
-        <div class="ai-planner-section" id="aiPlannerSection">
-            <div class="section-title" style="text-align: left; margin-bottom: 15px;">
-                <h2 style="font-size: 1.8rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI 智慧尊榮行程自動規劃器</h2>
-                <p>輸入您的旅遊天數與偏好風格，由 AURA AI 系統為您量身打造專屬的 Day-by-Day 行程表</p>
-            </div>
-            <div class="ai-planner-grid">
-                <div>
-                    <div class="form-group">
-                        <label>偏好旅遊風格：</label>
-                        <select id="aiStyle" style="width:100%; padding:10px; background:#111; border:1px solid #444; color:#fff; border-radius:6px;">
-                            <option value="michelin">🌟 米其林美食與頂級品酒私會</option>
-                            <option value="adventure">🚁 極境冒險與直升機冰川探險</option>
-                            <option value="culture">🏛️ 羅浮宮/古堡閉館私人文化導覽</option>
-                            <option value="aurora">🌌 極光穹頂別墅與極地生態</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>預計旅遊天數：</label>
-                        <select id="aiDays" style="width:100%; padding:10px; background:#111; border:1px solid #444; color:#fff; border-radius:6px;">
-                            <option value="5">5 日尊榮深度遊</option>
-                            <option value="7" selected>7 日頂級全包式假期</option>
-                            <option value="10">10 日極地／洲際大冒險</option>
-                        </select>
-                    </div>
-                    <button class="btn-submit-vip" onclick="generateAiItinerary()">✨ 立即生成 AI 專屬客製行程</button>
-                </div>
-                <div>
-                    <label style="color:var(--primary-gold); font-weight:bold; display:block; margin-bottom:8px;">AI 規劃結果摘要：</label>
-                    <div class="ai-plan-output" id="aiPlanOutput">
-                        <p style="color:var:var(--text-gray); font-style:italic;">請於左側設定您的偏好並點擊生成，AI 管家將為您即時編排專屬行程。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="section-title">
             <h2 id="sectionExploreTitle">探索 5 大洲共 150 大頂級奢華航點</h2>
             <p id="sectionExploreDesc">點擊下方大洲按鈕，即可切換檢視該洲專屬的 30 大頂級旅遊行程</p>
@@ -541,7 +548,6 @@
             <div class="itinerary-timeline" id="timelineContainer"></div>
         </div>
 
-        <!-- 地圖與全球即時航班雷達面板 (新功能) -->
         <div class="map-section" id="mapSection">
             <div class="section-title" style="text-align: left; margin-bottom: 20px;">
                 <h2 id="mapSectionTitle" style="font-size: 1.5rem;">全球真實導覽地圖與即時航班雷達</h2>
@@ -550,7 +556,6 @@
             <div class="map-layout">
                 <div id="realMap"></div>
                 <div class="map-info-panel" id="mapInfoPanel">
-                    <!-- ✈️ 即時航班雷達面板 -->
                     <div class="radar-box">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                             <strong style="color:var(--primary-gold);"><i class="fa-solid fa-satellite-dish"></i> AURA LIVE RADAR</strong>
@@ -607,7 +612,7 @@
                     <li><strong>不可抗力：</strong> 若遇極端天候，管家團隊將即時調整行程，相關費用由保險或應變基金覆蓋。</li>
                     <li><strong>健康申明：</strong> 參與高海拔或極地行程之貴賓請自主確認健康狀況。</li>
                     <li><strong>私人保險：</strong> 建議出發前自行投保高額海外醫療及突發事故保險。</li>
-                    <li><strong>財物安全：</strong> 私人行館與專機均設有頂級保險箱，隨身貴重物品請妥善保管。</li>
+                    <li><strong>財物安全：</strong> 私人行館與專機均設有頂級保險箱，隨身貴重物品請自行妥善保管。</li>
                 </ul>
             </div>
         </div>
@@ -731,7 +736,7 @@
                 </div>
             </div>
             <div class="ai-chat-body" id="aiChatBody">
-                <div class="ai-msg">您好，尊榮貴賓！我是您的 AI 旅遊管家。我們現已提供 150 大行程與 AI 行程自動規劃，請問想諮詢什麼呢？</div>
+                <div class="ai-msg">您好，尊榮貴賓！我是您的 AI 旅遊管家。我們現已提供全球 150 大頂級行程與專機預約，請問想諮詢哪一個航點呢？</div>
             </div>
             <div class="ai-chat-footer">
                 <input type="text" id="aiInputText" placeholder="輸入您的旅遊提問..." onkeypress="if(event.key==='Enter') sendAiMessage()">
@@ -786,7 +791,7 @@
         </div>
     </div>
 
-    <!-- 會員中心儀表板 Modal -->
+    <!-- 會員中心儀表板 Modal (內含區塊鏈虛擬旅遊紀念護照與集章冊) -->
     <div id="dashboardModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDashboardModal()">&times;</span>
@@ -803,6 +808,26 @@
                 </div>
                 <input type="file" id="avatarInput" accept="image/*" style="display:none;" onchange="uploadAvatar(event)">
                 <span style="font-size:0.75rem; color:var(--text-gray);">點擊上方圖示可上傳個人照片</span>
+            </div>
+
+            <!-- 📜 區塊鏈虛擬旅遊紀念護照與集章冊 (新功能) -->
+            <div class="blockchain-passport-box">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <strong style="color:var(--primary-gold); font-size:0.9rem;"><i class="fa-solid fa-passport"></i> 區塊鏈黃金旅遊護照</strong>
+                    <span style="font-size:0.75rem; color:var(--text-gray);">已集滿 <span id="stampCount" style="color:var(--primary-gold); font-weight:bold;">0</span> / 8 枚金印</span>
+                </div>
+                <p style="font-size:0.75rem; color:var(--text-gray); margin-bottom:8px;">收藏心儀行程即可解鎖全球航點數位金印</p>
+                <div class="passport-grid" id="passportStampsGrid">
+                    <!-- 動態載入集章 -->
+                    <div class="stamp-badge unlocked">🗼 東京</div>
+                    <div class="stamp-badge">🏛️ 巴黎</div>
+                    <div class="stamp-badge">🏝️ 馬爾地夫</div>
+                    <div class="stamp-badge">🏔️ 瑞士</div>
+                    <div class="stamp-badge">🏜️ 杜拜</div>
+                    <div class="stamp-badge">🌌 冰島</div>
+                    <div class="stamp-badge">🍷 托斯卡尼</div>
+                    <div class="stamp-badge">🧊 南極</div>
+                </div>
             </div>
 
             <div class="web3-wallet-box">
@@ -1110,30 +1135,6 @@
         function toggleMobileMenu() { document.getElementById('navMenu').classList.toggle('active'); }
         function closeMobileMenu() { document.getElementById('navMenu').classList.remove('active'); }
 
-        // 🤖 AI 智慧行程自動規劃器邏輯 (新功能)
-        function generateAiItinerary() {
-            const style = document.getElementById('aiStyle').value;
-            const days = document.getElementById('aiDays').value;
-            const output = document.getElementById('aiPlanOutput');
-
-            let title = "米其林美饌與品酒極上假期";
-            if (style === 'adventure') title = "極地探險與直升機冰川巡航";
-            if (style === 'culture') title = "皇室宮殿與羅浮宮私密文化漫遊";
-            if (style === 'aurora') title = "極光穹頂別墅與極地生態之旅";
-
-            output.innerHTML = `
-                <h4 style="color:var(--primary-gold); margin-bottom:8px;"><i class="fa-solid fa-crown"></i> AURA AI 為您量身訂製：${days}日【${title}】</h4>
-                <ul style="font-size:0.85rem; color:#ddd; padding-left:15px; display:flex; flex-direction:column; gap:6px;">
-                    <li><strong>Day 1：</strong>搭乘 AURA 旗艦專機直達目的地，專車入住總統套房，晚間享用主廚私宴。</li>
-                    <li><strong>Day 2-3：</strong>專屬管家帶領進行深度私人導覽（含VIP快速通關與閉館參訪）。</li>
-                    <li><strong>Day 4-${days-1}：</strong>安排頂級 Spa、私人直升機鳥瞰奇觀、米其林三星主廚無菜單料理。</li>
-                    <li><strong>Day ${days}：</strong>貴賓室專屬離境通道，專機賦歸。</li>
-                </ul>
-                <button class="btn-reserve" style="margin-top:12px;" onclick="selectTour('【AI客製】${days}日 ${title}', 'tokyo')">一鍵套用此規劃並預訂</button>
-            `;
-            showToast("✨ AI 專屬客製行程已成功生成！");
-        }
-
         // 🪙 Web3 錢包綁定
         function connectWeb3Wallet() {
             showToast("正在連接 MetaMask 區塊鏈錢包...");
@@ -1358,10 +1359,20 @@
             }
         }
 
+        // 更新會員中心集章冊顯示
         function updateDashboardView() {
             document.getElementById('dashboardUserEmail').innerText = `登入帳號：${loggedInUser || 'VIP貴賓'}`;
             document.getElementById('cardHolderName').innerText = loggedInName;
             
+            // 計算收藏數並更新集章冊
+            const stampCount = Math.min(8, wishlist.length + 1);
+            document.getElementById('stampCount').innerText = stampCount;
+            const grid = document.getElementById('passportStampsGrid');
+            const countries = ["🗼 東京", "🏛️ 巴黎", "🏝️ 馬爾地夫", "🏔️ 瑞士", "🏜️ 杜拜", "🌌 冰島", "🍷 托斯卡尼", "🧊 南極"];
+            grid.innerHTML = countries.map((c, i) => `
+                <div class="stamp-badge ${i < stampCount ? 'unlocked' : ''}">${c}</div>
+            `).join('');
+
             const ordersList = document.getElementById('dashboardOrdersList');
             if (userOrders.length === 0) {
                 ordersList.innerHTML = `<p style="font-size:0.8rem; color:var(--text-gray);">目前尚無預約紀錄。</p>`;
@@ -1443,7 +1454,7 @@
                 showToast(`已從收藏夾移除「${tourName}」`);
             } else {
                 wishlist.push(tourId);
-                showToast(`已成功將「${tourName}」加入收藏夾 ❤️`);
+                showToast(`已成功將「${tourName}」加入收藏夾 ❤️ (護照已解鎖新金印)`);
             }
 
             document.getElementById('wishlistCount').innerText = wishlist.length;
@@ -1528,10 +1539,9 @@
             document.getElementById('weatherWidget').innerHTML = `<i class="fa-solid fa-cloud-sun"></i> 即時氣象：<span>${data.weather}</span>`;
             document.getElementById('flightWidget').innerHTML = `<i class="fa-solid fa-plane-departure"></i> 專機動態：<span>${data.flight}</span>`;
             
-            // 更新雷達面板動態
             document.getElementById('radarFlightInfo').innerHTML = `
                 航機編號：<strong>${data.flight.split(' ')[0]} (Gulfstream G700)</strong><br>
-                航线：航向目的地 (${data.name.substring(0, 4)})<br>
+                航線：航向目的地 (${data.name.substring(0, 4)})<br>
                 即時高度：41,000 ft | 速度：Mach 0.92
             `;
 
